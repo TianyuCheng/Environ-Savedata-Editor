@@ -1,0 +1,94 @@
+extend layout
+
+block content
+    .header
+      h1 #{title} Inspector
+      h2 Developers' Tool for Save Data Editing
+    .content
+      h2.content-subhead Global Variables
+      table.pure-table.pure-table-vertical
+        thead
+            tr
+              th Political Capital
+              th Total Funds
+          tbody
+            tr
+              td 
+                span(contenteditable="true") #{info.political_capital}
+              td 
+                span(contenteditable="true") #{info.funds}
+
+
+      h2.content-subhead Regional Variables
+      table.pure-table.pure-table-striped
+        thead
+            tr
+              th 
+                - for (var i = 0; i < info.region_counts; ++i) {
+                    th= "region"
+                - }
+          tbody
+            tr
+              td Economy
+                  td 
+                    span(contenteditable="true") #{info.political_capital}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+            tr
+              td Environment
+                  td 
+                    span(contenteditable="true") #{info.political_capital}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+            tr
+              td Technology
+                  td 
+                    span(contenteditable="true") #{info.political_capital}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+            tr
+              td Green Sentiment
+                  td 
+                    span(contenteditable="true") #{info.political_capital}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
+                  td 
+                    span(contenteditable="true") #{info.funds}
