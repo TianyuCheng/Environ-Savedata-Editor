@@ -9,7 +9,7 @@ var merge = function(dict1, dict2) {
 
 var read = function(callback) {
 
-  var filename = "/Users/tc26752/Projects/SaveFile/savedata.dat";
+  var filename = "/Users/tc26752/Projects/Environ-Dashboard/savedata.dat";
 
   fs.stat(filename, function(error, stats) {
     
