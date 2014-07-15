@@ -3,9 +3,10 @@ html
   head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title #{title} - Environ SaveData Browser
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='icon', type='image/x-icon', href='images/favicon.ico')
     link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/pure-min.css')
     link(rel='stylesheet', href='/stylesheets/side-menu.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
 
   body
     #layout
@@ -15,7 +16,7 @@ html
         span
       #menu
         .pure-menu.pure-menu-open
-          a.pure-menu-heading(href='#') Environ
+          a.pure-menu-heading(href='/') Environ
           ul
             li
               a(href='/') Home
@@ -23,4 +24,4 @@ html
               a(href='/savedata') Save Data
       #main
         block content
-    script(src='/javascript/ui.js')
+  script(src='/javascript/ui.js')

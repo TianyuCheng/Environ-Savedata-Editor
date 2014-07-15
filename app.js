@@ -38,32 +38,26 @@ app.get('/', function (req, res) {
 // savedata
 app.get('/savedata', function (req, res) {
 
-  data.read(function(_info, _regions) {
-    res.render('savedata', {
-      title : 'Environ',
-      info : _info,
-      regions: _regions
-    })
-  });
-
-});
-
-// a test call external scripts like python
-app.get('/python-test', function(req, res) {
   var python = require('child_process').spawn(
       'python',
       // second argument is array of parameters, e.g.:
-      ["test.py"]);
+      ["read_savedata.py"]);
 
   var output = "";
   python.stdout.on('data', function(data){ output += data });
 
   python.on('close', function(code){ 
     if (code !== 0) {  return res.send(500, code); }
-    return res.send(200, output)
+    var infos = JSON.parse(output);
+    console.log(infos);
+    // return res.send(200, infos)
+    return res.render('savedata', {
+      title : 'Environ',
+      info : infos
+    })
   });
 
 });
 
-app.listen(3001);
-console.log("Server starts on port 3001");
+app.listen(3002);
+console.log("Server starts on port 3002");

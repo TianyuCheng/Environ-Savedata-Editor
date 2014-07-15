@@ -5,6 +5,11 @@ block content
       h1 #{title} Inspector
       h2 Developers' Tool for Save Data Editing
     .content
+      h2.content-subhead Upload Your Save Data
+      form(id="upload-form", name="upload-form", class="pure-form pure-form-aligned")
+          input(id="datafile", name="datafile", type="file", size="40", accept="dat", class="pure-button")
+          input(id="upload", name="upload", type="submit", size="40", class="pure-button pure-button-primary")
+
       h2.content-subhead Global Variables
       table.pure-table.pure-table-vertical
         thead
@@ -17,78 +22,90 @@ block content
                 span(contenteditable="true") #{info.political_capital}
               td 
                 span(contenteditable="true") #{info.funds}
-
-
+    
       h2.content-subhead Regional Variables
       table.pure-table.pure-table-striped
         thead
             tr
               th 
                 - for (var i = 0; i < info.region_counts; ++i) {
-                    th= "region"
+                    th= "region_" + info.regions[i].id
                 - }
           tbody
             tr
               td Economy
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.political_capital}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.EC
+                - }
             tr
               td Environment
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.political_capital}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.EN
+                - }
             tr
               td Technology
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.political_capital}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
-                  td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.TECH
+                - }
             tr
               td Green Sentiment
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.political_capital}
+                    span(contenteditable="true")= info.regions[i].scores.GREEN
+                - }
+            tr
+              td GDP
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.GDP
+                - }
+            tr
+              td Income Equality
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.EQ
+                - }
+            tr
+              td Purchasing Power
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.PP
+                - }
+            tr
+              td Donations
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.DONATION
+                - }
+            tr
+              td CO2 Emission
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.CO2
+                - }
+            tr
+              td Air Pollution
+                - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true") #{info.funds}
+                    span(contenteditable="true")= info.regions[i].scores.AP
+                - }
+            tr
+              td Water Pollution
+                - for (var i = 0; i < info.region_counts; ++i) {
+                  td 
+                    span(contenteditable="true")= info.regions[i].scores.WP
+                - }
+            tr
+              td Land Pollution
+                - for (var i = 0; i < info.region_counts; ++i) {
+                  td 
+                    span(contenteditable="true")= info.regions[i].scores.LP
+                - }
+
+      h2.content-subhead Save Profile
+        hr
+        form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
+          input(id="save", name="save", type="submit", size="40", class="pure-button pure-button-primary")
