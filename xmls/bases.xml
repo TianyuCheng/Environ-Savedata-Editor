@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<bases>
+  <base>
+    <key>B1</key>
+    <title>Coal</title>
+    <description> </description>
+    <image> </image>
+    <model>3D_coalPlant</model>
+    <reward>10</reward>
+    <tags>
+      <tag>T9</tag>
+      <tag>T10</tag>
+    </tags>
+    <upgrades>
+      <upgrade state="2">U1</upgrade>
+      <upgrade state="2">U2</upgrade>
+      <upgrade state="1">U3</upgrade>
+      <upgrade state="1">U4</upgrade>
+      <upgrade state="1">U5</upgrade>
+      <upgrade state="0">U6</upgrade>
+      <upgrade state="0">U7</upgrade>
+      <upgrade state="0">U8</upgrade>
+      <upgrade state="0">U9</upgrade>
+    </upgrades>
+  </base>
+  <base>
+    <key>B2</key>
+    <title>Solar Power</title>
+    <description> </description>
+    <image> </image>
+    <model>3D_coalPlant</model>
+    <reward>10</reward>
+    <tags>
+      <tag>T9</tag>
+      <tag>T11</tag>
+      <tag>T17</tag>
+    </tags>
+    <upgrades>
+      <upgrade state="2">U10</upgrade>
+      <upgrade state="2">U11</upgrade>
+      <upgrade state="1">U12</upgrade>
+      <upgrade state="1">U13</upgrade>
+      <upgrade state="1">U14</upgrade>
+      <upgrade state="0">U15</upgrade>
+      <upgrade state="0">U16</upgrade>
+      <upgrade state="0">U17</upgrade>
+      <upgrade state="0">U18</upgrade>
+      <upgrade state="0">U19</upgrade>
+      <upgrade state="0">U20</upgrade>
+    </upgrades>
+  </base>
+  <base>
+    <key>B3</key>
+    <title>Capitol</title>
+    <description> </description>
+    <image> </image>
+    <model> </model>
+    <reward>10</reward>
+    <tags>
+      <tag>T12</tag>
+    </tags>
+    <upgrades>
+      <upgrade state="2">U21</upgrade>
+      <upgrade state="2">U22</upgrade>
+      <upgrade state="1">U23</upgrade>
+      <upgrade state="1">U24</upgrade>
+      <upgrade state="1">U25</upgrade>
+      <upgrade state="0">U26</upgrade>
+      <upgrade state="0">U27</upgrade>
+      <upgrade state="0">U28</upgrade>
+      <upgrade state="0">U29</upgrade>
+    </upgrades>
+  </base>
+  <base>
+    <key>B4</key>
+    <title>Wind Power</title>
+    <description> </description>
+    <image> </image>
+    <model>3D_wind</model>
+    <reward>10</reward>
+    <tags>
+      <tag>T9</tag>
+      <tag>T13</tag>
+      <tag>T17</tag>
+    </tags>
+    <upgrades>
+      <upgrade state="2">U30</upgrade>
+      <upgrade state="2">U31</upgrade>
+      <upgrade state="1">U32</upgrade>
+      <upgrade state="1">U33</upgrade>
+      <upgrade state="1">U34</upgrade>
+      <upgrade state="0">U35</upgrade>
+      <upgrade state="0">U36</upgrade>
+      <upgrade state="0">U37</upgrade>
+    </upgrades>
+  </base>
+  <base>
+    <key>B5</key>
+    <title>Nuclear Power</title>
+    <description> </description>
+    <image> </image>
+    <model>3D_NuclearPlant</model>
+    <reward>10</reward>
+    <tags>
+      <tag>T9</tag>
+      <tag>T14</tag>
+      <tag>T17</tag>
+    </tags>
+    <upgrades>
+      <upgrade state="2">U38</upgrade>
+      <upgrade state="2">U39</upgrade>
+      <upgrade state="1">U40</upgrade>
+      <upgrade state="1">U41</upgrade>
+      <upgrade state="1">U42</upgrade>
+      <upgrade state="0">U43</upgrade>
+      <upgrade state="0">U44</upgrade>
+      <upgrade state="0">U45</upgrade>
+      <upgrade state="0">U46</upgrade>
+      <upgrade state="0">U47</upgrade>
+      <upgrade state="0">U48</upgrade>
+    </upgrades>
+  </base>
+  <base>
+    <key>B6</key>
+    <title>Oil And Gas</title>
+    <description> </description>
+    <image> </image>
+    <model>3D_oilAndGas</model>
+    <reward>10</reward>
+    <tags>
+      <tag>T26</tag>
+    </tags>
+    <upgrades>
+      <upgrade state="2">U38</upgrade>
+      <upgrade state="2">U39</upgrade>
+      <upgrade state="1">U40</upgrade>
+      <upgrade state="1">U41</upgrade>
+      <upgrade state="1">U42</upgrade>
+      <upgrade state="0">U43</upgrade>
+      <upgrade state="0">U44</upgrade>
+      <upgrade state="0">U45</upgrade>
+      <upgrade state="0">U46</upgrade>
+      <upgrade state="0">U47</upgrade>
+      <upgrade state="0">U48</upgrade>
+    </upgrades>
+  </base>
+  <base>
+    <key>B7</key>
+    <title>Research</title>
+    <description> </description>
+    <image> </image>
+    <model>3D_research</model>
+    <reward>10</reward>
+    <tags>
+      <tag>T26</tag>
+    </tags>
+    <upgrades/>
+  </base>
+</bases>

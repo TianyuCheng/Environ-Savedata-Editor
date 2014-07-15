@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+<tags>
+  <tag>
+    <key>T1</key>
+    <title>North America</title>
+  </tag>
+  <tag>
+    <key>T2 </key>
+    <title>South America</title>
+  </tag>
+  <tag>
+    <key>T3 </key>
+    <title>Europe</title>
+  </tag>
+  <tag>
+    <key>T4</key>
+    <title>Africa</title>
+  </tag>
+  <tag>
+    <key>T5</key>
+    <title>Central Asia</title>
+  </tag>
+  <tag>
+    <key>T6</key>
+    <title>East Asia</title>
+  </tag>
+  <tag>
+    <key>T7</key>
+    <title>Event</title>
+  </tag>
+  <tag>
+    <key>T8</key>
+    <title>Disaster</title>
+  </tag>
+  <tag>
+    <key>T9</key>
+    <title>Energy</title>
+  </tag>
+  <tag>
+    <key>T10</key>
+    <title>Fossil Fuel</title>
+  </tag>
+  <tag>
+    <key>T11</key>
+    <title>Solar </title>
+  </tag>
+  <tag>
+    <key>T12</key>
+    <title>Capital</title>
+  </tag>
+  <tag>
+    <key>T13</key>
+    <title>Wind</title>
+  </tag>
+  <tag>
+    <key>T14</key>
+    <title>Nuclear</title>
+  </tag>
+  <tag>
+    <key>T15</key>
+    <title>Research</title>
+  </tag>
+  <tag>
+    <key>T16</key>
+    <title>Coal</title>
+  </tag>
+  <tag>
+    <key>T17</key>
+    <title>Low Carbon</title>
+  </tag>
+  <tag>
+    <key>T18</key>
+    <title>Power Plant</title>
+  </tag>
+  <tag>
+    <key>T19</key>
+    <title>Oil</title>
+  </tag>
+  <tag>
+    <key>T20</key>
+    <title>Natural Gas</title>
+  </tag>
+  <tag>
+    <key>T21</key>
+    <title>Policy</title>
+  </tag>
+  <tag>
+    <key>T22</key>
+    <title>Advanced Research</title>
+  </tag>
+  <tag>
+    <key>T23</key>
+    <title>Energy Infrastructure</title>
+  </tag>
+  <tag>
+    <key>T24</key>
+    <title>Nuclear Safety</title>
+  </tag>
+  <tag>
+    <key>T25</key>
+    <title>Diminish</title>
+  </tag>
+  <tag>
+    <key>T26</key>
+    <title>Transportation</title>
+  </tag>
+</tags>

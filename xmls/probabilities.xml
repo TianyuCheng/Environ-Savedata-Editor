@@ -1,0 +1,355 @@
+<?xml version="1.0" ?>
+<probabilities>
+  <probability>
+    <key>P1</key>
+    <factors>
+      <factor rel="1" type="node">U3</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P2</key>
+    <factors>
+      <factor rel="1" type="tag">T20</factor>
+      <factor rel="1" type="tag">T18</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P3</key>
+    <factors>
+      <factor rel="1" type="tag">T19</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P4</key>
+    <factors>
+      <factor rel="1" type="tag">T11</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P5</key>
+    <factors>
+      <factor rel="1" type="node">U12</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P6</key>
+    <factors>
+      <factor rel="1" type="tag">T11</factor>
+      <factor rel="1" type="tag">T19</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P7</key>
+    <factors>
+      <factor rel="1" type="node">U16</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P8</key>
+    <factors>
+      <factor rel="1" type="node">U19</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P9</key>
+    <factors>
+      <factor rel="1" type="tag">T17</factor>
+      <factor rel="-1" type="tag">T25</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P10</key>
+    <factors>
+      <factor rel="1" type="tag">T18</factor>
+      <factor rel="1" type="tag">T10</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P11</key>
+    <factors>
+      <factor rel="1" type="tag">T17</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P12</key>
+    <factors>
+      <factor rel="1" type="node">U23</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P13</key>
+    <factors>
+      <factor rel="1" type="tag">T18</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P14</key>
+    <factors>
+      <factor rel="1" type="tag">T17</factor>
+      <factor rel="1" type="tag">T18</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P15</key>
+    <factors>
+      <factor rel="1" type="tag">T18</factor>
+      <factor rel="1" type="tag">T13</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P16</key>
+    <factors>
+      <factor rel="1" type="node">U31</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P17</key>
+    <factors>
+      <factor rel="1" type="node">U34</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P18</key>
+    <factors>
+      <factor rel="1" type="node">U40</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P19</key>
+    <factors>
+      <factor rel="1" type="tag">T14</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P20</key>
+    <factors>
+      <factor rel="1" type="tag">T14</factor>
+      <factor rel="1" type="tag">T18</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P21</key>
+    <factors>
+      <factor rel="1" type="node">U43</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P22</key>
+    <factors>
+      <factor rel="1" type="node">E9</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P23</key>
+    <factors>
+      <factor rel="1" type="score">TECH</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P24</key>
+    <factors>
+      <factor rel="1" type="score">EC</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P25</key>
+    <factors>
+      <factor rel="1" type="score">EN</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P26</key>
+    <factors>
+      <factor rel="1" type="node">U9</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P27</key>
+    <factors>
+      <factor rel="1" type="tag">T20</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P28</key>
+    <factors>
+      <factor rel="1" type="score">GREEN</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P29</key>
+    <factors>
+      <factor rel="-1" type="tag">T17</factor>
+      <factor rel="1" type="tag">T10</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P30</key>
+    <factors>
+      <factor rel="-1" type="score">GREEN</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P31</key>
+    <factors>
+      <factor rel="1" type="score">PP</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P32</key>
+    <factors>
+      <factor rel="1" type="score">GDP</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P33</key>
+    <factors>
+      <factor rel="1" type="node">U44</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P34</key>
+    <factors>
+      <factor rel="1" type="node">U5</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P35</key>
+    <factors>
+      <factor rel="1" type="score">CO2</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P36</key>
+    <factors>
+      <factor rel="1" type="score">WP</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P37</key>
+    <factors>
+      <factor rel="1" type="node">E11</factor>
+      <factor rel="1" type="score">CO2</factor>
+      <factor rel="1" type="score">WP</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P38</key>
+    <factors>
+      <factor rel="1" type="score">GDP</factor>
+      <factor rel="1" type="score">PP</factor>
+      <factor rel="1" type="score">EQ</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P39</key>
+    <factors>
+      <factor rel="1" type="tag">T8</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P40</key>
+    <factors>
+      <factor rel="1" type="node">E13</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P41</key>
+    <factors>
+      <factor rel="1" type="score">EQ</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P42</key>
+    <factors>
+      <factor rel="1" type="score">AP</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P43</key>
+    <factors>
+      <factor rel="1" type="score">LP</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P44</key>
+    <factors>
+      <factor rel="1" type="score">CO2</factor>
+      <factor rel="1" type="node">E16</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P45</key>
+    <factors>
+      <factor rel="1" type="tag">T14</factor>
+      <factor rel="1" type="tag">T18</factor>
+      <factor rel="-1" type="tag">T24</factor>
+      <factor rel="-1" type="node">U38</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P46</key>
+    <factors>
+      <factor rel="-1" type="tag">T25</factor>
+      <factor rel="1" type="tag">T10</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P47</key>
+    <factors>
+      <factor rel="-1" type="score">GDP</factor>
+      <factor rel="-1" type="score">PP</factor>
+      <factor rel="-1" type="score">EC</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P48</key>
+    <factors>
+      <factor rel="1" type="score">GDP</factor>
+      <factor rel="1" type="score">PP</factor>
+      <factor rel="1" type="node">E21</factor>
+      <factor rel="1" type="score">EC</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P49</key>
+    <factors>
+      <factor rel="1" type="score">GDP</factor>
+      <factor rel="1" type="score">PP</factor>
+      <factor rel="1" type="score">EC</factor>
+      <factor rel="1" type="node">E22</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P50</key>
+    <factors>
+      <factor rel="1" type="score">GDP</factor>
+      <factor rel="1" type="score">PP</factor>
+      <factor rel="1" type="score">EC</factor>
+      <factor rel="1" type="node">E23</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P51</key>
+    <factors>
+      <factor rel="1" type="score">GDP</factor>
+      <factor rel="1" type="score">PP</factor>
+      <factor rel="1" type="score">EQ</factor>
+      <factor rel="1" type="node">E14</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P52</key>
+    <factors>
+      <factor rel="1" type="node">E25</factor>
+      <factor rel="-1" type="score">EC</factor>
+    </factors>
+  </probability>
+  <probability>
+    <key>P53</key>
+    <factors>
+      <factor rel="1" type="tag">T14</factor>
+      <factor rel="1" type="node">E26</factor>
+      <factor rel="-1" type="score">GREEN</factor>
+    </factors>
+  </probability>
+</probabilities>
