@@ -1,5 +1,6 @@
 import json
 from struct import unpack 
+import sys
 
 MAGIC = 1989127302
 
@@ -24,12 +25,6 @@ def read_header(fileContent):
     return ret
 
 def read_region(fileContent):
-    """@todo: Docstring for read_region.
-
-    :fileContent: @todo
-    :returns: @todo
-
-    """
     region_id = unpack("i", fileContent[:4])[0]
     region_active = unpack("?", fileContent[4:5])[0]
 
@@ -44,7 +39,8 @@ def read_region(fileContent):
 if __name__ == '__main__':
     info = dict()
     regions = list()
-    with open("savedata.dat", mode='rb') as file: # b is important -> binary
+    with open(sys.argv[1], mode='rb') as file: # b is important -> binary
+    # with open("savedata.dat", mode='rb') as file: # b is important -> binary
         fileContent = file.read()
         info.update(read_header(fileContent))
         fileContent = fileContent[24:]

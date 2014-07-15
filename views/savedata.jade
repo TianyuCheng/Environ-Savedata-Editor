@@ -6,9 +6,9 @@ block content
       h2 Developers' Tool for Save Data Editing
     .content
       h2.content-subhead Upload Your Save Data
-      form(id="upload-form", name="upload-form", class="pure-form pure-form-aligned")
+      form(id="upload-form", name="upload-form", class="pure-form pure-form-aligned" method="post", action="/savedata")
           input(id="datafile", name="datafile", type="file", size="40", accept="dat", class="pure-button")
-          input(id="upload", name="upload", type="submit", size="40", class="pure-button pure-button-primary")
+          input(id="upload", name="upload", type="submit", class="pure-button pure-button-primary")
 
       h2.content-subhead Global Variables
       table.pure-table.pure-table-vertical
