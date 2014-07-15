@@ -22,6 +22,8 @@ app.use(stylus.middleware(
     , compile: compile
   }
 ))
+app.use(express.bodyParser());
+// app.use(bodyParser.urlencoded());
 
 app.use(express.static(__dirname + '/public'))
 app.locals.pretty = true;
@@ -35,8 +37,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/savedata', function (req, res) {
-  var filename = req.query.datafile
-  console.log(filename);
+  // var filename = req.body.datafile
+  console.log(req.body);
 
   // var python = require('child_process').spawn(
   //     'python',

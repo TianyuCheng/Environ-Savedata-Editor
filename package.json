@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": "true",
   "dependencies": {
+    "binary-parser": "*",
     "express": "3.12.1",
     "jade": "*",
-    "stylus": "*",
     "nib": "*",
-    "binary-parser": "*"
+    "stylus": "*"
   }
 }
