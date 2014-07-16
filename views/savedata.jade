@@ -8,7 +8,7 @@ block content
       h2.content-subhead Upload Your Save Data
       form(id="upload-form", name="upload-form", class="pure-form pure-form-aligned" method="post", action="/savedata")
           input(id="datafile", name="datafile", type="file", size="40", accept="dat", class="pure-button")
-          input(id="upload", name="upload", type="submit", class="pure-button pure-button-primary")
+          input(id="upload", name="upload", type="submit", class="pure-button pure-button-primary" value="upload") 
 
       h2.content-subhead Global Variables
       table.pure-table.pure-table-vertical
@@ -16,12 +16,15 @@ block content
             tr
               th Political Capital
               th Total Funds
+              th Time in Game Play
           tbody
             tr
               td 
                 span(contenteditable="true") #{info.political_capital}
               td 
                 span(contenteditable="true") #{info.funds}
+              td 
+                span(contenteditable="true") #{info.time}
     
       h2.content-subhead Regional Variables
       table.pure-table.pure-table-striped
@@ -29,83 +32,126 @@ block content
             tr
               th 
                 - for (var i = 0; i < info.region_counts; ++i) {
-                    th= "region_" + info.regions[i].id
+                    th= info.regions_dict[info.regions[i].id]
                 - }
           tbody
+            tr
+              td Unlocked?
+                - for (var i = 0; i < info.region_counts; ++i) {
+                  td 
+                    span(contenteditable="false", class="toggleable")= info.regions[i].active
+                - }
             tr
               td Economy
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.EC
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.EC
                 - }
             tr
               td Environment
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.EN
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.EN
                 - }
             tr
               td Technology
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.TECH
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.TECH
                 - }
             tr
               td Green Sentiment
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.GREEN
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.GREEN
                 - }
             tr
               td GDP
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.GDP
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.GDP
                 - }
             tr
               td Income Equality
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.EQ
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.EQ
                 - }
             tr
               td Purchasing Power
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.PP
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.PP
                 - }
             tr
               td Donations
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.DONATION
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.DONATION
                 - }
             tr
               td CO2 Emission
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.CO2
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.CO2
                 - }
             tr
               td Air Pollution
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.AP
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.AP
                 - }
             tr
               td Water Pollution
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.WP
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.WP
                 - }
             tr
               td Land Pollution
                 - for (var i = 0; i < info.region_counts; ++i) {
                   td 
-                    span(contenteditable="true")= info.regions[i].scores.LP
+                    span(contenteditable="true", class="scores")= info.regions[i].scores.LP
                 - }
 
-      h2.content-subhead Save Profile
-        hr
-        form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
-          input(id="save", name="save", type="submit", size="40", class="pure-button pure-button-primary")
+
+      h2.content-subhead Regional History
+      - for (var i = 0; i < info.region_counts; ++i) {
+          h3.content-subhead= info.regions_dict[info.regions[i].id]
+          table.pure-table.pure-table-striped
+            thead
+              tr
+                th= "Time"
+                th= "Status"
+                th= "Key"
+                th= "Title"
+              tbody
+                - for (var key in info.regions[i].history) {
+                    tr
+                      - var value = info.regions[i].history[key]
+                      td
+                        span(contenteditable="true") #{key}
+                      - if (value.substring(0, 1) == '+')
+                          td
+                            span(contenteditable="false", class="toggleable") activate
+                      - else
+                          td
+                            span(contenteditable="false", class="toggleable") deactivate
+                      td
+                        span(contenteditable="true", class="node-key") #{value.substring(1)}
+                      td
+                        span(contenteditable="false", class="node-title") #{info.nodes_dict[value.substring(1)]}
+                - }
+      - }
+
+      h2.content-subhead 
+      form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
+        input(id="save", name="save", type="submit", size="40", class="pure-button pure-button-primary" value="save")
+
+
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='/javascript/savedata.js')
+    script(type='text/javascript').
+      var nodes_dict = !{JSON.stringify(info.nodes_dict)};
+      $(document).rich(nodes_dict);
