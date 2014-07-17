@@ -175,4 +175,6 @@
 
   }
 
+  // the end
+
 }(jQuery));

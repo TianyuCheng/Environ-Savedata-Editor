@@ -24,7 +24,15 @@ def read_regions():
                                    "y" : eval(base['y'])  })
             regions_bases[key] = base_list
 
-    return regions_dict, regions_bases
+            # find all events
+            event_list = list()
+            for event in region.findAll("event"):
+                event_list.append({ "key" : str(event.text), \
+                                   "x" : eval(event['x']), \
+                                   "y" : eval(event['y'])  })
+            regions_events[key] = event_list
+
+    return regions_dict, regions_bases, regions_events
 
 def read_bases():
     bases_dict = dict()
@@ -58,7 +66,7 @@ def read_events():
 
 
 if __name__ == '__main__':
-    regions_dict, regions_bases = read_regions()
+    regions_dict, regions_bases, regions_events = read_regions()
     bases_dict = read_bases()
     upgrades_dict = read_upgrades()
     events_dict = read_events()
@@ -73,6 +81,8 @@ if __name__ == '__main__':
                  'bases_dict' : bases_dict, \
                  'upgrades_dict' : upgrades_dict, \
                  'nodes_dict' : nodes_dict, \
-                 'regions_bases' : regions_bases }
+                 'regions_bases' : regions_bases, \
+                 'regions_events' : regions_events
+                 }
 
     print json.dumps(mappings)

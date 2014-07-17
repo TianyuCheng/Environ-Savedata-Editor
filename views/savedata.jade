@@ -140,12 +140,14 @@ block content
 
             div.horizontal-container
               div.table-bases
+                h4.content-subhead.small Bases
                 table.pure-table.pure-table-striped
                   thead
                     tr
                       th= "Key"
                       th= "Title"
-                      th= "status"
+                      th= "Status"
+                      th= "Location"
                     tbody
                       - var bases = mappings.regions_bases[region_id]
                       - for (var index in bases) {
@@ -163,10 +165,41 @@ block content
                                 input(type="checkbox")
                                 img(src="/images/icons/cross-icon.png")
                             - }
+                          td
+                            input(type="text", value="(#{base.x}, #{base.y})", class="coordinates")
                       - }
               div.table-upgrades
               div.table-events
+                h4.content-subhead.small Events
+                table.pure-table.pure-table-striped
+                  thead
+                    tr
+                      th= "Key"
+                      th= "Title"
+                      th= "Status"
+                      th= "Location"
+                    tbody
+                      - var events = mappings.regions_events[region_id]
+                      - for (var index in events) {
+                        - var event = events[index]
+                        tr
+                          td
+                            span #{event.key}
+                          td 
+                            span #{mappings.events_dict[event.key]}
+                          td(class="toggleable")
+                            - if (event.active) {
+                                input(type="checkbox", checked)
+                                img(src="/images/icons/tick-icon.png")
+                            - } else {
+                                input(type="checkbox")
+                                img(src="/images/icons/cross-icon.png")
+                            - }
+                          td
+                            input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
+                      - }
               div.table-history
+                h4.content-subhead.small History
                 table.pure-table.pure-table-striped
                   thead
                     tr

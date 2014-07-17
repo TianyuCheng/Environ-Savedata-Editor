@@ -16,8 +16,20 @@ body {
   background: transparent;
 }
 
+.coordinates {
+  width: 80px;
+  border-width: 0;
+  background: transparent;
+}
+
+
+.region-info {
+  border-bottom: 1px solid lineare-gradient(left, #eee, right, transparent);
+  width: 1600px;
+}
+
 .horizontal-container {
-  width: 1300px;
+  width: 100%;
   display: inline-block;
   overflow-x: auto;
   position: relative;
@@ -37,4 +49,9 @@ th, td {
 
 .pure-menu-selected {
   background: #eee;
+}
+
+.small {
+ margin-top: 5px; 
+ margin-bottom: 5px; 
 }
