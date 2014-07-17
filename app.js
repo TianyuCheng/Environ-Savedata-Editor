@@ -5,6 +5,7 @@ var express = require('express');
 var stylus = require('stylus');
 var nib = require('nib');
 var fs = require('fs');
+var xml = require('./read_xml');
 
 var app = express();
 
@@ -36,50 +37,26 @@ app.get('/', function (req, res) {
 
 });
 
-app.post('/savedata', function (req, res) {
-  // var filename = req.body.datafile
-  console.log(req.body);
-
-  // var python = require('child_process').spawn(
-  //     'python',
-  //     // second argument is array of parameters, e.g.:
-  //     ["python/read_savedata.py", filename]);
-  //
-  // var output = "";
-  // python.stdout.on('data', function(data){ output += data });
-  //
-  // python.on('close', function(code){ 
-  //   if (code !== 0) {  return res.send(500, code); }
-  //   var infos = JSON.parse(output);
-  //   console.log(infos);
-  //   // return res.send(200, infos)
-  //   return res.render('savedata', {
-  //     title : 'Environ',
-  //     info : infos
-  //   })
-  // });
-
-});
-
 // savedata
 app.get('/savedata', function (req, res) {
 
+  console.log(xml.mappings);
   var python = require('child_process').spawn(
       'python',
       // second argument is array of parameters, e.g.:
       ["python/read_savedata.py", 'data/savedata.dat']);
-
   var output = "";
   python.stdout.on('data', function(data){ output += data });
 
   python.on('close', function(code){ 
     if (code !== 0) {  return res.send(500, code); }
     var infos = JSON.parse(output);
-    console.log(infos);
+    // console.log(infos);
     // return res.send(200, infos)
     return res.render('savedata', {
       title : 'Environ',
-      info : infos
+      info : infos,
+      mappings : xml.mappings
     })
   });
 

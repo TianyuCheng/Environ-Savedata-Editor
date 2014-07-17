@@ -2,6 +2,39 @@ body {
   
 }
 
+.hide {
+  display: none;
+}
+
 .toggleable {
   cursor: pointer;
+}
+
+.scores {
+  width: 100px;
+  border-width: 0;
+  background: transparent;
+}
+
+.horizontal-container {
+  width: 1300px;
+  display: inline-block;
+  overflow-x: auto;
+  position: relative;
+}
+
+.horizontal-container div[class^="table-"] {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: relative;
+  float: left!important;
+}
+
+th, td {
+  text-align: center;
+}
+
+.pure-menu-selected {
+  background: #eee;
 }

@@ -1,55 +1,8 @@
 import sys
 import json
 from struct import unpack, calcsize
-from BeautifulSoup import BeautifulStoneSoup 
 
 MAGIC = 1989127302
-
-def read_xml():
-    path = "data/xmls"
-    # path = "../data/xmls"
-    regions_dict = dict()
-    bases_dict = dict()
-    upgrades_dict = dict()
-    events_dict = dict()
-    with open(path + "/regions.xml", mode='r') as file:
-        handle = BeautifulStoneSoup(file.read())
-        for region in handle.findAll("region"):
-            key = eval(region.find("id").text)
-            value = str(region.find("name").text)
-            regions_dict[key] = value
-
-    with open(path + "/bases.xml", mode='r') as file:
-        handle = BeautifulStoneSoup(file.read())
-        for region in handle.findAll("base"):
-            key = str(region.find("key").text)
-            value = str(region.find("title").text)
-            bases_dict[key] = value
-
-    with open(path + "/upgrades.xml", mode='r') as file:
-        handle = BeautifulStoneSoup(file.read())
-        for region in handle.findAll("upgrade"):
-            key = str(region.find("key").text)
-            value = str(region.find("title").text)
-            upgrades_dict[key] = value
-
-    with open(path + "/events.xml", mode='r') as file:
-        handle = BeautifulStoneSoup(file.read())
-        for region in handle.findAll("event"):
-            key = str(region.find("key").text)
-            value = str(region.find("title").text)
-            events_dict[key] = value
-
-    nodes_dict = dict()
-    nodes_dict.update(bases_dict)
-    nodes_dict.update(upgrades_dict)
-    nodes_dict.update(events_dict)
-
-    return { 'regions_dict' : regions_dict, \
-             'events_dict' : events_dict, \
-             'bases_dict' : bases_dict, \
-             'upgrades_dict' : upgrades_dict, \
-             'nodes_dict' : nodes_dict }
 
 def read_content(fmt, fileContent):
     size = calcsize(fmt)
@@ -110,19 +63,14 @@ def read_region(fileContent):
     return ret, fileContent
 
 if __name__ == '__main__':
-    info = read_xml()
+    # info = read_xml()
+    info = dict()
     regions = list()
     with open(sys.argv[1], mode='rb') as file: # b is important -> binary
     # with open("../data/savedata.dat", mode='rb') as file: # b is important -> binary
         fileContent = file.read()
         header, fileContent = read_header(fileContent)
         info.update(header)
-        
-        # print "region 0"
-        # region, fileContent = read_region(fileContent)
-        #
-        # print "region 1"
-        # region, fileContent = read_region(fileContent)
 
         for index in xrange(info['region_counts']):
             region, fileContent = read_region(fileContent)
