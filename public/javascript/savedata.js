@@ -147,6 +147,9 @@
       var toggler = $(this).find(".menu-toggle");
       var show = true;
 
+      var base_table = $(this).find(".table-bases");
+      var upgrades_table = $(this).find(".table-upgrades");
+
       toggler.css("cursor", "pointer");
       toggler.click(function(){
         show = !show;
@@ -196,8 +199,6 @@
 
       });
 
-      var base_table = $(this).find(".table-bases");
-      var upgrades_table = $(this).find(".table-upgrades");
       var upgrades_body = upgrades_table.find("tbody");
       var base_keys = base_table.find(".key");
       var upgrades_show = true;
@@ -305,14 +306,17 @@
       var upgrades_table = $(this).find(".table-upgrades");
       var events_table = $(this).find(".table-events");
 
+      bases_table.find("tr .toggleable input").prop("checked", false).trigger("change");
+      // upgrades_table.find("tr .toggleable input").prop("checked", false).trigger("change");
+      events_table.find("tr .toggleable input").prop("checked", false).trigger("change");
+
       // time in increasing order
-      // for (var timestamp in history) {
       $(this).find(".table-history tbody tr").each(function () {
         _status = $(this).find(".toggleable input").prop("checked");
         _key = $(this).find(".node-key").text();
         _type = _key.substring(0, 1);
 
-        // console.log(_key + ": " + _status);
+        // console.log(_key + "|" + _status + "|" + _type);
         var record = null;
         switch (_type) {
           case 'B':
@@ -324,7 +328,7 @@
           case 'E':
             record = events_table.find("." + _key);
             break;
-          
+
           default:
         }
         if (record != null) {
@@ -347,78 +351,118 @@
 
   $.fn.sorted = function () {
   
-        // timestamp as trigger to sort history
-        $(this).find(".scores").blur(function() {
+    // timestamp as trigger to sort history
+    $(this).find(".scores").blur(function() {
 
-          // find parent for easy row moving
-          var myself = $(this).parents("tr");
-          
-          // try to move up in table
-          var my_prev = myself.prev();
-          if (my_prev.length > 0) 
-          {
-            var my_score = parseFloat(myself.find("input.scores").val());
-            var my_prev_score = parseFloat(my_prev.find("input.scores").val());
-            // console.log(my_prev.prev().prev().length);
-            while (my_score < my_prev_score)
-            {
-              myself.insertBefore(my_prev);
-              my_prev = myself.prev();
-              // console.log("move up " + my_score + " < " + my_prev_score);
+      // find parent for easy row moving
+      var myself = $(this).parents("tr");
+      
+      // try to move up in table
+      var my_prev = myself.prev();
+      if (my_prev.length > 0) 
+      {
+        var my_score = parseFloat(myself.find("input.scores").val());
+        var my_prev_score = parseFloat(my_prev.find("input.scores").val());
+        // console.log(my_prev.prev().prev().length);
+        while (my_score < my_prev_score)
+        {
+          myself.insertBefore(my_prev);
+          my_prev = myself.prev();
+          // console.log("move up " + my_score + " < " + my_prev_score);
 
-              if (my_prev.length == 0) break;
-              my_score = parseFloat(myself.find("input.scores").val());
-              my_prev_score = parseFloat(my_prev.find("input.scores").val());
-            }
-          }
+          if (my_prev.length == 0) break;
+          my_score = parseFloat(myself.find("input.scores").val());
+          my_prev_score = parseFloat(my_prev.find("input.scores").val());
+        }
+      }
 
-          // try to move down in table
-          var my_next = myself.next();
-          if (my_next.length > 0) 
-          {
-            var my_score = parseFloat(myself.find("input.scores").val());
-            var my_next_score = parseFloat(my_next.find("input.scores").val());
-            // console.log(my_next.next().next().length);
-            while (my_score > my_next_score)
-            {
-              myself.insertAfter(my_next);
-              my_next = myself.next();
-              // console.log("move down " + my_score + " > " + my_next_score);
+      // try to move down in table
+      var my_next = myself.next();
+      if (my_next.length > 0) 
+      {
+        var my_score = parseFloat(myself.find("input.scores").val());
+        var my_next_score = parseFloat(my_next.find("input.scores").val());
+        // console.log(my_next.next().next().length);
+        while (my_score > my_next_score)
+        {
+          myself.insertAfter(my_next);
+          my_next = myself.next();
+          // console.log("move down " + my_score + " > " + my_next_score);
 
-              if (my_next.length == 0) break;
-              my_score = parseFloat(myself.find("input.scores").val());
-              my_next_score = parseFloat(my_next.find("input.scores").val());
-            }
-          }
-          $(this).parents(".region-info").reHistorify();
-        });
+          if (my_next.length == 0) break;
+          my_score = parseFloat(myself.find("input.scores").val());
+          my_next_score = parseFloat(my_next.find("input.scores").val());
+        }
+      }
+      $(this).parents(".region-info").reHistorify();
+    });
 
-        // binding for select change
-        $(this).find("select").change(function() {
-          $(this).parents(".region-info").reHistorify();
-        });
-
-        // binding for checkbox
-        $(this).find(".toggleable img").click(function(e) {
-          var icon = $(this);
-          var checkbox = $(this).parent().find("input");
-          var isChecked = checkbox.prop("checked");
-          if (isChecked) {
-            checkbox.prop('checked', false);
-            icon.attr('src', '/images/icons/cross-icon.png');
-          }
-          else {
-            checkbox.prop('checked', true);
-            icon.attr('src', '/images/icons/tick-icon.png');
-          }
-          $(this).parents(".region-info").reHistorify();
-          e.stopPropagation();
-        });
+    // // binding for select change
+    // $(this).find("select").change(function() {
+    //   $(this).parents(".region-info").reHistorify();
+    // });
+    //
+    // // binding for checkbox
+    // $(this).find(".toggleable img").click(function(e) {
+    //   var icon = $(this);
+    //   var checkbox = $(this).parent().find("input");
+    //   var isChecked = checkbox.prop("checked");
+    //   if (isChecked) {
+    //     checkbox.prop('checked', false);
+    //     icon.attr('src', '/images/icons/cross-icon.png');
+    //   }
+    //   else {
+    //     checkbox.prop('checked', true);
+    //     icon.attr('src', '/images/icons/tick-icon.png');
+    //   }
+    // $(this).parents(".region-info").reHistorify();
+    // e.stopPropagation();
+    // });
   }
 
-  $.fn.addHistory = function () {
+  var NewHistoryRecord = function(key) {
+    var time = parseInt($("#gametime").val());
+    var new_record = $('<tr></tr>');
+    new_record.append($('<td><input type="number" min="0" step="0.1" class="scores" value="' + time + '"/></td>'));
+    new_record.append($('<td class="toggleable"><input type="checkbox" checked/><img src="/images/icons/tick-icon.png"/></td>'));
+    new_record.append($('<td class="hide"><span class="node-key"></span></td>'));
+    new_record.append($('<td><select class="node-options"></select></td>'));
+    new_record.append($('<td><img src="/images/icons/minus-icon.png"/></td>'));
 
-    $(this).each(function () {
+    new_record.sorted();
+    new_record.find(".scores").scores();
+    new_record.find(".toggleable").toggleable();
+    new_record.find(".node-options").selectify();
+
+    // // binding for select change
+    // new_record.find("select").change(function(e) {
+    //   $(this).parents(".region-info").reHistorify();
+    // });
+
+    return new_record;
+  }
+
+  $(document).ready(function () {
+
+  //   // binding for checkbox
+  //   $(document).find("div[class^=table-]").not("").find(".toggleable img").click(function(e) {
+  //     var icon = $(this);
+  //     var checkbox = $(this).parent().find("input");
+  //     var isChecked = checkbox.prop("checked");
+  //     if (isChecked) {
+  //       checkbox.prop('checked', false);
+  //       icon.attr('src', '/images/icons/cross-icon.png');
+  //     }
+  //     else {
+  //       checkbox.prop('checked', true);
+  //       icon.attr('src', '/images/icons/tick-icon.png');
+  //     }
+  //     new_record.parents(".region-info").reHistorify();
+  //     e.stopPropagation();
+  //   });
+
+
+    $(".add-history").each(function () {
       var add_icon = $(this);
       var region_div = $(this).parents(".region-info");
       var toggleable = region_div.find(".toggleable");
@@ -426,22 +470,6 @@
 
       // set css
       add_icon.css("cursor", "pointer");
-
-      var NewHistoryRecord = function(key) {
-        var time = parseInt($("#gametime").val());
-        var new_record = $('<tr></tr>');
-        new_record.append($('<td><input type="number" min="0" step="0.1" class="scores" value="' + time + '"/></td>'));
-        new_record.append($('<td class="toggleable"><input type="checkbox" checked/><img src="/images/icons/tick-icon.png"/></td>'));
-        new_record.append($('<td><select class="node-options"></select></td>'));
-        new_record.append($('<td><img src="/images/icons/minus-icon.png"/></td>'));
-
-        new_record.sorted();
-        new_record.find(".scores").scores();
-        new_record.find(".toggleable").toggleable();
-        new_record.find(".node-options").selectify();
-
-        return new_record;
-      }
 
       // click add history
       add_icon.click(function (e) {
@@ -451,7 +479,7 @@
 
     });
 
-  }
-  // the end
+
+  }); // end of document.ready
 
 }(jQuery));
