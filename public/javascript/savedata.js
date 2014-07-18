@@ -4,8 +4,8 @@
   $.fn.toggleable = function () {
     // process on each one
     $(this).each(function() {
-      icon = $(this).find("img");
-      checkbox = $(this).find("input");
+      var icon = $(this).find("img");
+      var checkbox = $(this).find("input");
       checkbox.hide();
       icon.css({
         'display' : 'block',
@@ -13,17 +13,26 @@
         'margin-right' : 'auto'
       });
 
-      $(this).click(function() {
-        var _checkbox = $(this).find("input");
-        var _icon = $(this).find("img");
-        var isChecked = _checkbox.prop("checked");
+      // link connection
+      checkbox.change(function() {
+        var isChecked = checkbox.prop("checked");
         if (isChecked) {
-          _checkbox.prop('checked', false);
-          _icon.attr('src', '/images/icons/cross-icon.png');
+          icon.attr('src', '/images/icons/tick-icon.png');
         }
         else {
-          _checkbox.prop('checked', true);
-          _icon.attr('src', '/images/icons/tick-icon.png');
+          icon.attr('src', '/images/icons/cross-icon.png');
+        }
+      });
+
+      $(this).click(function() {
+        var isChecked = checkbox.prop("checked");
+        if (isChecked) {
+          checkbox.prop('checked', false);
+          icon.attr('src', '/images/icons/cross-icon.png');
+        }
+        else {
+          checkbox.prop('checked', true);
+          icon.attr('src', '/images/icons/tick-icon.png');
         }
       });
     
@@ -114,13 +123,12 @@
   }
 
   // show hide menu in regions
-  $.fn.menuify = function () {
+  $.fn.menuify = function (mappings) {
     // process each one
     $(this).each(function() {
       var menu_buttons = $(this).find(".menu-option");
       var toggler = $(this).find(".menu-toggle");
       var show = true;
-      // console.log(menu_buttons);
 
       toggler.css("cursor", "pointer");
       toggler.click(function(){
@@ -171,10 +179,82 @@
 
       });
 
+      var base_table = $(this).find(".table-bases");
+      var upgrades_table = $(this).find(".table-upgrades tbody");
+      var base_keys = base_table.find(".key");
+      base_keys.each(function () {
+        var key = $(this).text();
+        var upgrades = mappings.bases_upgrades[key];
+        var cell = $(this).parent();
+        cell.css("cursor", "pointer");
+
+        cell.click(function() {
+          upgrades_table.find("tr").hide();
+          // upgrades_table.find("tr").slideUp();
+          for (var index in upgrades)
+          {
+            upgrades_table.find("." + upgrades[index].key).show();
+            // upgrades_table.find("." + upgrades[index].key).slideDown();
+          }
+        });
+      });
+
     });
 
   }
 
+  $.fn.historify = function (regions, mappings) {
+    // process on each region
+    $(this).each(function() {
+      var region_id = parseInt($(this).attr("id").split("-")[1]);
+      var history = regions[region_id].history;
+
+      // find the tables of this region
+      var bases_table = $(this).find(".table-bases");
+      var upgrades_table = $(this).find(".table-upgrades");
+      var events_table = $(this).find(".table-events");
+
+      // time in increasing order
+      for (var timestamp in history) {
+        value = history[timestamp];
+        _status = value.substring(0, 1);  // +/-
+        _key = value.substring(1);        // B1, U1, E1, etc
+        _type = _key.substring(0, 1);
+
+        var record = null;
+        switch (_type) {
+          case 'B':
+            record = bases_table.find("." + _key);
+            break;
+          case 'U':
+            record = upgrades_table.find("." + _key);
+            break;
+          case 'E':
+            record = events_table.find("." + _key);
+            break;
+          
+          default:
+            
+        }
+        if (record != null) {
+          // change status and icon
+          var checkbox = record.find(".status").find("input");
+          if (_status == "+") {
+            checkbox.prop("checked", true);
+            checkbox.trigger("change");
+          }
+          else {
+            checkbox.prop("checked", false);
+            checkbox.trigger("change");
+          }
+        }
+        //
+
+      }
+
+    });
+
+  }
   // the end
 
 }(jQuery));

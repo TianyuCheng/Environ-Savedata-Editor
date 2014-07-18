@@ -5,6 +5,7 @@ var express = require('express');
 var stylus = require('stylus');
 var nib = require('nib');
 var fs = require('fs');
+var bodyParser  = require('body-parser');
 var xml = require('./read_xml');
 
 var app = express();
@@ -23,8 +24,11 @@ app.use(stylus.middleware(
     , compile: compile
   }
 ))
-app.use(express.bodyParser());
-// app.use(bodyParser.urlencoded());
+// app.use(express.bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use(express.static(__dirname + '/public'))
 app.locals.pretty = true;

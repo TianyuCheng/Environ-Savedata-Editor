@@ -4,6 +4,7 @@
   "private": "true",
   "dependencies": {
     "binary-parser": "*",
+    "body-parser": "*",
     "express": "3.12.1",
     "jade": "*",
     "nib": "*",

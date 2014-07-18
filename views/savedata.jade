@@ -35,7 +35,7 @@ block content
                     th= mappings.regions_dict[region_id]
                 - }
           tbody
-            tr
+            tr(id="region-status")
               td Unlocked?
                 - for (var region_id in info.regions) {
                     td(class="toggleable")
@@ -47,73 +47,73 @@ block content
                           img(src="/images/icons/cross-icon.png")
                       - }
                 - }
-            tr
+            tr(id="economy")
               td Economy
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EC}")
                 - }
-            tr
+            tr(id="environment")
               td Environment
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EN}")
                 - }
-            tr
+            tr(id="technology")
               td Technology
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.TECH}")
                 - }
-            tr
+            tr(id="green-sentiment")
               td Green Sentiment
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GREEN}")
                 - }
-            tr
+            tr(id="gross-domestic-product")
               td GDP
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GDP}")
                 - }
-            tr
+            tr(id="income-equality")
               td Income Equality
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EQ}")
                 - }
-            tr
+            tr(id="purchasing-power")
               td Purchasing Power
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.PP}")
                 - }
-            tr
+            tr(id="donations")
               td Donations
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.DONATION}")
                 - }
-            tr
+            tr(id="CO2-emission")
               td CO2 Emission
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.CO2}")
                 - }
-            tr
+            tr(id="air-pollution")
               td Air Pollution
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.AP}")
                 - }
-            tr
+            tr(id="water-pollution")
               td Water Pollution
                 - for (var region_id in info.regions) {
                   td 
                     input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.WP}")
                 - }
-            tr
+            tr(id="land-pollution")
               td Land Pollution
                 - for (var region_id in info.regions) {
                   td 
@@ -125,39 +125,38 @@ block content
       - for (var region_id in info.regions) {
 
           div.clear(style="clear:both")
-          div.region-info
+          div(class="region-info", id="region-#{region_id}")
             h3.content-subhead(class="menu-toggle")= mappings.regions_dict[info.regions[region_id].id]
             .pure-menu.pure-menu-open.pure-menu-horizontal
               ul(class="region-menu")
                 li.pure-menu-selected
                   a(href='javascript:void(0);', class="menu-option", rel=".table-bases") Bases
-                // li
-                //   a(href='javascript:void(0);', class="menu-option", rel=".table-upgrades") Upgrades
+                li
+                  a(href='javascript:void(0);', class="menu-option", rel=".table-upgrades") Upgrades
                 li.pure-menu-selected
                   a(href='javascript:void(0);', class="menu-option", rel=".table-events") Events
                 li.pure-menu-selected
                   a(href='javascript:void(0);', class="menu-option", rel=".table-history") History
 
             div.horizontal-container
+
               div.table-bases
                 h4.content-subhead.small Bases
                 table.pure-table.pure-table-striped
                   thead
                     tr
-                      th= "Key"
-                      th= "Title"
-                      th= "Status"
-                      th= "Location"
+                      th(class="key hide")= "Key"
+                      th(class="title")= "Title"
+                      th(class="status")= "Status"
+                      th(class="location")= "Location"
                     tbody
                       - var bases = mappings.regions_bases[region_id]
                       - for (var index in bases) {
                         - var base = bases[index]
-                        tr
-                          td
-                            span #{base.key}
-                          td 
-                            span #{mappings.bases_dict[base.key]}
-                          td(class="toggleable")
+                        tr(class="#{base.key}")
+                          td(class="key hide")= base.key
+                          td(class="title")= mappings.bases_dict[base.key]
+                          td(class="status toggleable")
                             - if (base.active) {
                                 input(type="checkbox", checked)
                                 img(src="/images/icons/tick-icon.png")
@@ -165,29 +164,50 @@ block content
                                 input(type="checkbox")
                                 img(src="/images/icons/cross-icon.png")
                             - }
-                          td
+                          td(class="location")
                             input(type="text", value="(#{base.x}, #{base.y})", class="coordinates")
                       - }
+
               div.table-upgrades
+                h4.content-subhead.small Upgrades
+                table.pure-table.pure-table-striped
+                  thead
+                    tr
+                      th(class="key hide")= "Key"
+                      th(class="title")= "Title"
+                      th(class="status")= "Status"
+                    tbody
+                      - var bases = mappings.regions_bases[region_id]
+                      - for (var i in bases) {
+                          - var base = bases[i];
+                          - var upgrades = mappings.bases_upgrades[base.key];
+                          - for (var index in upgrades) {
+                            - var upgrade = upgrades[index]
+                              tr(class="#{upgrade.key}")
+                                td(class="key hide")= upgrade.key
+                                td(class="title")= mappings.upgrades_dict[upgrade.key]
+                                td(class="status")= upgrade.state
+                          - }
+                      - }
+
+
               div.table-events
                 h4.content-subhead.small Events
                 table.pure-table.pure-table-striped
                   thead
                     tr
-                      th= "Key"
-                      th= "Title"
-                      th= "Status"
-                      th= "Location"
+                      th(class="key hide")= "Key"
+                      th(class="title")= "Title"
+                      th(class="status")= "Status"
+                      th(class="location")= "Location"
                     tbody
                       - var events = mappings.regions_events[region_id]
                       - for (var index in events) {
                         - var event = events[index]
-                        tr
-                          td
-                            span #{event.key}
-                          td 
-                            span #{mappings.events_dict[event.key]}
-                          td(class="toggleable")
+                        tr(class="#{event.key}")
+                          td(class="key hide")= event.key
+                          td(class="title")= mappings.events_dict[event.key]
+                          td(class="status toggleable")
                             - if (event.active) {
                                 input(type="checkbox", checked)
                                 img(src="/images/icons/tick-icon.png")
@@ -195,7 +215,7 @@ block content
                                 input(type="checkbox")
                                 img(src="/images/icons/cross-icon.png")
                             - }
-                          td
+                          td(class="location")
                             input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
                       - }
               div.table-history
@@ -210,7 +230,7 @@ block content
                       th= ""
                     tbody
                       - for (var key in info.regions[region_id].history) {
-                          tr
+                          tr(class="#{key}")
                             - var value = info.regions[region_id].history[key]
                             td
                               span(contenteditable="true") #{key}
@@ -236,12 +256,13 @@ block content
         input(id="save", name="save", type="submit", size="40", class="pure-button pure-button-primary" value="save")
 
 
-
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src='/javascript/savedata.js')
     script(type='text/javascript').
-      var nodes_dict = !{JSON.stringify(mappings)};
+      var mappings = !{JSON.stringify(mappings)};
+      var info = !{JSON.stringify(info)};
       $(".toggleable").toggleable();
       $(".scores").scores();
-      $(".node-options").selectify(nodes_dict);
-      $(".region-info").menuify();
+      $(".node-options").selectify(mappings);
+      $(".region-info").menuify(mappings);
+      $(".region-info").historify(info.regions, mappings);

@@ -36,13 +36,21 @@ def read_regions():
 
 def read_bases():
     bases_dict = dict()
+    bases_upgrades = dict();
     with open(path + "/bases.xml", mode='r') as file:
         handle = BeautifulStoneSoup(file.read())
         for region in handle.findAll("base"):
             key = str(region.find("key").text)
             value = str(region.find("title").text)
             bases_dict[key] = value
-    return bases_dict
+
+            # find all upgrades
+            upgrade_list = list()
+            for upgrade in region.findAll("upgrade"):
+                upgrade_list.append({ "key" : str(upgrade.text), \
+                                      "state" : eval(upgrade['state'])  })
+            bases_upgrades[key] = upgrade_list
+    return bases_dict, bases_upgrades
 
 def read_upgrades():
     upgrades_dict = dict()
@@ -67,7 +75,7 @@ def read_events():
 
 if __name__ == '__main__':
     regions_dict, regions_bases, regions_events = read_regions()
-    bases_dict = read_bases()
+    bases_dict, bases_upgrades  = read_bases()
     upgrades_dict = read_upgrades()
     events_dict = read_events()
 
@@ -82,7 +90,7 @@ if __name__ == '__main__':
                  'upgrades_dict' : upgrades_dict, \
                  'nodes_dict' : nodes_dict, \
                  'regions_bases' : regions_bases, \
-                 'regions_events' : regions_events
-                 }
+                 'regions_events' : regions_events, \
+                 'bases_upgrades' : bases_upgrades }
 
     print json.dumps(mappings)
