@@ -59,3 +59,21 @@ th, td {
 input[type="checkbox"] {
   display: none;
 }
+
+#status-hint {
+  float: left;
+  color: white;
+  margin-left: 20px;
+  padding: 5px 20px 5px 20px;
+  border-radius:2em;
+  -webkit-border-radius:2em;
+  -moz-border-radius:2em;
+}
+
+.status-success {
+  background: rgba(66, 184, 221, 0.8); /* this is a light blue */
+}
+
+.status-error {
+  background: rgba(202, 60, 60, 0.8); /* this is a maroon */
+}

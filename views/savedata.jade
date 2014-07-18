@@ -257,7 +257,10 @@ block content
 
       h2.content-subhead 
       form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
-        input(id="save", name="save", type="button", size="40", class="pure-button pure-button-primary" value="save")
+        input(id="save", name="save", type="button", size="40", class="pure-button pure-button-primary", value="save", style="float: left;")
+        div(id="status-hint", class="hide")
+        div(style="clear: both;")
+
 
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')

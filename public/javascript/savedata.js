@@ -540,6 +540,9 @@
       save_info['regions'][region_id] = region_info;
     }
 
+    // prepare hints
+    var hint = $("#status-hint");
+
     // console.log(save_info);
     $.ajax({
       type: 'POST',
@@ -549,6 +552,31 @@
       success: function(data) {
         console.log('success');
         console.log(JSON.stringify(data));
+
+        // show hints
+        hint.removeClass("hide");
+        hint.addClass("status-success");
+        hint.text("Successfully saved!");
+        hint.fadeIn(500, function() {
+          setTimeout(function () {
+            hint.fadeOut(500, function () {
+              hint.removeClass("status-success").addClass("hide");
+            });
+          }, 2000);
+        });
+      },
+      error: function(data) {
+        // show hints
+        hint.removeClass("hide");
+        hint.addClass("status-error");
+        hint.text("An error occurred while saving!");
+        hint.fadeIn(500, function() {
+          setTimeout(function () {
+            hint.fadeOut(500, function () {
+              hint.removeClass("status-success").addClass("hide");
+            });
+          }, 2000);
+        });
       }
     });
 
