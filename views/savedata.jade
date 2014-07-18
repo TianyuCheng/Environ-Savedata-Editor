@@ -20,11 +20,11 @@ block content
           tbody
             tr
               td 
-                input(type="text", class="scores" value="#{info.political_capital}")
+                input(type="text", id="political_capital", class="scores" value="#{info.political_capital}")
               td 
-                input(type="text", class="scores" value="#{info.funds}")
+                input(type="text", id="funds", class="scores" value="#{info.funds}")
               td 
-                input(type="text", class="scores" value="#{info.time}")
+                input(type="text", id="gametime", class="scores" value="#{info.time}")
     
       h2.content-subhead Regional Variables
       table.pure-table.pure-table-striped
@@ -131,7 +131,7 @@ block content
               ul(class="region-menu")
                 li.pure-menu-selected
                   a(href='javascript:void(0);', class="menu-option", rel=".table-bases") Bases
-                li
+                li(style="display: none;")
                   a(href='javascript:void(0);', class="menu-option", rel=".table-upgrades") Upgrades
                 li.pure-menu-selected
                   a(href='javascript:void(0);', class="menu-option", rel=".table-events") Events
@@ -145,10 +145,10 @@ block content
                 table.pure-table.pure-table-striped
                   thead
                     tr
-                      th(class="key hide")= "Key"
-                      th(class="title")= "Title"
-                      th(class="status")= "Status"
-                      th(class="location")= "Location"
+                      th(class="hide")= "Key"
+                      th= "Title"
+                      th= "Status"
+                      th= "Location"
                     tbody
                       - var bases = mappings.regions_bases[region_id]
                       - for (var index in bases) {
@@ -173,9 +173,9 @@ block content
                 table.pure-table.pure-table-striped
                   thead
                     tr
-                      th(class="key hide")= "Key"
-                      th(class="title")= "Title"
-                      th(class="status")= "Status"
+                      th(class="hide")= "Key"
+                      th= "Title"
+                      th= "Status"
                     tbody
                       - var bases = mappings.regions_bases[region_id]
                       - for (var i in bases) {
@@ -196,10 +196,10 @@ block content
                 table.pure-table.pure-table-striped
                   thead
                     tr
-                      th(class="key hide")= "Key"
-                      th(class="title")= "Title"
-                      th(class="status")= "Status"
-                      th(class="location")= "Location"
+                      th(class="hide")= "Key"
+                      th= "Title"
+                      th= "Status"
+                      th= "Location"
                     tbody
                       - var events = mappings.regions_events[region_id]
                       - for (var index in events) {
@@ -218,8 +218,9 @@ block content
                           td(class="location")
                             input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
                       - }
-              div.table-history
-                h4.content-subhead.small History
+              div.table-history 
+                h4.content-subhead.small History &nbsp;
+                  i.fa.fa-plus.add-history
                 table.pure-table.pure-table-striped
                   thead
                     tr
@@ -233,7 +234,7 @@ block content
                           tr(class="#{key}")
                             - var value = info.regions[region_id].history[key]
                             td
-                              span(contenteditable="true") #{key}
+                              input(type="number", min="0", step="0.1", class="scores" value="#{key}")
                             td(class="toggleable")
                               - if (value.substring(0, 1) == '+') {
                                   input(type="checkbox", checked)
@@ -266,3 +267,5 @@ block content
       $(".node-options").selectify(mappings);
       $(".region-info").menuify(mappings);
       $(".region-info").historify(info.regions, mappings);
+      $(".table-history tbody tr").sorted();
+      $(".add-history").addHistory();
