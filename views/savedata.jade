@@ -40,10 +40,10 @@ block content
                 - for (var region_id in info.regions) {
                     td(class="toggleable")
                       - if (info.regions[region_id].active) {
-                          input(type="checkbox", checked)
+                          input(id="region-#{region_id}-status", type="checkbox", checked)
                           img(src="/images/icons/tick-icon.png")
                       - } else {
-                          input(type="checkbox")
+                          input(id="region-#{region_id}-status", type="checkbox")
                           img(src="/images/icons/cross-icon.png")
                       - }
                 - }
@@ -51,79 +51,79 @@ block content
               td Economy
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EC}")
+                    input(id="region-#{region_id}-economy", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EC}")
                 - }
             tr(id="environment")
               td Environment
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EN}")
+                    input(id="region-#{region_id}-environment", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EN}")
                 - }
             tr(id="technology")
               td Technology
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.TECH}")
+                    input(id="region-#{region_id}-technology", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.TECH}")
                 - }
             tr(id="green-sentiment")
               td Green Sentiment
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GREEN}")
+                    input(id="region-#{region_id}-green-sentiment", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GREEN}")
                 - }
             tr(id="gross-domestic-product")
               td GDP
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GDP}")
+                    input(id="region-#{region_id}-gross-domestic-product", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GDP}")
                 - }
             tr(id="income-equality")
               td Income Equality
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EQ}")
+                    input(id="region-#{region_id}-income-equality", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EQ}")
                 - }
             tr(id="purchasing-power")
               td Purchasing Power
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.PP}")
+                    input(id="region-#{region_id}-purchasing-power", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.PP}")
                 - }
             tr(id="donations")
               td Donations
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.DONATION}")
+                    input(id="region-#{region_id}-donations", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.DONATION}")
                 - }
             tr(id="CO2-emission")
               td CO2 Emission
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.CO2}")
+                    input(id="region-#{region_id}-co2-emission", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.CO2}")
                 - }
             tr(id="air-pollution")
               td Air Pollution
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.AP}")
+                    input(id="region-#{region_id}-air-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.AP}")
                 - }
             tr(id="water-pollution")
               td Water Pollution
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.WP}")
+                    input(id="region-#{region_id}-water-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.WP}")
                 - }
             tr(id="land-pollution")
               td Land Pollution
                 - for (var region_id in info.regions) {
                   td 
-                    input(type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.LP}")
+                    input(id="region-#{region_id}-land-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.LP}")
                 - }
 
 
       h2.content-subhead Regional Information
       - for (var region_id in info.regions) {
-
+        - if (region_id == 0) continue;
           div.clear(style="clear:both")
           div(class="region-info", id="region-#{region_id}")
             h3.content-subhead(class="menu-toggle")= mappings.regions_dict[info.regions[region_id].id]
@@ -186,7 +186,9 @@ block content
                               tr(class="#{upgrade.key}")
                                 td(class="key hide")= upgrade.key
                                 td(class="title")= mappings.upgrades_dict[upgrade.key]
-                                td(class="status")= upgrade.state
+                                td(class="status toggleable")
+                                  input(type="checkbox")
+                                  img(src="/images/icons/cross-icon.png")
                           - }
                       - }
 
@@ -230,31 +232,32 @@ block content
                       th= "Title"
                       th= ""
                     tbody
-                      - for (var key in info.regions[region_id].history) {
-                          tr(class="#{key}")
-                            - var value = info.regions[region_id].history[key]
-                            td
-                              input(type="number", min="0", step="0.1", class="scores" value="#{key}")
-                            td(class="toggleable")
-                              - if (value.substring(0, 1) == '+') {
-                                  input(type="checkbox", checked)
-                                  img(src="/images/icons/tick-icon.png")
-                              - } else {
-                                  input(type="checkbox")
-                                  img(src="/images/icons/cross-icon.png")
-                              - }
-                            td(class="hide")
-                              span(contenteditable="false", class="node-key") #{value.substring(1)}
-                            td
-                              select(class="node-options")
-                            td
-                              img(src="/images/icons/minus-icon.png", alt="delete")
-                      - }
+                      // -|| dynamicall loaded with javascript
+                      // - for (var key in info.regions[region_id].history) {
+                      //     tr(class="#{key}")
+                      //       - var value = info.regions[region_id].history[key]
+                      //       td
+                      //         input(type="number", min="0", step="0.1", class="scores" value="#{key}")
+                      //       td(class="toggleable")
+                      //         - if (value.substring(0, 1) == '+') {
+                      //             input(type="checkbox", checked="checked")
+                      //             img(src="/images/icons/tick-icon.png")
+                      //         - } else {
+                      //             input(type="checkbox", checked="unchecked")
+                      //             img(src="/images/icons/cross-icon.png")
+                      //         - }
+                      //       td(class="hide")
+                      //         span(contenteditable="false", class="node-key") #{value.substring(1)}
+                      //       td
+                      //         select(class="node-options")
+                      //       td
+                      //         img(src="/images/icons/minus-icon.png", alt="delete")
+                      // - }
       - }
 
       h2.content-subhead 
       form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
-        input(id="save", name="save", type="submit", size="40", class="pure-button pure-button-primary" value="save")
+        input(id="save", name="save", type="button", size="40", class="pure-button pure-button-primary" value="save")
 
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
@@ -262,10 +265,10 @@ block content
     script(type='text/javascript').
       var mappings = !{JSON.stringify(mappings)};
       var info = !{JSON.stringify(info)};
+      $(this)._start(info, mappings);
       $(".toggleable").toggleable();
       $(".scores").scores();
-      $(".node-options").selectify(mappings);
       $(".region-info").menuify(mappings);
       $(".region-info").historify(info.regions, mappings);
       $(".table-history tbody tr").sorted();
-      // $(".add-history").addHistory();
+      $(this)._end();

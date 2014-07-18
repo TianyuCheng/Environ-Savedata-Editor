@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
 
 });
 
-// savedata
+// savedata display page
 app.get('/savedata', function (req, res) {
 
   console.log(xml.mappings);
@@ -65,6 +65,14 @@ app.get('/savedata', function (req, res) {
   });
 
 });
+
+// savedata save post
+app.post('/save', function (req, res) {
+  var obj = {};
+  console.log('save info: ' + JSON.stringify(req.body));
+  res.send(req.body);
+});
+
 
 var port = 3000;
 app.listen(port);
