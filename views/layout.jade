@@ -5,9 +5,8 @@ html
     title #{title} - Environ SaveData Browser
     link(rel='icon', type='image/x-icon', href='images/favicon.ico')
     link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/pure-min.css')
-    link(rel='stylesheet', href='/stylesheets/side-menu.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/side-menu.css')
 
   body
     #layout
@@ -24,3 +23,12 @@ html
       #main
         block content
   script(src='/javascript/ui.js')
+  style.
+    #layout, #menu, .menu-link {
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+  link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
