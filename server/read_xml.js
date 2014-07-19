@@ -2,7 +2,7 @@
 var xml_info = require('child_process').spawn(
     'python',
     // second argument is array of parameters, e.g.:
-    ["python/read_xml.py"]);
+    ["server/python/read_xml.py"]);
 var xml_output = "";
 xml_info.stdout.on('data', function(data){ xml_output += data });
 

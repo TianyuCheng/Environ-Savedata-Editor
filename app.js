@@ -6,7 +6,7 @@ var stylus = require('stylus');
 var nib = require('nib');
 var fs = require('fs');
 var bodyParser  = require('body-parser');
-var xml = require('./read_xml');
+var routes = require('./routes');
 
 var app = express();
 
@@ -34,44 +34,13 @@ app.use(express.static(__dirname + '/public'))
 app.locals.pretty = true;
 
 // home page
-app.get('/', function (req, res) {
-  res.render('index', {
-    title : 'Environ'
-  })
-
-});
+app.get('/', routes.index);
 
 // savedata display page
-app.get('/savedata', function (req, res) {
-
-  console.log(xml.mappings);
-  var python = require('child_process').spawn(
-      'python',
-      // second argument is array of parameters, e.g.:
-      ["python/read_savedata.py", 'data/savedata.dat']);
-  var output = "";
-  python.stdout.on('data', function(data){ output += data });
-
-  python.on('close', function(code){ 
-    if (code !== 0) {  return res.send(500, code); }
-    var infos = JSON.parse(output);
-    // console.log(infos);
-    // return res.send(200, infos)
-    return res.render('savedata', {
-      title : 'Environ',
-      info : infos,
-      mappings : xml.mappings
-    })
-  });
-
-});
+app.get('/savedata', routes.savedata);
 
 // savedata save post
-app.post('/save', function (req, res) {
-  var obj = {};
-  console.log('save info: ' + JSON.stringify(req.body));
-  res.send(req.body);
-});
+app.post('/save', routes.save);
 
 
 var port = 3000;

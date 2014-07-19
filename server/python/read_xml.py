@@ -1,7 +1,7 @@
 import json
 from BeautifulSoup import BeautifulStoneSoup 
 
-path = "data/xmls"
+path = "server/data/xmls"
 # path = "../data/xmls"
 
 def read_regions():
