@@ -7,7 +7,10 @@ var xml_output = "";
 xml_info.stdout.on('data', function(data){ xml_output += data });
 
 xml_info.on('close', function(code){ 
-  if (code !== 0) {  return res.send(500, code); }
+  if (code !== 0) { 
+    console.log ("error occurred during reading xml");
+    return;
+  }
   var infos = JSON.parse(xml_output);
   // console.log(infos);
   exports.mappings = infos;
