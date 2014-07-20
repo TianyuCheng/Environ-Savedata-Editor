@@ -11,7 +11,5 @@
     "stylus": "*",
     "connect-multiparty": "*",
     "method-override": "*",
-    "python": "*",
-    "pip": "*"
   }
 }
