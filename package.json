@@ -10,6 +10,6 @@
     "jade": "*",
     "stylus": "*",
     "connect-multiparty": "*",
-    "method-override": "*",
+    "method-override": "*"
   }
 }
