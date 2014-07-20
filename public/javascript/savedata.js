@@ -318,7 +318,7 @@
 
   // for update
   $.fn.reHistorify = function () {
-    console.log("reHistorify");
+    // console.log("reHistorify");
     // process on each region
     $(this).each(function() {
 
@@ -460,7 +460,7 @@
       new_record.append($('<td class="toggleable"><input type="checkbox" checked/><img src="/images/icons/tick-icon.png"/></td>'));
     else 
       new_record.append($('<td class="toggleable"><input type="checkbox"/><img src="/images/icons/cross-icon.png"/></td>'));
-    new_record.append($('<td class=""><span class="node-key">' +  key + '</span></td>'));
+    new_record.append($('<td class="hide"><span class="node-key">' +  key + '</span></td>'));
     new_record.append($('<td><select class="node-options"></select></td>'));
     new_record.append($('<td class="delete-history"><img src="/images/icons/minus-icon.png"/></td>'));
 
@@ -547,7 +547,7 @@
       type: 'POST',
       data: JSON.stringify(save_info),
       contentType: 'application/json',
-      url: '/save',						
+      url: '/savedata/save',						
       success: function(data) {
         console.log('success');
         console.log(JSON.stringify(data));

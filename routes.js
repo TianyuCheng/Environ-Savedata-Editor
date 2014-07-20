@@ -1,4 +1,7 @@
+var fs = require('fs');
+var path = require('path');
 var xml = require('./server/read_xml');
+var read_savedata = require('./server/read_savedata').read_savedata;
 
 /**
  * GET homepage
@@ -12,27 +15,18 @@ exports.index = function (req, res) {
 // GET savedata page
 exports.savedata = function (req, res) {
 
-  var python = require('child_process').spawn(
-      'python',
-      // second argument is array of parameters, e.g.:
-      ["server/python/read_savedata.py", 'server/data/tmp/savedata.dat']);
-  var output = "";
-  python.stdout.on('data', function(data){ output += data });
-
-  python.on('close', function(code){ 
-    if (code !== 0) {  return res.send(500, code); }
-    var infos = JSON.parse(output);
-    // console.log(infos);
-    return res.render('savedata', {
-      title : 'Environ',
-      info : infos,
-      mappings : xml.mappings
-    })
-  });
-
+  switch (req.method) 
+  {
+    case 'GET':
+      return read_savedata(req, res, path.join(__dirname, "server/data/savedata.dat"), xml.mappings);
+      break;
+    case 'POST':
+      return read_savedata(req, res, req.files.datafile.path, xml.mappings);
+      break;
+    default:
+      res.send("You found the secret!");
+  }
 }
-
-// POST savedata page
 
 // POST savedata to backend
 exports.save = function (req, res) {

@@ -1,48 +1,50 @@
-/*
- * Module dependencies
+/**
+ * Module dependencies.
  */
+
 var express = require('express');
-var stylus = require('stylus');
-var nib = require('nib');
-var fs = require('fs');
-var bodyParser  = require('body-parser');
 var routes = require('./routes');
+var http = require('http');
+var path = require('path');
+var connect = require('connect');
+var multiparty = require('connect-multiparty');
+var methodOverride = require('method-override');
 
 var app = express();
 
-function compile(str, path) {
-  return stylus(str)
-    .set('filename', path)
-    .use(nib())
+app.configure('development', function () {
+    app.locals.pretty = true;
+});
+
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(methodOverride('X-HTTP-Method-Override'))
+app.use(multiparty({ uploadDir: path.join(__dirname, 'server/data/uploads') }));
+app.use(app.router);
+app.use(require('stylus').middleware(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
 }
-
-app.set('views', __dirname + '/views')
-app.set('view engine', 'jade')
-app.use(express.logger('dev'))
-app.use(stylus.middleware(
-  { src: __dirname + '/public'
-    , compile: compile
-  }
-))
-// app.use(express.bodyParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-app.use(express.static(__dirname + '/public'))
-app.locals.pretty = true;
 
 // home page
 app.get('/', routes.index);
 
 // savedata display page
 app.get('/savedata', routes.savedata);
+app.post('/savedata', routes.savedata);
 
 // savedata save post
-app.post('/save', routes.save);
+app.post('/savedata/save', routes.save);
 
-
-var port = 3000;
-app.listen(port);
-console.log("Server starts on port " + port);
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});

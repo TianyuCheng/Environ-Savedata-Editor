@@ -2,12 +2,15 @@
   "name": "Environ-Dashboard",
   "version": "0.0.1",
   "private": "true",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
-    "binary-parser": "*",
-    "body-parser": "*",
     "express": "3.12.1",
     "jade": "*",
-    "nib": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "connect-multiparty": "*",
+    "method-override": "*",
+    "connect": "*"
   }
 }
