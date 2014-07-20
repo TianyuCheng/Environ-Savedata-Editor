@@ -118,7 +118,6 @@
       that.append(events_group);
 
       // upgrades
-      var upgrades_group = $('<optgroup label="Upgrades"></optgroup>');
       for (var index in bases)
       {
         var base_key = bases[index].key;
@@ -129,9 +128,8 @@
           var upgrade = upgrades[jindex];
           group.append($('<option value="' + upgrade.key+  '">' + upgrades_dict[upgrade.key] + '</option>'));
         }
-        upgrades_group.append(group);
+        that.append(group);
       }
-      that.append(upgrades_group);
      
       // process on each one
       that.each(function() {
@@ -139,6 +137,7 @@
         var option = $(this).find('option[value="' + node_key.text() + '"]');
         option.prop("selected", true);
 
+        node_key.text($(this).val());
         // bind selection
         $(this).change(function() {
           node_key.text($(this).val());
@@ -319,7 +318,7 @@
 
   // for update
   $.fn.reHistorify = function () {
-    // console.log("reHistorify");
+    console.log("reHistorify");
     // process on each region
     $(this).each(function() {
 
@@ -461,7 +460,7 @@
       new_record.append($('<td class="toggleable"><input type="checkbox" checked/><img src="/images/icons/tick-icon.png"/></td>'));
     else 
       new_record.append($('<td class="toggleable"><input type="checkbox"/><img src="/images/icons/cross-icon.png"/></td>'));
-    new_record.append($('<td class="hide"><span class="node-key">' +  key + '</span></td>'));
+    new_record.append($('<td class=""><span class="node-key">' +  key + '</span></td>'));
     new_record.append($('<td><select class="node-options"></select></td>'));
     new_record.append($('<td class="delete-history"><img src="/images/icons/minus-icon.png"/></td>'));
 

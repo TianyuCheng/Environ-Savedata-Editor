@@ -15,7 +15,7 @@ exports.savedata = function (req, res) {
   var python = require('child_process').spawn(
       'python',
       // second argument is array of parameters, e.g.:
-      ["server/python/read_savedata.py", 'server/data/savedata.dat']);
+      ["server/python/read_savedata.py", 'server/data/tmp/savedata.dat']);
   var output = "";
   python.stdout.on('data', function(data){ output += data });
 
@@ -31,6 +31,8 @@ exports.savedata = function (req, res) {
   });
 
 }
+
+// POST savedata page
 
 // POST savedata to backend
 exports.save = function (req, res) {

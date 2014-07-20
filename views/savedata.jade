@@ -20,11 +20,11 @@ block content
           tbody
             tr
               td 
-                input(type="text", id="political_capital", class="scores" value="#{info.political_capital}")
+                input(type="number", id="political_capital", class="scores", min="0", step="100", value="#{info.political_capital}")
               td 
-                input(type="text", id="funds", class="scores" value="#{info.funds}")
+                input(type="number", id="funds", class="scores", min="0", step="100",  value="#{info.funds}")
               td 
-                input(type="text", id="gametime", class="scores" value="#{info.time}")
+                input(type="number", id="gametime", class="scores", min="0", value="#{info.time}")
     
       h2.content-subhead Regional Variables
       table.pure-table.pure-table-striped
