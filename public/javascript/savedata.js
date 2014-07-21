@@ -1,3 +1,7 @@
+function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+
 (function ( $ ) {
 
   var bases_dict = null;
@@ -54,6 +58,8 @@
     $(this).each(function() {
       input = $(this);
       input.attr('style', 'text-align: center');
+      var val = roundToTwo(parseFloat($(this).val()));
+      $(this).val(val);
     
       input.on({
         keypress : function (event) {
@@ -79,7 +85,7 @@
         },
         blur : function(event) {
           // truncating to 2 decimal
-          var val = parseFloat($(this).val()).toFixed(2);
+          var val = roundToTwo(parseFloat($(this).val()));
           $(this).val(val);
         }
 
