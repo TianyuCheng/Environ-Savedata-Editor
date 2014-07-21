@@ -11,7 +11,7 @@ parser.packet("header", "l32 => magic, \
                          l32 => region_counts");
 
 parser.packet("region_info", "l32 => region_id, \
-                              b8 => active, \
+                              l32 => active, \
                               b32f => FUNDS, b32f => PC, \
                               b32f => EC, b32f => EN, \
                               b32f => CO2, b32f => AP, b32f => WP, b32f => LP, \
@@ -20,13 +20,14 @@ parser.packet("region_info", "l32 => region_id, \
                               b32f => DONATION,\
                               l32 => num_nodes_in_history");
 
-parser.packet("record", "b8[10]z|utf8() => key, b32f => activated_time");
+parser.packet("record", "b8 => length, b8[8]z|utf8() => key, b32f => activated_time");
 
 function readHistoryRecord(region, parser, callback) {
   // extract history record
   parser.extract("record", function (record) {
     var key = record.key.replace(/\s+/g, ""); // strip white spaces
     var time = record.activated_time.toFixed(2) + "";
+    console.log(key + " " + time);
     region.history[time] = key;
     callback();
   });
@@ -79,7 +80,7 @@ function readSaveData (filename)
         if (count < header.region_counts)
           readRegionInfo(header, parser, readNextRegion);
         else {
-          // console.log (header.regions[1].history);
+          // console.log (JSON.stringify(header));
           console.log (header);
         }
       };
@@ -91,4 +92,6 @@ function readSaveData (filename)
   });
 }
 
-readSaveData('./testdata.dat');
+// readSaveData('./testdata.dat');
+// readSaveData('./savedata2.dat');
+readSaveData('./savedata3.dat');

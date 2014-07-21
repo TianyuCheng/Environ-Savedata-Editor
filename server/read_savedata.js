@@ -11,7 +11,7 @@ parser.packet("header", "l32 => magic, \
                          l32 => region_counts");
 
 parser.packet("region_info", "l32 => region_id, \
-                              b8 => active, \
+                              l32 => active, \
                               b32f => FUNDS, b32f => PC, \
                               b32f => EC, b32f => EN, \
                               b32f => CO2, b32f => AP, b32f => WP, b32f => LP, \
@@ -20,7 +20,7 @@ parser.packet("region_info", "l32 => region_id, \
                               b32f => DONATION,\
                               l32 => num_nodes_in_history");
 
-parser.packet("record", "b8[10]z|utf8() => key, b32f => activated_time");
+parser.packet("record", "b8 => length, b8[8]z|utf8() => key, b32f => activated_time");
 
 function readHistoryRecord(region, parser, callback) {
   // extract history record
@@ -35,7 +35,7 @@ function readHistoryRecord(region, parser, callback) {
 function readRegionInfo(header, parser, callback) {
   // extract regional info
   parser.extract("region_info", function (region_info) {
-    // console.log(region_info);
+    console.log(region_info);
     region_info['history'] = {};
     // history counter
     var count = 0;

@@ -38,23 +38,24 @@ def read_header(fileContent):
 
 def read_region(fileContent):
     region_id, fileContent = read_content("i", fileContent)
-    region_active, fileContent = read_content("?", fileContent)
+    region_active, fileContent = read_content("i", fileContent)
+    region_active = True if region_active != 0 else False
 
     # read scores
     scores  = ['FUNDS', 'PC', 'EC', 'EN', 'CO2', 'AP', 'WP', 'LP', 'GDP', 'EQ', 'PP', 'TECH', 'GREEN', 'DONATION']
     numbers, fileContent = read_contents("14f", fileContent)
     numbers = map(lambda x : round(x, 2), numbers)
     scores = dict(zip(scores, numbers))
-    # print scores
+    print scores
 
     # read history nodes
     history = dict()
     num_nodes_in_history, fileContent = read_content("i", fileContent)
     assert num_nodes_in_history < 200, "too many nodes"
     for index in xrange(num_nodes_in_history):
-        key, fileContent = read_content("10s", fileContent)
+        key, fileContent = read_content("8s", fileContent[1:])
         activated_time, fileContent = read_content("f", fileContent)
-        # print key.strip(), activated_time
+        print key.strip(), activated_time
         # history[key.strip()] = round(activated_time, 2)
         history[round(activated_time, 2)] = key.strip()
 
@@ -67,8 +68,9 @@ if __name__ == '__main__':
     info = dict()
     regions = list()
     # with open(sys.argv[1], mode='rb') as file: # b is important -> binary
-    # with open("../data/savedata.dat", mode='rb') as file: # b is important -> binary
-    with open("../save.dat", mode='rb') as file: # b is important -> binary
+    with open("savedata.dat", mode='rb') as file: # b is important -> binary
+    # with open("savedata2.dat", mode='rb') as file: # b is important -> binary
+    # with open("savedata2.dat", mode='rb') as file: # b is important -> binary
         fileContent = file.read()
         header, fileContent = read_header(fileContent)
         info.update(header)

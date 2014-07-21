@@ -3,7 +3,7 @@
 var fs = require('fs');
 
 function pad(width, string, padding) { 
-  return (width <= string.length) ? string : pad(width, padding + string, padding)
+  return (width <= string.length) ? string : pad(width, string + padding, padding)
 }
 
 var info = {"time":95.94,"political_capital":14889.94,"funds":2222.18,"region_counts":7,
@@ -33,18 +33,18 @@ var info = {"time":95.94,"political_capital":14889.94,"funds":2222.18,"region_co
 var magic = 1989127302;
 
 function writeRegion(writer, region) {
-  console.log(region);
+  // console.log(region);
 
-  var size = 4 + 1 + 14 * 4 + 4;
+  var size = 4 + 4 + 14 * 4 + 4;
   var buffer = new Buffer(size);
   buffer.writeInt32LE(region.id, 0);
-  buffer.writeInt8(region.active, 4);
+  buffer.writeInt32LE(region.active, 4);
 
   // these two does not count
-  buffer.writeFloatLE(0, 5);  // political capital
-  buffer.writeFloatLE(0, 9);  // funds
+  buffer.writeFloatLE(0, 8);  // political capital
+  buffer.writeFloatLE(0, 12);  // funds
 
-  var offset = 13;
+  var offset = 16;
   var scores = ['economy', 'environment', 'co2-emission', 
       'air-pollution', 'water-pollution', 'land-pollution',
       'gross-domestic-product', 'income-equality', 'purchasing-power',
@@ -63,15 +63,16 @@ function writeRegion(writer, region) {
   writer.write(buffer);
 
   // write in history
-  size = numNodes * (4 + 10);
+  size = numNodes * (4 + 9);
   buffer = new Buffer(size);
   offset = 0;
   for (var i = 0; i < numNodes; i++) {
     var node = region.history[i];
-    var key = pad(10, node.key, ' ');
-    buffer.write(key, offset);
-    buffer.writeFloatLE(node.time, offset + 10);
-    offset += 14;
+    var key = pad(8, node.key, ' ');
+    buffer.writeInt8(8, offset);
+    buffer.write(key, offset + 1);
+    buffer.writeFloatLE(node.time, offset + 9);
+    offset += 13;
   }
   writer.write(buffer);
 }

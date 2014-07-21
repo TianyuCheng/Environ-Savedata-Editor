@@ -19,10 +19,10 @@ exports.savedata = function (req, res) {
   switch (req.method) 
   {
     case 'GET':
-      return read_savedata(req, res, path.join(__dirname, "server/data/empty.dat"), xml.mappings);
+      read_savedata(req, res, path.join(__dirname, "server/data/empty.dat"), xml.mappings);
       break;
     case 'POST':
-      return read_savedata(req, res, req.files.datafile.path, xml.mappings);
+      read_savedata(req, res, req.files.datafile.path, xml.mappings);
       break;
     default:
       res.send("You found the secret!");
