@@ -157,13 +157,8 @@ block content
                           td(class="key hide")= base.key
                           td(class="title")= mappings.bases_dict[base.key]
                           td(class="status toggleable")
-                            - if (base.active) {
-                                input(type="checkbox", checked)
-                                img(src="/images/icons/tick-icon.png")
-                            - } else {
-                                input(type="checkbox")
-                                img(src="/images/icons/cross-icon.png")
-                            - }
+                            input(type="checkbox")
+                            img(src="/images/icons/cross-icon.png")
                           td(class="location")
                             input(type="text", value="(#{base.x}, #{base.y})", class="coordinates")
                       - }
@@ -210,13 +205,8 @@ block content
                           td(class="key hide")= event.key
                           td(class="title")= mappings.events_dict[event.key]
                           td(class="status toggleable")
-                            - if (event.active) {
-                                input(type="checkbox", checked)
-                                img(src="/images/icons/tick-icon.png")
-                            - } else {
-                                input(type="checkbox")
-                                img(src="/images/icons/cross-icon.png")
-                            - }
+                            input(type="checkbox")
+                            img(src="/images/icons/cross-icon.png")
                           td(class="location")
                             input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
                       - }
@@ -233,26 +223,6 @@ block content
                       th= ""
                     tbody
                       // -|| dynamicall loaded with javascript
-                      // - for (var key in info.regions[region_id].history) {
-                      //     tr(class="#{key}")
-                      //       - var value = info.regions[region_id].history[key]
-                      //       td
-                      //         input(type="number", min="0", step="0.1", class="scores" value="#{key}")
-                      //       td(class="toggleable")
-                      //         - if (value.substring(0, 1) == '+') {
-                      //             input(type="checkbox", checked="checked")
-                      //             img(src="/images/icons/tick-icon.png")
-                      //         - } else {
-                      //             input(type="checkbox", checked="unchecked")
-                      //             img(src="/images/icons/cross-icon.png")
-                      //         - }
-                      //       td(class="hide")
-                      //         span(contenteditable="false", class="node-key") #{value.substring(1)}
-                      //       td
-                      //         select(class="node-options")
-                      //       td
-                      //         img(src="/images/icons/minus-icon.png", alt="delete")
-                      // - }
       - }
 
       h2.content-subhead 
