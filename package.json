@@ -10,6 +10,8 @@
     "jade": "*",
     "stylus": "*",
     "connect-multiparty": "*",
-    "packet": "*"
+    "packet": "*",
+    "xml2js": "*",
+    "async": "*"
   }
 }

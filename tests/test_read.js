@@ -91,4 +91,4 @@ function readSaveData (filename)
   });
 }
 
-readSaveData('../testdata.dat');
+readSaveData('./testdata.dat');

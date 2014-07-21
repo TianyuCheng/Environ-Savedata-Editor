@@ -1,0 +1,640 @@
+<?xml version="1.0" ?>
+<effects>
+  <effect>
+    <key>F1</key>
+    <probability/>
+    <scores>
+      <score amount="-1000">FUNDS</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F2</key>
+    <probability/>
+    <scores>
+      <score amount="-0.2">AP</score>
+      <score amount="0.1">EN</score>
+      <score amount="-0.3">CO2</score>
+      <score amount="-0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F3</key>
+    <probability/>
+    <scores>
+      <score amount="-0.2">EN</score>
+      <score amount="0.2">EC</score>
+      <score amount="0.2">AP</score>
+      <score amount="0.3">CO2</score>
+      <score amount="0.2">LP</score>
+      <score amount="0.1">WP</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F4</key>
+    <probability/>
+    <scores>
+      <score amount="0.3">TECH</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F5</key>
+    <probability/>
+    <scores>
+      <score amount="0.3">EN</score>
+      <score amount="-0.2">CO2</score>
+      <score amount="0.1">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F6</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">EN</score>
+      <score amount="0.4">CO2</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F7</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">EN</score>
+      <score amount="0.3">CO2</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F8</key>
+    <probability/>
+    <scores>
+      <score amount="0.1">PP</score>
+      <score amount="-0.2">EN</score>
+      <score amount="0.3">CO2</score>
+      <score amount="0.3">EC</score>
+      <score amount="0.2">WP</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F9</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">PP</score>
+      <score amount="0.3">EN</score>
+      <score amount="-0.2">CO2</score>
+      <score amount="-0.4">EC</score>
+      <score amount="-0.2">WP</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F10</key>
+    <probability>P2</probability>
+    <scores>
+      <score amount="-100">FUNDS</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F11</key>
+    <probability>P3</probability>
+    <scores>
+      <score amount="-1">FUNDS</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F12</key>
+    <probability/>
+    <scores>
+      <score amount="-0.2">AP</score>
+      <score amount="-0.1">PP</score>
+      <score amount="0.1">EN</score>
+      <score amount="-0.4">CO2</score>
+      <score amount="0.1">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F13</key>
+    <probability/>
+    <scores>
+      <score amount="0.4">TECH</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F14</key>
+    <probability>P4</probability>
+    <scores>
+      <score amount="-200">FUNDS</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F15</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">AP</score>
+      <score amount="-0.1">PP</score>
+      <score amount="0.1">EN</score>
+      <score amount="-0.3">CO2</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F16</key>
+    <probability/>
+    <scores>
+      <score amount="0.8">TECH</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F17</key>
+    <probability>P6</probability>
+    <scores>
+      <score amount="0.2">PP</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F18</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">AP</score>
+      <score amount="0.1">PP</score>
+      <score amount="0.1">EN</score>
+      <score amount="-0.2">CO2</score>
+      <score amount="0.1">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F19</key>
+    <probability/>
+    <scores>
+      <score amount="0.2">TECH</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F20</key>
+    <probability>P6</probability>
+    <scores>
+      <score amount="0.1">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F21</key>
+    <probability/>
+    <scores>
+      <score amount="0.2">GDP</score>
+      <score amount="0.2">PP</score>
+      <score amount="0.3">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F22</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">AP</score>
+      <score amount="-0.2">PP</score>
+      <score amount="0.2">EN</score>
+      <score amount="-0.2">CO2</score>
+      <score amount="-0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F23</key>
+    <probability>P9</probability>
+    <scores>
+      <score amount="-4">FUNDS</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F24</key>
+    <probability/>
+    <scores>
+      <score amount="-0.2">AP</score>
+      <score amount="-0.4">PP</score>
+      <score amount="0.4">EN</score>
+      <score amount="-0.5">CO2</score>
+      <score amount="-0.3">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F25</key>
+    <probability>P10</probability>
+    <scores>
+      <score amount="3">FUNDS</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F26</key>
+    <probability>P11</probability>
+    <scores>
+      <score amount="-2">FUNDS</score>
+      <score amount="-0.6">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F27</key>
+    <probability/>
+    <scores>
+      <score amount="0.8">GREEN</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F28</key>
+    <probability/>
+    <scores>
+      <score amount="-0.2">AP</score>
+      <score amount="-0.1">PP</score>
+      <score amount="0.3">EN</score>
+      <score amount="-0.3">CO2</score>
+      <score amount="-0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F29</key>
+    <probability>P13</probability>
+    <scores>
+      <score amount="0.4">PP</score>
+      <score amount="0.3">EN</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F30</key>
+    <probability>P14</probability>
+    <scores>
+      <score amount="-2">FUNDS</score>
+      <score amount="-0.3">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F31</key>
+    <probability/>
+    <scores>
+      <score amount="0.3">GDP</score>
+      <score amount="0.2">PP</score>
+      <score amount="0.4">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F32</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">AP</score>
+      <score amount="-0.1">PP</score>
+      <score amount="0.1">EN</score>
+      <score amount="-0.1">CO2</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F33</key>
+    <probability>P15</probability>
+    <scores>
+      <score amount="-1">FUNDS</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F34</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">AP</score>
+      <score amount="-0.1">PP</score>
+      <score amount="0.1">EN</score>
+      <score amount="-0.2">CO2</score>
+      <score amount="0.1">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F35</key>
+    <probability>P15</probability>
+    <scores>
+      <score amount="0.2">PP</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F36</key>
+    <probability/>
+    <scores>
+      <score amount="-0.2">AP</score>
+      <score amount="0.1">EN</score>
+      <score amount="-0.3">CO2</score>
+      <score amount="0.1">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F37</key>
+    <probability/>
+    <scores>
+      <score amount="0.1">TECH</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F38</key>
+    <probability>P15</probability>
+    <scores>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F39</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">AP</score>
+      <score amount="0.1">PP</score>
+      <score amount="0.3">EN</score>
+      <score amount="-0.2">CO2</score>
+      <score amount="0.1">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F40</key>
+    <probability/>
+    <scores>
+      <score amount="0.2">CO2</score>
+      <score amount="-0.3">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F41</key>
+    <probability/>
+    <scores>
+      <score amount="-0.2">AP</score>
+      <score amount="-0.1">PP</score>
+      <score amount="0.2">EN</score>
+      <score amount="-0.2">CO2</score>
+      <score amount="0.2">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F42</key>
+    <probability>P19</probability>
+    <scores>
+      <score amount="-0.2">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F43</key>
+    <probability>P20</probability>
+    <scores>
+      <score amount="0.3">PP</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F44</key>
+    <probability/>
+    <scores>
+      <score amount="0.5">TECH</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F45</key>
+    <probability/>
+    <scores>
+      <score amount="-0.1">AP</score>
+      <score amount="0.2">EN</score>
+      <score amount="-0.3">CO2</score>
+      <score amount="0.3">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F46</key>
+    <probability/>
+    <scores>
+      <score amount="500">FUNDS</score>
+      <score amount="300">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F47</key>
+    <probability>P27</probability>
+    <scores>
+      <score amount="-100">FUNDS</score>
+      <score amount="5">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F48</key>
+    <probability>P29</probability>
+    <scores>
+      <score amount="200">FUNDS</score>
+      <score amount="50">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F49</key>
+    <probability>P11</probability>
+    <scores>
+      <score amount="-200">FUNDS</score>
+      <score amount="-50">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F50</key>
+    <probability>P29</probability>
+    <scores>
+      <score amount="-200">FUNDS</score>
+      <score amount="-50">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F51</key>
+    <probability>P11</probability>
+    <scores>
+      <score amount="200">FUNDS</score>
+      <score amount="50">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F52</key>
+    <probability/>
+    <scores>
+      <score amount="200">FUNDS</score>
+      <score amount="20">EC</score>
+      <score amount="50">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F53</key>
+    <probability>P4</probability>
+    <scores>
+      <score amount="-150">FUNDS</score>
+      <score amount="100">EN</score>
+      <score amount="100">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F54</key>
+    <probability/>
+    <scores>
+      <score amount="-15">EN</score>
+      <score amount="-300">FUNDS</score>
+      <score amount="-5">EC</score>
+      <score amount="-100">PC</score>
+      <score amount="20">GREEN</score>
+      <score amount="10">LP</score>
+      <score amount="15">WP</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F55</key>
+    <probability/>
+    <scores>
+      <score amount="-100">FUNDS</score>
+      <score amount="-10">EN</score>
+      <score amount="10">GREEN</score>
+      <score amount="-5">EC</score>
+      <score amount="-50">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F56</key>
+    <probability/>
+    <scores>
+      <score amount="-200">FUNDS</score>
+      <score amount="-20">EN</score>
+      <score amount="20">GREEN</score>
+      <score amount="-20">EC</score>
+      <score amount="-100">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F57</key>
+    <probability/>
+    <scores>
+      <score amount="-100">FUNDS</score>
+      <score amount="-5">EC</score>
+      <score amount="-50">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F58</key>
+    <probability/>
+    <scores>
+      <score amount="-300">FUNDS</score>
+      <score amount="-25">EC</score>
+      <score amount="-150">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F59</key>
+    <probability/>
+    <scores>
+      <score amount="-200">FUNDS</score>
+      <score amount="-15">EN</score>
+      <score amount="25">GREEN</score>
+      <score amount="-5">EC</score>
+      <score amount="-100">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F60</key>
+    <probability/>
+    <scores>
+      <score amount="-100">FUNDS</score>
+      <score amount="-5">EN</score>
+      <score amount="25">GREEN</score>
+      <score amount="-5">EC</score>
+      <score amount="-75">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F61</key>
+    <probability/>
+    <scores>
+      <score amount="-100">FUNDS</score>
+      <score amount="-5">EN</score>
+      <score amount="25">GREEN</score>
+      <score amount="-10">EC</score>
+      <score amount="-75">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F62</key>
+    <probability/>
+    <scores>
+      <score amount="-3">GDP</score>
+      <score amount="-5">PP</score>
+      <score amount="-350">FUNDS</score>
+      <score amount="-5">EC</score>
+      <score amount="-150">PC</score>
+      <score amount="10">GREEN</score>
+      <score amount="-5">EQ</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F63</key>
+    <probability/>
+    <scores>
+      <score amount="-10">GDP</score>
+      <score amount="-15">PP</score>
+      <score amount="-100">FUNDS</score>
+      <score amount="-50">PC</score>
+      <score amount="10">GREEN</score>
+      <score amount="-10">EQ</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F64</key>
+    <probability>P10</probability>
+    <scores>
+      <score amount="50">FUNDS</score>
+      <score amount="-5">EC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F65</key>
+    <probability>P46</probability>
+    <scores>
+      <score amount="-50">PC</score>
+      <score amount="50">FUNDS</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F66</key>
+    <probability/>
+    <scores>
+      <score amount="-100">FUNDS</score>
+      <score amount="-20">GREEN</score>
+      <score amount="-10">EC</score>
+      <score amount="-75">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F67</key>
+    <probability>P11</probability>
+    <scores>
+      <score amount="35">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F68</key>
+    <probability/>
+    <scores>
+      <score amount="-800">FUNDS</score>
+      <score amount="-50">EC</score>
+      <score amount="-500">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F69</key>
+    <probability/>
+    <scores>
+      <score amount="-1000">FUNDS</score>
+      <score amount="-20">EN</score>
+      <score amount="-30">EC</score>
+      <score amount="-400">PC</score>
+    </scores>
+  </effect>
+  <effect>
+    <key>F70</key>
+    <probability/>
+    <scores>
+      <score amount="-40">EN</score>
+      <score amount="-800">PC</score>
+      <score amount="-2000">FUNDS</score>
+      <score amount="-40">EC</score>
+      <score amount="30">AP</score>
+      <score amount="30">LP</score>
+      <score amount="30">WP</score>
+    </scores>
+  </effect>
+</effects>

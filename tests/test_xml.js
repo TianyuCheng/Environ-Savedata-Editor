@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var xml2js = require('xml2js');
 var parseString = require('xml2js').parseString;
@@ -13,7 +15,8 @@ var regions_events = {};
 var bases_upgrades = {};
 var nodes_dict = {};
 
-var path = "server/"
+// var path = "server/"
+var path = ""
 
 async.parallel([
     function (callback) {

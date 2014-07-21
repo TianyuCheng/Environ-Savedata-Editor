@@ -1,0 +1,515 @@
+<?xml version="1.0" ?>
+<events>
+  <event>
+    <key>E1</key>
+    <title>Moon-based Solar Power</title>
+    <description> </description>
+    <image>moonSolarPowerBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P7</probability>
+      <probability>P23</probability>
+    </probabilities>
+    <effects/>
+  </event>
+  <event>
+    <key>E2</key>
+    <title>Advanced Wind Turbines</title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P17</probability>
+      <probability>P23</probability>
+    </probabilities>
+    <effects/>
+  </event>
+  <event>
+    <key>E3</key>
+    <title>Level Up</title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P24</probability>
+      <probability>P25</probability>
+    </probabilities>
+    <effects>
+      <effect>F46</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E4</key>
+    <title>Massive Natural Gas Field Discovered</title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P26</probability>
+      <probability>P27</probability>
+    </probabilities>
+    <effects>
+      <effect>F47</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E5</key>
+    <title>Rise in Environmentalism </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P28</probability>
+    </probabilities>
+    <effects>
+      <effect>F48</effect>
+      <effect>F49</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E6</key>
+    <title>Decline in Environmentalism </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P30</probability>
+    </probabilities>
+    <effects>
+      <effect>F50</effect>
+      <effect>F51</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E7</key>
+    <title>Economic Boom </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P24</probability>
+      <probability>P31</probability>
+      <probability>P32</probability>
+    </probabilities>
+    <effects>
+      <effect>F52</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E8</key>
+    <title>Solar Research Breakthrough </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P5</probability>
+      <probability>P7</probability>
+      <probability>P4</probability>
+    </probabilities>
+    <effects>
+      <effect>F53</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E9</key>
+    <title>Nuclear Fusion Discovered </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T7</tag>
+    </tags>
+    <probabilities>
+      <probability>P33</probability>
+      <probability>P19</probability>
+    </probabilities>
+    <effects/>
+  </event>
+  <event>
+    <key>E10</key>
+    <title>Oil Spill</title>
+    <description>An offshore oil platform exploded and its well on the ocean floor is now leaking millions of gallons of oil into the ocean. This will have a devastating impact on the local marine environment and the local economy over the next couple of years if you choose not to intervene. Taking action would involve an extensive cleanup effort, new regulatiosn for oil platform safety that will cost money over time to enforce. </description>
+    <image>windTurbineBanner</image>
+    <model>event_oilSpill2</model>
+    <reference>http://en.wikipedia.org/wiki/Oil_spill</reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P34</probability>
+      <probability>P26</probability>
+      <probability>P3</probability>
+    </probabilities>
+    <effects>
+      <effect>F54</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E11</key>
+    <title>Drought </title>
+    <description>Dry winds, excessive farming, and erosion has resulted in crop failure and shortage of water. The extended conditions of drought may result in social unrest and mass human migrations if not addressed in the near future. Confronting this issue requires you to reassess water usage, enforce water conservation &amp; regulation laws, or invest in technologies that will help open supplementary water resources. </description>
+    <image>droughtBanner</image>
+    <model>event_drought</model>
+    <reference>http://en.wikipedia.org/wiki/Drought</reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P35</probability>
+      <probability>P36</probability>
+    </probabilities>
+    <effects>
+      <effect>F55</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E12</key>
+    <title>Desertification </title>
+    <description>This part of the land is dwindling into an arid dry region, slowly losing any vegetation and wildlife. Deforestation, drought or unsustainable farming habits has only accelerated the formation of a desert. Implementing anti-desertification programs, managing the provisioning of water, and hyper-fertilization programs, managing the provisioning of water, and hyper-fertilization of the soil will help prevent and reclaim the land back to its original stasis. </description>
+    <image>desertBanner</image>
+    <model>event_desert</model>
+    <reference>http://en.wikipedia.org/wiki/Desertification</reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P37</probability>
+    </probabilities>
+    <effects>
+      <effect>F56</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E13</key>
+    <title>Civil Unrest </title>
+    <description>Public protest is on the rist against the government policies in place. This is a visual representation of the economic,social and political pressures pressed upon the poeple. If left unaddressed, the unrest may escalate into more violent incidents and will disrupt the flow of everyday life for others who aren't involved. </description>
+    <image>socialUnrestBanner</image>
+    <model>event_socialUnrest</model>
+    <reference>http://en.wikipedia.org/wiki/Civil_disorder</reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P38</probability>
+      <probability>P39</probability>
+    </probabilities>
+    <effects>
+      <effect>F57</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E14</key>
+    <title>Mass Riots </title>
+    <description> </description>
+    <image>socialUnrestBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P40</probability>
+      <probability>P32</probability>
+      <probability>P41</probability>
+      <probability>P31</probability>
+      <probability>P42</probability>
+      <probability>P36</probability>
+      <probability>P43</probability>
+      <probability>P39</probability>
+    </probabilities>
+    <effects>
+      <effect>F58</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E15</key>
+    <title>Severe Water Pollution </title>
+    <description>A new level of contamination has consequently affected the lakes, oceans and possible sources of drinking water. Contaminates caused from industrial discharge will affect organisms that depend on these sources. If you don't act soon, there may not be enough adequate treatment to prevent pathogens from spreading across all water systems. Investing in green technologies to improve the sewage system will reduce the level of waste. </description>
+    <image>windTurbineBanner</image>
+    <model>event_waterPollution</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P36</probability>
+    </probabilities>
+    <effects>
+      <effect>F59</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E16</key>
+    <title>Intensifying Weather </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_waterPollution</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P35</probability>
+    </probabilities>
+    <effects>
+      <effect>F60</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E17</key>
+    <title>Extreme Storm </title>
+    <description>The change in climate has affected the atmosphere's temperature, resulting in heavier amounts of precipitation and moisture. Snowfall has isolated the region completely, brainging cities to a stop and traping homes and building under layers of snow, sleet, and ice. </description>
+    <image>windTurbineBanner</image>
+    <model>event_waterPollution</model>
+    <reference>http://www.climatecommunication.org/new/articles/extreme-weather/winter-storms/</reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P44</probability>
+    </probabilities>
+    <effects>
+      <effect>F60</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E18</key>
+    <title>Category 5 Hurricane </title>
+    <description>This event is occurring much more frequently due to the extreme changes in the climate, resulting in heavier and more intense amounts of precipitation. The hurricane season is getting longer and the increased winds have left a path of destruction. </description>
+    <image>windTurbineBanner</image>
+    <model>event_waterPollution</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P44</probability>
+    </probabilities>
+    <effects>
+      <effect>F61</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E19</key>
+    <title>Nuclear Meltdown </title>
+    <description>This event can be best categorized into two subtopics: &quot;full-scale&quot; and &quot;limited.&quot; Both are essentially similar in that they are compsed of large scale military nuclear weaponry to dispose on the enemy. A possible solution to this unwanted chaos is to increase your political standing and maintain a peaceful strategy regional issues. </description>
+    <image>windTurbineBanner</image>
+    <model>event_waterPollution</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P45</probability>
+    </probabilities>
+    <effects>
+      <effect>F62</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E20</key>
+    <title>Oil Price Spike </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_oilSpill2</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P10</probability>
+    </probabilities>
+    <effects>
+      <effect>F63</effect>
+      <effect>F64</effect>
+      <effect>F65</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E21</key>
+    <title>Recession </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P47</probability>
+    </probabilities>
+    <effects>
+      <effect>F66</effect>
+      <effect>F67</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E22</key>
+    <title>Mass Unemployment </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P48</probability>
+    </probabilities>
+    <effects>
+      <effect>F66</effect>
+      <effect>F67</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E23</key>
+    <title>Depression </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P49</probability>
+    </probabilities>
+    <effects>
+      <effect>F66</effect>
+      <effect>F67</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E24</key>
+    <title>Economic Collapse </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P50</probability>
+    </probabilities>
+    <effects>
+      <effect>F66</effect>
+      <effect>F67</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E25</key>
+    <title>Anarchy </title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_socialUnrest</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P51</probability>
+      <probability>P42</probability>
+      <probability>P36</probability>
+      <probability>P43</probability>
+      <probability>P39</probability>
+    </probabilities>
+    <effects>
+      <effect>F68</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E26</key>
+    <title>War</title>
+    <description> </description>
+    <image>windTurbineBanner</image>
+    <model>event_oilSpill2</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P52</probability>
+    </probabilities>
+    <effects>
+      <effect>F69</effect>
+    </effects>
+  </event>
+  <event>
+    <key>E27</key>
+    <title>Nuclear War </title>
+    <description>Sometimes seen as the conclusion to a military conflict or a political plan to create quick and extensive damage to an opponent, nuclear warfare is a total meltdown of a region's habitual systemic process. Global nuclear war is scaled up version of just nuclear war. In this situation you can expect complete destruction on a worldwide stage. </description>
+    <image>windTurbineBanner</image>
+    <model>event_oilSpill2</model>
+    <reference> </reference>
+    <duration>-1</duration>
+    <tags>
+      <tag>T8</tag>
+    </tags>
+    <probabilities>
+      <probability>P53</probability>
+    </probabilities>
+    <effects>
+      <effect>F70</effect>
+    </effects>
+  </event>
+</events>

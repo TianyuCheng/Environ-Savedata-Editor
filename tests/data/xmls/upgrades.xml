@@ -1,0 +1,1142 @@
+<?xml version="1.0" ?>
+<upgrades>
+  <upgrade>
+    <key>U1</key>
+    <title>Decomission Old Coal Plants</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T16</tag>
+      <tag>T19</tag>
+      <tag>T26</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F2</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U2</key>
+    <title>New Coal Plants &amp; Mines </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T16</tag>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F3</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U3</key>
+    <title>Research Carbon Capture </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T16</tag>
+      <tag>T15</tag>
+      <tag>T18</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F4</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U4</key>
+    <title>Clean Coal Plants </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T16</tag>
+      <tag>T19</tag>
+      <tag>T18</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P1</probability>
+    </probabilities>
+    <effects>
+      <effect>F5</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U5</key>
+    <title>Oil Refineries and Wells</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T20</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F6</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U6</key>
+    <title>Natural Gas Plants </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T21</tag>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F7</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U7</key>
+    <title>Deregulate Fracking </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T21</tag>
+      <tag>T20</tag>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F8</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U8</key>
+    <title>Ban Fracking </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T18</tag>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F9</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U9</key>
+    <title>Oil and Natural Gas Exploration </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T20</tag>
+      <tag>T21</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F7</effect>
+      <effect>F10</effect>
+      <effect>F11</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U10</key>
+    <title>Photovoltaic Plants </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>techIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F12</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U11</key>
+    <title>Thermal Plants </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F12</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U12</key>
+    <title>Solar Energy Research </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F13</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U13</key>
+    <title>Solar Subsidy </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F14</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U14</key>
+    <title>Offshore Solar Plants </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P5</probability>
+    </probabilities>
+    <effects>
+      <effect>F15</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U15</key>
+    <title>Hybrid Solar Plants </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>techIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P5</probability>
+    </probabilities>
+    <effects>
+      <effect>F15</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U16</key>
+    <title>Advanced Solar Energy Research</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>8</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+      <tag>T23</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P5</probability>
+    </probabilities>
+    <effects>
+      <effect>F16</effect>
+      <effect>F17</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U17</key>
+    <title>Solar Concentration Plants </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P7</probability>
+    </probabilities>
+    <effects>
+      <effect>F18</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U18</key>
+    <title>Nanomaterial Solar Cells </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>techIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+      <tag>T23</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P7</probability>
+    </probabilities>
+    <effects>
+      <effect>F19</effect>
+      <effect>F20</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U19</key>
+    <title>Space-based Solar Power </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P7</probability>
+    </probabilities>
+    <effects>
+      <effect>F18</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U20</key>
+    <title>Moon-based Solar Power</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P7</probability>
+      <probability>P8</probability>
+    </probabilities>
+    <effects>
+      <effect>F18</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U21</key>
+    <title>Cut Taxes </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>1</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F21</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U22</key>
+    <title>Subsidize Renewable Energy </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T18</tag>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F22</effect>
+      <effect>F23</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U23</key>
+    <title>Carbon Tax </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T18</tag>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F24</effect>
+      <effect>F25</effect>
+      <effect>F26</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U24</key>
+    <title>Severe Carbon Tax </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T18</tag>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P12</probability>
+    </probabilities>
+    <effects>
+      <effect>F24</effect>
+      <effect>F25</effect>
+      <effect>F26</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U25</key>
+    <title>Fund Climate Studies </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F27</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U26</key>
+    <title>Increase Renewable Energy R&amp;D Budget </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T18</tag>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F28</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U27</key>
+    <title>Smart Grid </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>techIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T18</tag>
+      <tag>T24</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F29</effect>
+      <effect>F30</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U28</key>
+    <title>Global Greenhouse Gas Emmissions Agreement </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T18</tag>
+      <tag>T24</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F28</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U29</key>
+    <title>Economic Stimulus </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>1</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F31</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U30</key>
+    <title>Wind Farms </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F32</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U31</key>
+    <title>Wind Power Research </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F19</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U32</key>
+    <title>Wind Power Subsidy </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>0</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T22</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F33</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U33</key>
+    <title>Offshore Wind Farms</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P16</probability>
+    </probabilities>
+    <effects>
+      <effect>F34</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U34</key>
+    <title>Advanced Wind Power Research </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>8</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+      <tag>T23</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P16</probability>
+    </probabilities>
+    <effects>
+      <effect>F19</effect>
+      <effect>F35</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U35</key>
+    <title>Airborne Wind Turbines </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P17</probability>
+    </probabilities>
+    <effects>
+      <effect>F36</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U36</key>
+    <title>Nanomaterial Wind Turbines </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>techIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+      <tag>T23</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P17</probability>
+    </probabilities>
+    <effects>
+      <effect>F37</effect>
+      <effect>F38</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U37</key>
+    <title>Advanced Wind Turbines</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P17</probability>
+    </probabilities>
+    <effects>
+      <effect>F39</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U38</key>
+    <title>Ban Nuclear Power</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>1</revertible_times>
+    <tags>
+      <tag>T22</tag>
+      <tag>T26</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F40</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U39</key>
+    <title>Nuclear Plants</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F41</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U40</key>
+    <title>Nuclear Power Research </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities/>
+    <effects>
+      <effect>F4</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U41</key>
+    <title>Passive Nuclear Safety</title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>PolicyIcon</icon>
+    <reference> </reference>
+    <time>5</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T25</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P18</probability>
+    </probabilities>
+    <effects>
+      <effect>F42</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U42</key>
+    <title>Safe Fuel Pellets </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>4</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T25</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P18</probability>
+    </probabilities>
+    <effects>
+      <effect>F42</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U43</key>
+    <title>Advanced Nuclear Power Research </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>8</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+      <tag>T23</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P18</probability>
+    </probabilities>
+    <effects>
+      <effect>F13</effect>
+      <effect>F43</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U44</key>
+    <title>Nuclear Fusion Research </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>ResearchIcon</icon>
+    <reference> </reference>
+    <time>20</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T15</tag>
+      <tag>T23</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P21</probability>
+    </probabilities>
+    <effects>
+      <effect>F44</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U45</key>
+    <title>Travelling Wave Reactors </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P21</probability>
+    </probabilities>
+    <effects>
+      <effect>F45</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U46</key>
+    <title>Thorium Reactors </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P21</probability>
+    </probabilities>
+    <effects>
+      <effect>F45</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U47</key>
+    <title>Generation IV and V Reactors </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>1</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P21</probability>
+    </probabilities>
+    <effects>
+      <effect>F45</effect>
+    </effects>
+  </upgrade>
+  <upgrade>
+    <key>U48</key>
+    <title>Fusion Reactors </title>
+    <description> </description>
+    <image> </image>
+    <model>lab</model>
+    <icon>InfraIcon</icon>
+    <reference> </reference>
+    <time>2</time>
+    <repurchasable_times>0</repurchasable_times>
+    <revertible_times>0</revertible_times>
+    <tags>
+      <tag>T19</tag>
+    </tags>
+    <costs>
+      <cost>F1</cost>
+    </costs>
+    <probabilities>
+      <probability>P22</probability>
+    </probabilities>
+    <effects>
+      <effect>F45</effect>
+    </effects>
+  </upgrade>
+</upgrades>
