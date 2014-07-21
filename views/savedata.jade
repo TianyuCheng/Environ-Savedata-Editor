@@ -51,73 +51,73 @@ block content
               td Economy
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-economy", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EC}")
+                    input(id="region-#{region_id}-economy", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EC}")
                 - }
             tr(id="environment")
               td Environment
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-environment", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EN}")
+                    input(id="region-#{region_id}-environment", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EN}")
                 - }
             tr(id="technology")
               td Technology
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-technology", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.TECH}")
+                    input(id="region-#{region_id}-technology", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].TECH}")
                 - }
             tr(id="green-sentiment")
               td Green Sentiment
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-green-sentiment", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GREEN}")
+                    input(id="region-#{region_id}-green-sentiment", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GREEN}")
                 - }
             tr(id="gross-domestic-product")
               td GDP
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-gross-domestic-product", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.GDP}")
+                    input(id="region-#{region_id}-gross-domestic-product", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GDP}")
                 - }
             tr(id="income-equality")
               td Income Equality
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-income-equality", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.EQ}")
+                    input(id="region-#{region_id}-income-equality", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EQ}")
                 - }
             tr(id="purchasing-power")
               td Purchasing Power
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-purchasing-power", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.PP}")
+                    input(id="region-#{region_id}-purchasing-power", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].PP}")
                 - }
             tr(id="donations")
               td Donations
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-donations", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.DONATION}")
+                    input(id="region-#{region_id}-donations", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].DONATION}")
                 - }
             tr(id="CO2-emission")
               td CO2 Emission
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-co2-emission", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.CO2}")
+                    input(id="region-#{region_id}-co2-emission", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].CO2}")
                 - }
             tr(id="air-pollution")
               td Air Pollution
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-air-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.AP}")
+                    input(id="region-#{region_id}-air-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].AP}")
                 - }
             tr(id="water-pollution")
               td Water Pollution
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-water-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.WP}")
+                    input(id="region-#{region_id}-water-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].WP}")
                 - }
             tr(id="land-pollution")
               td Land Pollution
                 - for (var region_id in info.regions) {
                   td 
-                    input(id="region-#{region_id}-land-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].scores.LP}")
+                    input(id="region-#{region_id}-land-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].LP}")
                 - }
 
 

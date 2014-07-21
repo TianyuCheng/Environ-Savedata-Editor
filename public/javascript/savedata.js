@@ -266,6 +266,7 @@
       var events_table = $(this).find(".table-events");
       var history_table = $(this).find(".table-history table tbody");
 
+      // console.log (regions[region_id]);
       // time in increasing order
       for (var timestamp in history) {
         value = history[timestamp];

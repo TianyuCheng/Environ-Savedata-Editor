@@ -61,9 +61,8 @@ function readRegionInfo(header, parser, callback) {
   }); // end of extract header
 }
 
-function readSaveData (req, res, filename, mappings)
+function readSaveData (filename)
 {
-  console.log (filename);
   // create a read stream
   var reader = fs.createReadStream(filename);
 
@@ -80,12 +79,8 @@ function readSaveData (req, res, filename, mappings)
         if (count < header.region_counts)
           readRegionInfo(header, parser, readNextRegion);
         else {
+          // console.log (header.regions[1].history);
           console.log (header);
-          return res.render('savedata', {
-            title : 'Environ',
-            info : header,
-            mappings : mappings
-          });
         }
       };
       // call region parser
@@ -96,29 +91,4 @@ function readSaveData (req, res, filename, mappings)
   });
 }
 
-exports.read_savedata = readSaveData;
-
-// exports.read_savedata = function (req, res, filename, mappings) {
-//   console.log(filename);
-//   var python = require('child_process').spawn(
-//       'python',
-//       // second argument is array of parameters, e.g.:
-//       ["server/python/read_savedata.py", filename]);
-//       // ["python/read_savedata.py", 'server/data/savedata.dat']);
-//   var output = "";
-//   python.stdout.on('data', function(data){ output += data });
-//
-//   python.on('close', function(code) { 
-//     if (code !== 0) {  
-//       return res.send("Error happened during reading files!"); 
-//     }
-//     var infos = JSON.parse(output);
-//     // console.log(infos);
-//     return res.render('savedata', {
-//       title : 'Environ',
-//       info : infos,
-//       mappings : mappings
-//     });
-//   })
-//
-// }
+readSaveData('../testdata.dat');

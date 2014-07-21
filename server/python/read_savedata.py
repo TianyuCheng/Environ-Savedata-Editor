@@ -68,6 +68,7 @@ if __name__ == '__main__':
     regions = list()
     with open(sys.argv[1], mode='rb') as file: # b is important -> binary
     # with open("../data/savedata.dat", mode='rb') as file: # b is important -> binary
+    # with open("../../testdata.dat", mode='rb') as file: # b is important -> binary
         fileContent = file.read()
         header, fileContent = read_header(fileContent)
         info.update(header)
