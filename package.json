@@ -12,6 +12,7 @@
     "connect-multiparty": "*",
     "packet": "*",
     "xml2js": "*",
-    "async": "*"
+    "async": "*",
+    "method-override": "*"
   }
 }
