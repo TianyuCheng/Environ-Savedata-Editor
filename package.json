@@ -13,6 +13,7 @@
     "packet": "*",
     "xml2js": "*",
     "async": "*",
-    "method-override": "*"
+    "method-override": "*",
+    "temp": "*"
   }
 }

@@ -2,6 +2,25 @@ function roundToTwo(num) {
     return +(Math.round(num + "e+2")  + "e-2");
 }
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    console.log(ca);
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+    }
+    return null;
+}
+
 (function ( $ ) {
 
   var bases_dict = null;
@@ -87,6 +106,8 @@ function roundToTwo(num) {
           // truncating to 2 decimal
           var val = roundToTwo(parseFloat($(this).val()));
           $(this).val(val);
+          if (val > parseFloat($("#gametime").val()))
+            $("#gametime").val(val);
         }
 
       });
@@ -546,10 +567,15 @@ function roundToTwo(num) {
       save_info['regions'][region_id] = region_info;
     }
 
+    var filenameOnServer = getCookie('environ_savedata');
+    if (filenameOnServer == null) 
+      save_info['environ_savedata'] = 'undefined';
+    else
+      save_info['environ_savedata'] = filenameOnServer;
+
     // prepare hints
     var hint = $("#status-hint");
 
-    // console.log(save_info);
     $.ajax({
       type: 'POST',
       data: JSON.stringify(save_info),
@@ -558,6 +584,13 @@ function roundToTwo(num) {
       success: function(data) {
         console.log('success');
         console.log(JSON.stringify(data));
+
+        var downloader = $("#file-downloader");
+        downloader.attr('href', data.environ_savedata);
+        downloader.removeClass("disabled");
+
+        // set up cookies
+        setCookie('environ_savedata', data.environ_savedata, 7);
 
         // show hints
         hint.removeClass("hide");
@@ -579,7 +612,7 @@ function roundToTwo(num) {
         hint.fadeIn(500, function() {
           setTimeout(function () {
             hint.fadeOut(500, function () {
-              hint.removeClass("status-success").addClass("hide");
+              hint.removeClass("status-error").addClass("hide");
             });
           }, 2000);
         });

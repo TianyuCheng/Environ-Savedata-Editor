@@ -77,3 +77,20 @@ input[type="checkbox"] {
 .status-error {
   background: rgba(202, 60, 60, 0.8); /* this is a maroon */
 }
+
+#file-downloader {
+  float: left;
+  margin-left: 20px!important; 
+}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+   color: #ccc;
+}
+
+/* hide world column */
+#global_scores tr *:nth-child(2) {
+  /* background: red; */
+  display: none;
+}

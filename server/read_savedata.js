@@ -35,7 +35,7 @@ function readHistoryRecord(region, parser, callback) {
 function readRegionInfo(header, parser, callback) {
   // extract regional info
   parser.extract("region_info", function (region_info) {
-    console.log(region_info);
+    // console.log(region_info);
     region_info['history'] = {};
     // history counter
     var count = 0;
@@ -61,7 +61,7 @@ function readRegionInfo(header, parser, callback) {
   }); // end of extract header
 }
 
-function readSaveData (req, res, filename, mappings)
+function readSaveData (req, res, filename, mappings, callback)
 {
   console.log (filename);
   // create a read stream
@@ -80,7 +80,8 @@ function readSaveData (req, res, filename, mappings)
         if (count < header.region_counts)
           readRegionInfo(header, parser, readNextRegion);
         else {
-          console.log (header);
+          if (callback != null) callback(filename);
+          // console.log (header);
           return res.render('savedata', {
             title : 'Environ',
             info : header,

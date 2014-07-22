@@ -27,7 +27,7 @@ block content
                 input(type="number", id="gametime", class="scores", min="0", value="#{info.time}")
     
       h2.content-subhead Regional Variables
-      table.pure-table.pure-table-striped
+      table.pure-table.pure-table-striped#global_scores
         thead
             tr
               th 
@@ -40,11 +40,11 @@ block content
                 - for (var region_id in info.regions) {
                     td(class="toggleable")
                       - if (info.regions[region_id].active) {
-                          input(id="region-#{region_id}-status", type="checkbox", checked)
                           img(src="/images/icons/tick-icon.png")
+                          input(id="region-#{region_id}-status", type="checkbox", checked)
                       - } else {
-                          input(id="region-#{region_id}-status", type="checkbox")
                           img(src="/images/icons/cross-icon.png")
+                          input(id="region-#{region_id}-status", type="checkbox")
                       - }
                 - }
             tr(id="economy")
@@ -126,7 +126,7 @@ block content
         - if (region_id == 0) continue;
           div.clear(style="clear:both")
           div(class="region-info", id="region-#{region_id}")
-            h3.content-subhead(class="menu-toggle")= mappings.regions_dict[info.regions[region_id].id]
+            h2.content-subhead(class="menu-toggle")= mappings.regions_dict[region_id]
             .pure-menu.pure-menu-open.pure-menu-horizontal
               ul(class="region-menu")
                 li.pure-menu-selected
@@ -228,6 +228,7 @@ block content
       h2.content-subhead 
       form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
         input(id="save", name="save", type="button", size="40", class="pure-button pure-button-primary", value="save", style="float: left;")
+        a(id="file-downloader", href="#", download="savedata.dat", class="pure-button disabled") Download
         div(id="status-hint", class="hide")
         div(style="clear: both;")
 
