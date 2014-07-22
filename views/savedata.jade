@@ -17,6 +17,7 @@ block content
               th Political Capital
               th Total Funds
               th Time in Game Play
+              th Expansion Points
           tbody
             tr
               td 
@@ -25,6 +26,8 @@ block content
                 input(type="number", id="funds", class="scores", min="0", step="100",  value="#{info.funds}")
               td 
                 input(type="number", id="gametime", class="scores", min="0", value="#{info.time}")
+              td 
+                input(type="number", id="expansionPnts", class="scores", min="0", step="1", value="#{info.expansionPnts}")
     
       h2.content-subhead Regional Variables
       table.pure-table.pure-table-striped#global_scores

@@ -53,14 +53,15 @@ function writeRegion(writer, region) {
 }
 
 function writeHeader(writer, info) {
-  var header = new Buffer(28);
+  var header = new Buffer(32);
 
   // write header
   header.writeUInt32LE(magic, 0);
   header.writeFloatLE(info.time, 4);
-  header.writeDoubleLE(info.political_capital, 8);
-  header.writeDoubleLE(info.funds, 16);
-  header.writeInt32LE(info.region_counts, 24);
+  header.writeInt32LE(info.expansionPnts, 8);
+  header.writeDoubleLE(info.political_capital, 12);
+  header.writeDoubleLE(info.funds, 20);
+  header.writeInt32LE(info.region_counts, 28);
   // console.log(header);
   writer.write(header);
   return header;

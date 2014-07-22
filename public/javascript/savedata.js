@@ -30,6 +30,7 @@ function getCookie(cname) {
   var regions_events = null;
   var upgrades_bases = null;
   var savefile = null;
+  var gametime = 0;
 
   // toggleable checkbox
   $.fn.toggleable = function () {
@@ -106,8 +107,6 @@ function getCookie(cname) {
           // truncating to 2 decimal
           var val = roundToTwo(parseFloat($(this).val()));
           $(this).val(val);
-          if (val > parseFloat($("#gametime").val()))
-            $("#gametime").val(val);
         }
 
       });
@@ -406,6 +405,10 @@ function getCookie(cname) {
 
       // find parent for easy row moving
       var myself = $(this).parents("tr");
+      // update gametime
+      var val = parseFloat($(this).val());
+      if (val > parseFloat($("#gametime").val()))
+      $("#gametime").val(val);
       
       // try to move up in table
       var my_prev = myself.prev();
@@ -477,7 +480,7 @@ function getCookie(cname) {
   }
 
   var NewHistoryRecord = function(key, _time, _stats) {
-    var time = _time || parseInt($("#gametime").val());
+    var time = _time || parseFloat($("#gametime").val());
     var stats = _stats;
     if (_stats == null)
        stats = true;
@@ -523,6 +526,7 @@ function getCookie(cname) {
     console.log("exporting json");
     var save_info = {
       'time' : parseFloat($("#gametime").val()),
+      'expansionPnts' : parseInt($("#expansionPnts").val()),
       'political_capital' : parseFloat($("#political_capital").val()),
       'funds' : parseFloat($("#funds").val()),
       'region_counts' : info.region_counts,
@@ -682,6 +686,13 @@ function getCookie(cname) {
 
     $("#save").click(function () {
       $(this).save();
+    });
+
+    // // blur for history scores
+    // $(".table-history .scores").(function () {
+    // });
+    $("#gametime").change(function() {
+      gametime = parseFloat($("#gametime").val());
     });
   }
 

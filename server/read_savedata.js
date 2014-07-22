@@ -6,6 +6,7 @@ var packet = require('packet');
 var parser = packet.createParser();
 parser.packet("header", "l32 => magic, \
                          b32f => time, \
+                         b32f => expansionPnts, \
                          b64f => political_capital, \
                          b64f => funds, \
                          l32 => region_counts");
