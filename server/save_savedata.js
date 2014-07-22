@@ -58,7 +58,7 @@ function writeHeader(writer, info) {
   // write header
   header.writeUInt32LE(magic, 0);
   header.writeFloatLE(info.time, 4);
-  header.writeInt32LE(info.expansionPnts, 8);
+  header.writeFloatLE(info.expansionPnts, 8);
   header.writeDoubleLE(info.political_capital, 12);
   header.writeDoubleLE(info.funds, 20);
   header.writeInt32LE(info.region_counts, 28);
