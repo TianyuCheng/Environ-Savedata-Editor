@@ -12,7 +12,6 @@ function setCookie(cname, cvalue, exdays) {
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
-    console.log(ca);
     for(var i=0; i<ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1);
@@ -23,6 +22,7 @@ function getCookie(cname) {
 
 (function ( $ ) {
 
+  var regions_dict = null;
   var bases_dict = null;
   var events_dict = null;
   var upgrades_dict = null;
@@ -30,7 +30,10 @@ function getCookie(cname) {
   var regions_events = null;
   var upgrades_bases = null;
   var savefile = null;
+  var calcCycles = 0;
   var gametime = 0;
+
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   // toggleable checkbox
   $.fn.toggleable = function () {
@@ -185,6 +188,8 @@ function getCookie(cname) {
       var base_table = $(this).find(".table-bases");
       var upgrades_table = $(this).find(".table-upgrades");
 
+      var chart = $(this).find(".bars_chart");
+
       toggler.css("cursor", "pointer");
       toggler.click(function(){
         show = !show;
@@ -195,11 +200,13 @@ function getCookie(cname) {
             li.addClass("pure-menu-selected");
             table = table.not(".table-upgrades");
             table.slideDown();
+            chart.slideDown();
         }
         else 
         {
             li.removeClass("pure-menu-selected");
             table.slideUp();
+            chart.slideUp();
         }
       });
 
@@ -218,7 +225,7 @@ function getCookie(cname) {
             table.animate({
               "width" : "toggle",
               "height" : "toggle",
-              "opacity" : 0
+              "opacity" : "toggle"
             }, 500);
           }
           else          
@@ -228,7 +235,7 @@ function getCookie(cname) {
             table.animate({
               "width" : "toggle",
               "height" : "toggle",
-              "opacity" : 1
+              "opacity" : "toggle"
             }, 500);
           }
         });
@@ -524,9 +531,11 @@ function getCookie(cname) {
   // core function for saving data into json and passing to backend
   $.fn.save = function () {
     console.log("exporting json");
+    calcCycles = parseInt($("#calcCycles").val());
     var save_info = {
       'time' : parseFloat($("#gametime").val()),
       'expansionPnts' : parseInt($("#expansionPnts").val()),
+      'calcCycles' : calcCycles,
       'political_capital' : parseFloat($("#political_capital").val()),
       'funds' : parseFloat($("#funds").val()),
       'region_counts' : info.region_counts,
@@ -565,7 +574,9 @@ function getCookie(cname) {
         'id' : parseInt(region_id),
         'active' : $("#region-" + region_id + "-status").prop("checked"),
         'scores' : scores,
-        'history' : history
+        'history' : history,
+        'environ_bars': region.environ_bars,
+        'economy_bars': region.economy_bars,
       };
 
       save_info['regions'][region_id] = region_info;
@@ -626,11 +637,68 @@ function getCookie(cname) {
     return save_info;
   }
 
+  $.fn.chartify = function (id) {
+    //setting up xAxis
+    calcCycles = parseInt($("#calcCycles").val());
+    var chronicle = [];
+    var year_nums = Math.floor(calcCycles / 12);
+    var month_nums = calcCycles % 12;
+    var startYear = 2030;
+    for (var i = 0; i < year_nums; i++) {
+      for (var j = 0; j < 12; j++) 
+        chronicle.push( startYear + " " + months[j]);
+      startYear++;
+    }
+
+    for (var i = 0; i < month_nums; i++)
+      chronicle.push(startYear + " " + months[i]);
+
+    $(this).highcharts({
+          title: {
+            text: regions_dict[id] + "'s Economy and Environment",
+            x: -20 //center
+          },
+          subtitle: {
+            text: 'Data Chart',
+            x: -20
+          },
+          xAxis: {
+            categories: chronicle
+          },
+          yAxis: {
+            title: {
+                text: 'Economy/Environment'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle',
+          borderWidth: 0
+        },
+        series: [{
+          name: 'Economy',
+          data: savefile.regions[id].economy_bars
+        }, {
+          name: 'Environment',
+          data: savefile.regions[id].environ_bars
+        }]
+      });
+  }
 
   $.fn._start = function (info, nodes_dict) {
 
     // retain global copies
     savefile = info;
+    regions_dict = nodes_dict.regions_dict;
     bases_dict = nodes_dict.bases_dict;
     events_dict = nodes_dict.events_dict;
     upgrades_dict = nodes_dict.upgrades_dict;
@@ -694,6 +762,11 @@ function getCookie(cname) {
     $("#gametime").change(function() {
       gametime = parseFloat($("#gametime").val());
     });
+
+    // set up the graphs
+    for (var id = 0; id < savefile.region_counts; id++) {
+      $("#region-" + id).find(".bars_chart").chartify(id);
+    }
   }
 
 }(jQuery));

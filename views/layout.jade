@@ -19,7 +19,8 @@ html
             li
               a(href='/') Home
             li
-              a(href='/savedata') Save Data
+              a(id="savedata", href='/savedata') Save Data
+              block savedata_menu
       #main
         block content
   script(src='/javascript/ui.js')

@@ -1,251 +1,288 @@
 extend layout
 
-block content
-    .header
-      h1 #{title} Inspector
-      h2 Developers' Tool for Save Data Editing
-    .content
-      h2.content-subhead Upload Your Save Data
-      form(class="pure-form pure-form-aligned", method="post", action="/savedata", enctype="multipart/form-data")
-          input(id="datafile", name="datafile", type="file", class="pure-button")
-          input(type="submit", class="pure-button pure-button-primary" value="upload") 
-
-      h2.content-subhead Global Variables
-      table.pure-table.pure-table-vertical
-        thead
-            tr
-              th Political Capital
-              th Total Funds
-              th Time in Game Play
-              th Expansion Points
-          tbody
-            tr
-              td 
-                input(type="number", id="political_capital", class="scores", min="0", step="100", value="#{info.political_capital}")
-              td 
-                input(type="number", id="funds", class="scores", min="0", step="100",  value="#{info.funds}")
-              td 
-                input(type="number", id="gametime", class="scores", min="0", value="#{info.time}")
-              td 
-                input(type="number", id="expansionPnts", class="scores", min="0", step="1", value="#{info.expansionPnts}")
-    
-      h2.content-subhead Regional Variables
-      table.pure-table.pure-table-striped#global_scores
-        thead
-            tr
-              th 
-                - for (var region_id in info.regions) {
-                    th= mappings.regions_dict[region_id]
-                - }
-          tbody
-            tr(id="region-status")
-              td Unlocked?
-                - for (var region_id in info.regions) {
-                    td(class="toggleable")
-                      - if (info.regions[region_id].active) {
-                          img(src="/images/icons/tick-icon.png")
-                          input(id="region-#{region_id}-status", type="checkbox", checked)
-                      - } else {
-                          img(src="/images/icons/cross-icon.png")
-                          input(id="region-#{region_id}-status", type="checkbox")
-                      - }
-                - }
-            tr(id="economy")
-              td Economy
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-economy", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EC}")
-                - }
-            tr(id="environment")
-              td Environment
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-environment", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EN}")
-                - }
-            tr(id="technology")
-              td Technology
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-technology", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].TECH}")
-                - }
-            tr(id="green-sentiment")
-              td Green Sentiment
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-green-sentiment", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GREEN}")
-                - }
-            tr(id="gross-domestic-product")
-              td GDP
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-gross-domestic-product", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GDP}")
-                - }
-            tr(id="income-equality")
-              td Income Equality
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-income-equality", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EQ}")
-                - }
-            tr(id="purchasing-power")
-              td Purchasing Power
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-purchasing-power", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].PP}")
-                - }
-            tr(id="donations")
-              td Donations
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-donations", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].DONATION}")
-                - }
-            tr(id="CO2-emission")
-              td CO2 Emission
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-co2-emission", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].CO2}")
-                - }
-            tr(id="air-pollution")
-              td Air Pollution
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-air-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].AP}")
-                - }
-            tr(id="water-pollution")
-              td Water Pollution
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-water-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].WP}")
-                - }
-            tr(id="land-pollution")
-              td Land Pollution
-                - for (var region_id in info.regions) {
-                  td 
-                    input(id="region-#{region_id}-land-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].LP}")
-                - }
-
-
-      h2.content-subhead Regional Information
-      - for (var region_id in info.regions) {
-        - if (region_id == 0) continue;
-          div.clear(style="clear:both")
-          div(class="region-info", id="region-#{region_id}")
-            h2.content-subhead(class="menu-toggle")= mappings.regions_dict[region_id]
-            .pure-menu.pure-menu-open.pure-menu-horizontal
-              ul(class="region-menu")
-                li.pure-menu-selected
-                  a(href='javascript:void(0);', class="menu-option", rel=".table-bases") Bases
-                li(style="display: none;")
-                  a(href='javascript:void(0);', class="menu-option", rel=".table-upgrades") Upgrades
-                li.pure-menu-selected
-                  a(href='javascript:void(0);', class="menu-option", rel=".table-events") Events
-                li.pure-menu-selected
-                  a(href='javascript:void(0);', class="menu-option", rel=".table-history") History
-
-            div.horizontal-container
-
-              div.table-bases
-                h4.content-subhead.small Bases
-                table.pure-table.pure-table-striped
-                  thead
-                    tr
-                      th(class="hide")= "Key"
-                      th= "Title"
-                      th= "Status"
-                      th= "Location"
-                    tbody
-                      - var bases = mappings.regions_bases[region_id]
-                      - for (var index in bases) {
-                        - var base = bases[index]
-                        tr(class="#{base.key}")
-                          td(class="key hide")= base.key
-                          td(class="title")= mappings.bases_dict[base.key]
-                          td(class="status toggleable")
-                            input(type="checkbox")
-                            img(src="/images/icons/cross-icon.png")
-                          td(class="location")
-                            input(type="text", value="(#{base.x}, #{base.y})", class="coordinates")
-                      - }
-
-              div.table-upgrades
-                h4.content-subhead.small Upgrades
-                table.pure-table.pure-table-striped
-                  thead
-                    tr
-                      th(class="hide")= "Key"
-                      th= "Title"
-                      th= "Status"
-                    tbody
-                      - var bases = mappings.regions_bases[region_id]
-                      - for (var i in bases) {
-                          - var base = bases[i];
-                          - var upgrades = mappings.bases_upgrades[base.key];
-                          - for (var index in upgrades) {
-                            - var upgrade = upgrades[index]
-                              tr(class="#{upgrade.key}")
-                                td(class="key hide")= upgrade.key
-                                td(class="title")= mappings.upgrades_dict[upgrade.key]
-                                td(class="status toggleable")
-                                  input(type="checkbox")
-                                  img(src="/images/icons/cross-icon.png")
-                          - }
-                      - }
-
-
-              div.table-events
-                h4.content-subhead.small Events
-                table.pure-table.pure-table-striped
-                  thead
-                    tr
-                      th(class="hide")= "Key"
-                      th= "Title"
-                      th= "Status"
-                      th= "Location"
-                    tbody
-                      - var events = mappings.regions_events[region_id]
-                      - for (var index in events) {
-                        - var event = events[index]
-                        tr(class="#{event.key}")
-                          td(class="key hide")= event.key
-                          td(class="title")= mappings.events_dict[event.key]
-                          td(class="status toggleable")
-                            input(type="checkbox")
-                            img(src="/images/icons/cross-icon.png")
-                          td(class="location")
-                            input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
-                      - }
-              div.table-history 
-                h4.content-subhead.small History &nbsp;
-                  i.fa.fa-plus.add-history
-                table.pure-table.pure-table-striped
-                  thead
-                    tr
-                      th= "Time"
-                      th= "Status"
-                      th(class="hide")= "Key"
-                      th= "Title"
-                      th= ""
-                    tbody
-                      // -|| dynamicall loaded with javascript
+block savedata_menu
+  div.submenu
+    a(class="subitem", href='#variables') Variables
+    a(class="subitem", href='#regions') Regions
+    div.submenu
+      - for (var id in info.regions) {
+        - var region_id = info.regions[id].region_id;
+          a(class="subitem", href='#region-#{region_id}')= mappings.regions_dict[region_id]
       - }
 
-      h2.content-subhead 
-      form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
-        input(id="save", name="save", type="button", size="40", class="pure-button pure-button-primary", value="save", style="float: left;")
-        a(id="file-downloader", href="#", download="savedata.dat", class="pure-button disabled") Download
-        div(id="status-hint", class="hide")
-        div(style="clear: both;")
+block content
+  .header
+    h1 #{title} Inspector
+    h2 Developers' Tool for Save Data Editing
+  .content
+    h2.content-subhead Upload Your Save Data
+    form(class="pure-form pure-form-aligned", method="post", action="/savedata", enctype="multipart/form-data")
+        input(id="datafile", name="datafile", type="file", class="pure-button")
+        input(type="submit", class="pure-button pure-button-primary" value="upload") 
+
+    h2.content-subhead Global Variables
+    table.pure-table.pure-table-vertical
+      thead
+          tr
+            th Political Capital
+            th Total Funds
+            th Expansion Points
+            th Time in Game Play
+            th Calculation Cycles
+        tbody
+          tr
+            td 
+              input(type="number", id="political_capital", class="scores", min="0", step="100", value="#{info.political_capital}")
+            td 
+              input(type="number", id="funds", class="scores", min="0", step="100",  value="#{info.funds}")
+            td 
+              input(type="number", id="expansionPnts", class="scores", min="0", step="1", value="#{info.expansionPnts}")
+            td 
+              input(type="number", id="gametime", class="scores", min="0", value="#{info.time}")
+            td 
+              input(type="number", id="calcCycles", class="scores", min="0", step="1", value="#{info.calcCycles}")
+  
+    h2.content-subhead#variables Regional Variables
+    table.pure-table.pure-table-striped#global_scores
+      thead
+          tr
+            th 
+              - for (var region_id in info.regions) {
+                  th= mappings.regions_dict[region_id]
+              - }
+        tbody
+          tr(id="region-status")
+            td Unlocked?
+              - for (var region_id in info.regions) {
+                  td(class="toggleable")
+                    - if (info.regions[region_id].active) {
+                        img(src="/images/icons/tick-icon.png")
+                        input(id="region-#{region_id}-status", type="checkbox", checked)
+                    - } else {
+                        img(src="/images/icons/cross-icon.png")
+                        input(id="region-#{region_id}-status", type="checkbox")
+                    - }
+              - }
+          tr(id="economy")
+            td Economy
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-economy", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EC}")
+              - }
+          tr(id="environment")
+            td Environment
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-environment", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EN}")
+              - }
+          tr(id="technology")
+            td Technology
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-technology", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].TECH}")
+              - }
+          tr(id="green-sentiment")
+            td Green Sentiment
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-green-sentiment", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GREEN}")
+              - }
+          tr(id="gross-domestic-product")
+            td GDP
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-gross-domestic-product", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GDP}")
+              - }
+          tr(id="income-equality")
+            td Income Equality
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-income-equality", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EQ}")
+              - }
+          tr(id="purchasing-power")
+            td Purchasing Power
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-purchasing-power", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].PP}")
+              - }
+          tr(id="donations")
+            td Donations
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-donations", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].DONATION}")
+              - }
+          tr(id="CO2-emission")
+            td CO2 Emission
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-co2-emission", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].CO2}")
+              - }
+          tr(id="air-pollution")
+            td Air Pollution
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-air-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].AP}")
+              - }
+          tr(id="water-pollution")
+            td Water Pollution
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-water-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].WP}")
+              - }
+          tr(id="land-pollution")
+            td Land Pollution
+              - for (var region_id in info.regions) {
+                td 
+                  input(id="region-#{region_id}-land-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].LP}")
+              - }
 
 
+    h2.content-subhead#regions Regional Information
+    - for (var region_id in info.regions) {
+        div.clear(style="clear:both")
+        div(class="region-info", id="region-#{region_id}")
+          h2.content-subhead(class="menu-toggle")= mappings.regions_dict[region_id]
+          .pure-menu.pure-menu-open.pure-menu-horizontal
+            ul(class="region-menu")
+              li.pure-menu-selected
+                a(href='javascript:void(0);', class="menu-option", rel=".table-bases") Bases
+              li(style="display: none;")
+                a(href='javascript:void(0);', class="menu-option", rel=".table-upgrades") Upgrades
+              li.pure-menu-selected
+                a(href='javascript:void(0);', class="menu-option", rel=".table-events") Events
+              li.pure-menu-selected
+                a(href='javascript:void(0);', class="menu-option", rel=".table-history") History
+              li.pure-menu-selectedHistory
+                a(href='javascript:void(0);', class="menu-option", rel=".bars_chart") Chart
 
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src='/javascript/savedata.js')
-    script(type='text/javascript').
-      var mappings = !{JSON.stringify(mappings)};
-      var info = !{JSON.stringify(info)};
-      $(this)._start(info, mappings);
-      $(".toggleable").toggleable();
-      $(".scores").scores();
-      $(".region-info").menuify(mappings);
-      $(".region-info").historify(info.regions, mappings);
-      $(".table-history tbody tr").sorted();
-      $(this)._end();
+          div.horizontal-container
+
+            div.table-bases
+              h4.content-subhead.small Bases
+              table.pure-table.pure-table-striped
+                thead
+                  tr
+                    th(class="hide")= "Key"
+                    th= "Title"
+                    th= "Status"
+                    th= "Location"
+                  tbody
+                    - var bases = mappings.regions_bases[region_id]
+                    - for (var index in bases) {
+                      - var base = bases[index]
+                      tr(class="#{base.key}")
+                        td(class="key hide")= base.key
+                        td(class="title")= mappings.bases_dict[base.key]
+                        td(class="status toggleable")
+                          input(type="checkbox")
+                          img(src="/images/icons/cross-icon.png")
+                        td(class="location")
+                          input(type="text", value="(#{base.x}, #{base.y})", class="coordinates")
+                    - }
+
+            div.table-upgrades
+              h4.content-subhead.small Upgrades
+              table.pure-table.pure-table-striped
+                thead
+                  tr
+                    th(class="hide")= "Key"
+                    th= "Title"
+                    th= "Status"
+                  tbody
+                    - var bases = mappings.regions_bases[region_id]
+                    - for (var i in bases) {
+                        - var base = bases[i];
+                        - var upgrades = mappings.bases_upgrades[base.key];
+                        - for (var index in upgrades) {
+                          - var upgrade = upgrades[index]
+                            tr(class="#{upgrade.key}")
+                              td(class="key hide")= upgrade.key
+                              td(class="title")= mappings.upgrades_dict[upgrade.key]
+                              td(class="status toggleable")
+                                input(type="checkbox")
+                                img(src="/images/icons/cross-icon.png")
+                        - }
+                    - }
+
+
+            div.table-events
+              h4.content-subhead.small Events
+              table.pure-table.pure-table-striped
+                thead
+                  tr
+                    th(class="hide")= "Key"
+                    th= "Title"
+                    th= "Status"
+                    th= "Location"
+                  tbody
+                    - var events = mappings.regions_events[region_id]
+                    - for (var index in events) {
+                      - var event = events[index]
+                      tr(class="#{event.key}")
+                        td(class="key hide")= event.key
+                        td(class="title")= mappings.events_dict[event.key]
+                        td(class="status toggleable")
+                          input(type="checkbox")
+                          img(src="/images/icons/cross-icon.png")
+                        td(class="location")
+                          input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
+                    - }
+            div.table-history 
+              h4.content-subhead.small History &nbsp;
+                i.fa.fa-plus.add-history
+              table.pure-table.pure-table-striped
+                thead
+                  tr
+                    th= "Time"
+                    th= "Status"
+                    th(class="hide")= "Key"
+                    th= "Title"
+                    th= ""
+                  tbody
+                    // -|| dynamicall loaded with javascript
+          div.bars_chart(style="width:1200px; height: 500px;")
+    - }
+
+    h2.content-subhead 
+    form(id="save-form", name="save-form", class="pure-form pure-form-aligned")
+      input(id="save", name="save", type="button", size="40", class="pure-button pure-button-primary", value="save", style="float: left;")
+      a(id="file-downloader", href="#", download="savedata.dat", class="pure-button disabled") Download
+      div(id="status-hint", class="hide")
+      div(style="clear: both;")
+
+
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+  script(src='/javascript/highcharts.js', charset='utf-8')
+  script(src='/javascript/savedata.js')
+  script(type='text/javascript').
+    var mappings = !{JSON.stringify(mappings)};
+    var info = !{JSON.stringify(info)};
+    $(this)._start(info, mappings);
+    $(".toggleable").toggleable();
+    $(".scores").scores();
+    $(".region-info").menuify(mappings);
+    $(".region-info").historify(info.regions, mappings);
+    $(".table-history tbody tr").sorted();
+    $(this)._end();
+    
+    $("#savedata").attr("href", "javascript:void(0);");
+    $("#savedata").click(function () {
+      $(this).parent().children('.submenu').animate({
+        "height" : "toggle",
+        "opacity" : "toggle"
+      }, 500)
+    });
+
+    $(".subitem").click(function(e) {
+      var $anchor = $(this).attr("href");
+      var $hrefStart = $anchor.substr(0, 1);
+      console.log($anchor)
+      if ( $hrefStart == "#" ) {
+        $('html,body').animate({
+          scrollTop: $($anchor).offset().top
+        }, 500);
+        e.preventDefault(); 
+      } else {
+        window.location.href = $anchor;
+      }
+    });

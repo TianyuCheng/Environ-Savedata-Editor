@@ -1,101 +1,87 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var packet = require('packet');
 
-var parser = packet.createParser();
-parser.packet("header", "l32 => magic, \
-                         b32f => time, \
-                         b32f => expansionPnts, \
-                         b64f => political_capital, \
-                         b64f => funds, \
-                         l32 => region_counts");
+function readRegionInfo(data, info, offset) {
+  var region_info = {};
+  var _offset = offset;
+  region_info['region_id'] = data.readInt32LE(_offset += 4);
+  region_info['active'] = Boolean(data.readInt32LE(_offset += 4));
+  region_info['economy_bars'] = new Array();
+  region_info['environ_bars'] = new Array();
+  region_info['history'] = {};
 
-parser.packet("region_info", "l32 => region_id, \
-                              l32 => active, \
-                              b32f => FUNDS, b32f => PC, \
-                              b32f => EC, b32f => EN, \
-                              b32f => CO2, b32f => AP, b32f => WP, b32f => LP, \
-                              b32f => GDP, b32f => EQ, b32f => PP, \
-                              b32f => TECH, b32f => GREEN, \
-                              b32f => DONATION,\
-                              l32 => num_nodes_in_history");
+  // _offset -= 4;
+  // scores
+  region_info['FUNDS']    = data.readFloatLE(_offset += 4);
+  region_info['PC']       = data.readFloatLE(_offset += 4);
+  region_info['EC']       = data.readFloatLE(_offset += 4);
+  region_info['EN']       = data.readFloatLE(_offset += 4);
+  region_info['CO2']      = data.readFloatLE(_offset += 4);
+  region_info['AP']       = data.readFloatLE(_offset += 4);
+  region_info['WP']       = data.readFloatLE(_offset += 4);
+  region_info['LP']       = data.readFloatLE(_offset += 4);
+  region_info['GDP']      = data.readFloatLE(_offset += 4);
+  region_info['EQ']       = data.readFloatLE(_offset += 4);
+  region_info['PP']       = data.readFloatLE(_offset += 4);
+  region_info['TECH']     = data.readFloatLE(_offset += 4);
+  region_info['GREEN']    = data.readFloatLE(_offset += 4);
+  region_info['DONATION'] = data.readFloatLE(_offset += 4);
+  
+  // read economy bars
+  for (var i = 0; i < info.calcCycles; i++) 
+    region_info.economy_bars.push(data.readFloatLE(_offset += 4));
 
-parser.packet("record", "b8 => length, b8[8]z|utf8() => key, b32f => activated_time");
+  // read economy bars
+  for (var i = 0; i < info.calcCycles; i++) 
+    region_info.environ_bars.push(data.readFloatLE(_offset += 4));
 
-function readHistoryRecord(region, parser, callback) {
-  // extract history record
-  parser.extract("record", function (record) {
-    var key = record.key.replace(/\s+/g, ""); // strip white spaces
-    var time = record.activated_time.toFixed(2) + "";
-    region.history[time] = key;
-    callback();
-  });
+  // // read history 
+  var num_nodes_in_history = data.readInt32LE(_offset += 4);
+  // console.log (num_nodes_in_history);
+  for (var i = 0; i < num_nodes_in_history; i++) {
+    _offset += 1; // skip string length
+    var node_key = data.toString('utf-8', _offset, _offset + 8); 
+    var timestamp = data.readFloatLE(_offset += 8);
+    _offset += 4;
+    region_info.history[timestamp] = node_key;
+  }
+  info.regions.push(region_info);
+  return _offset;
 }
 
-function readRegionInfo(header, parser, callback) {
-  // extract regional info
-  parser.extract("region_info", function (region_info) {
-    // console.log(region_info);
-    region_info['history'] = {};
-    // history counter
-    var count = 0;
-    var readNextRecord = function () {
-      count++;
-      if (count < region_info.num_nodes_in_history) {
-        readHistoryRecord(region_info, parser, readNextRecord);
-      }
-      else {
-        // call callback to go to next region if there is no records left
-        header.regions.push(region_info);
-        callback(); 
-      }
-    }
-    // call readHistory 
-    if (region_info.num_nodes_in_history <= 0) {
-      header.regions.push(region_info);
-      callback();
-    }
-    else {
-      readHistoryRecord(region_info, parser, readNextRecord);
-    }
-  }); // end of extract header
-}
+function readSaveData (req, res, filename, mappings, callback) {
 
-function readSaveData (req, res, filename, mappings, callback)
-{
-  console.log (filename);
+  // console.log (filename);
   // create a read stream
   var reader = fs.createReadStream(filename);
 
   reader.on('data', function (data) {
-    // extract header
-    parser.extract("header", function (header) {
-      // console.log(header);
-      header['regions'] = new Array();
-      // region counter
-      var count = 0;
-      // callback function
-      var readNextRegion = function () {
-        count++;
-        if (count < header.region_counts)
-          readRegionInfo(header, parser, readNextRegion);
-        else {
-          if (callback != null) callback(filename);
-          // console.log (header);
-          return res.render('savedata', {
-            title : 'Environ',
-            info : header,
-            mappings : mappings
-          });
-        }
-      };
-      // call region parser
-      readRegionInfo(header, parser, readNextRegion);
-    }); // end of extract header
+    // console.log(data);
+    var info = {};
+    info['magic'] = data.readInt32LE(0);
+    info['time'] = data.readFloatLE(4);
+    info['expansionPnts'] = data.readFloatLE(8);
+    info['calcCycles'] = data.readInt32LE(12);
+    info['political_capital'] = data.readDoubleLE(16);
+    info['funds'] = data.readDoubleLE(24);
+    info['region_counts'] = data.readInt32LE(32);
+    info['regions'] = new Array();
 
-    parser.parse(data);
+    var offset = 32;
+    for (var i = 0; i < info.region_counts; i++) {
+      offset = readRegionInfo(data, info, offset);
+    }
+    // console.log(info);
+
+    if (callback != null) callback(filename);
+    return res.render('savedata', {
+      title : 'Environ',
+      info : info,
+      mappings : mappings
+    });
   });
 }
 
 exports.read_savedata = readSaveData;
+// readSaveData(null, null, "savedata.dat", null, null);
