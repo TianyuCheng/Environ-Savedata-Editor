@@ -692,44 +692,15 @@ function getCookie(cname) {
           data: savefile.regions[id].economy_bars,
           point: {
             events: {
-              click: function(e) {
-                // get click coordinate
-                var evt = e ? e:window.event;
-                var clickX=0, clickY=0;
-
-                if ((evt.clientX || evt.clientY) &&
-                    document.body &&
-                    document.body.scrollLeft!=null) {
-                      clickX = evt.clientX + document.body.scrollLeft;
-                      clickY = evt.clientY + document.body.scrollTop;
-                    }
-                if ((evt.clientX || evt.clientY) &&
-                    document.compatMode=='CSS1Compat' && 
-                    document.documentElement && 
-                    document.documentElement.scrollLeft!=null) {
-                      clickX = evt.clientX + document.documentElement.scrollLeft;
-                      clickY = evt.clientY + document.documentElement.scrollTop;
-                    }
-                if (evt.pageX || evt.pageY) {
-                  clickX = evt.pageX;
-                  clickY = evt.pageY;
-                }
-
-                // create popup
-                var popup = $('<div style="width:200px;height:100px;"><div>Change the number</div><input type="number" class="scores" val="' + $(this).y + '"/><div>');
+              click: function() {
+                // alert ('Category: '+ this.x+', value: '+ this.y);
+                var popup = $('<div style="width:200px;height:100px;"><input type="number" class="scores"/><div>');
                 popup.find(".scores").scores();
                 popup.css({
                   "position": "absolute",
-                  "top": (clickY - 20)+ "px",
-                  "left": (clickX - 20) + "px",
-                  "background": "rgba(255,255,255,0.5)",
-                  "border": "1px solid black"
+                  "top": "100px",
+                  "left": "100px"
                 });
-                popup.focusout(function() {
-                  popup.remove();
-                });
-                popup.appendTo($("body"));
-                popup.focus();
               }
             }
           }
