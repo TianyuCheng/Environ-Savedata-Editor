@@ -16,6 +16,13 @@ body {
   background: transparent;
 }
 
+.transparent {
+  width: 100px;
+  border-width: 0;
+  background: transparent;
+  text-align: center;
+}
+
 .coordinates {
   width: 80px;
   border-width: 0;

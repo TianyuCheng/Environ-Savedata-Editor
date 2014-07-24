@@ -40,7 +40,7 @@ block content
             td 
               input(type="number", id="gametime", class="scores", min="0", value="#{info.time}")
             td 
-              input(type="number", id="calcCycles", class="scores", min="0", step="1", value="#{info.calcCycles}")
+              input(type="number", id="calcCycles", class="transparent", value="#{info.calcCycles}", disabled)
   
     h2.content-subhead#variables Regional Variables
     table.pure-table.pure-table-striped#global_scores
@@ -253,6 +253,7 @@ block content
 
   script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
   script(src='/javascript/highcharts.js', charset='utf-8')
+  script(src='/javascript/draggable-points.js', charset='utf-8')
   script(src='/javascript/savedata.js')
   script(type='text/javascript').
     var mappings = !{JSON.stringify(mappings)};

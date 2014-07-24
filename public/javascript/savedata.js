@@ -321,6 +321,7 @@ function getCookie(cname) {
           
           default:
         }
+        console.log (timestamp);
         // add record into history
         var history_record = NewHistoryRecord(_key, timestamp);
         history_table.append(history_record);
@@ -679,7 +680,8 @@ function getCookie(cname) {
             }]
         },
         tooltip: {
-            valueSuffix: '%'
+            valueSuffix: '%',
+            yDecimals: 2
         },
         legend: {
           layout: 'vertical',
@@ -690,52 +692,31 @@ function getCookie(cname) {
         series: [{
           name: 'Economy',
           data: savefile.regions[id].economy_bars,
+          draggableY: true,
+          dragMinY: -100,
+          dragMaxY: 100,
+          cursor: 'ns-resize',
           point: {
             events: {
-              click: function(e) {
-                // get click coordinate
-                var evt = e ? e:window.event;
-                var clickX=0, clickY=0;
-
-                if ((evt.clientX || evt.clientY) &&
-                    document.body &&
-                    document.body.scrollLeft!=null) {
-                      clickX = evt.clientX + document.body.scrollLeft;
-                      clickY = evt.clientY + document.body.scrollTop;
-                    }
-                if ((evt.clientX || evt.clientY) &&
-                    document.compatMode=='CSS1Compat' && 
-                    document.documentElement && 
-                    document.documentElement.scrollLeft!=null) {
-                      clickX = evt.clientX + document.documentElement.scrollLeft;
-                      clickY = evt.clientY + document.documentElement.scrollTop;
-                    }
-                if (evt.pageX || evt.pageY) {
-                  clickX = evt.pageX;
-                  clickY = evt.pageY;
-                }
-
-                // create popup
-                var popup = $('<div style="width:200px;height:100px;"><div>Change the number</div><input type="number" class="scores" val="' + $(this).y + '"/><div>');
-                popup.find(".scores").scores();
-                popup.css({
-                  "position": "absolute",
-                  "top": (clickY - 20)+ "px",
-                  "left": (clickX - 20) + "px",
-                  "background": "rgba(255,255,255,0.5)",
-                  "border": "1px solid black"
-                });
-                popup.focusout(function() {
-                  popup.remove();
-                });
-                popup.appendTo($("body"));
-                popup.focus();
-              }
+              drop: function (e) {
+                savefile.regions[id].economy_bars[this.x] = this.y;
+              },
             }
           }
         }, {
           name: 'Environment',
-          data: savefile.regions[id].environ_bars
+          data: savefile.regions[id].environ_bars,
+          draggableY: true,
+          dragMinY: -100,
+          dragMaxY: 100,
+          cursor: 'ns-resize',
+          point: {
+            events: {
+              drop: function (e) {
+                savefile.regions[id].environ_bars[this.x] = this.y;
+              },
+            }
+          }
         }],
         credits: false
       });
@@ -803,17 +784,39 @@ function getCookie(cname) {
       $(this).save();
     });
 
-    // // blur for history scores
-    // $(".table-history .scores").(function () {
-    // });
-    $("#gametime").change(function() {
-      gametime = parseFloat($("#gametime").val());
-    });
-
     // set up the graphs
     for (var id = 0; id < savefile.region_counts; id++) {
       $("#region-" + id).find(".bars_chart").chartify(id);
     }
+
+    // // set up listener for game time 
+    // $("#gamtime").on("change", function () {
+    //   console.log ("game time changed");
+    //   gametime = parseFloat($("#gametime").val());
+    //   var temp = parseInt($("#calcCycles").val());
+    //   if (temp == calcCycles) return;
+    //   if (temp < calcCycles) {
+    //     for (var id = 0; id < savefile.region_counts; id++)  {
+    //       savefile.regions[id].economy_bars = savefile.regions[id].economy_bars.slice(0, temp);
+    //       savefile.regions[id].environ_bars = savefile.regions[id].environ_bars.slice(0, temp);
+    //
+    //       $("#region-" + id).find(".bars_chart").redraw();
+    //     }
+    //     calcCycles = temp;
+    //   }
+    //   else {
+    //     for (var id = 0; id < savefile.region_counts; id++)  {
+    //       var economy_bars = savefile.regions[id].economy_bars;
+    //       var environ_bars = savefile.regions[id].environ_bars;
+    //       for (var i = calcCycles; i < temp; i++) {
+    //         economy_bars.push(0);
+    //         environ_bars.push(0);
+    //       }
+    //       $("#region-" + id).find(".bars_chart").redraw();
+    //     }
+    //   }
+    //   $("#calcCycles").val(calcCycles);
+    // });
   }
 
 }(jQuery));

@@ -38,12 +38,11 @@ function readRegionInfo(data, info, offset) {
 
   // // read history 
   var num_nodes_in_history = data.readInt32LE(_offset += 4);
-  // console.log (num_nodes_in_history);
   for (var i = 0; i < num_nodes_in_history; i++) {
-    _offset += 1; // skip string length
-    var node_key = data.toString('utf-8', _offset, _offset + 8); 
-    var timestamp = data.readFloatLE(_offset += 8);
-    _offset += 4;
+    var length = data.readInt8(_offset + 4);
+    var node_key = data.toString('utf-8', _offset + 5, _offset + 9); 
+    var timestamp = data.readFloatLE(_offset + 13);
+    _offset += 13;
     region_info.history[timestamp] = node_key;
   }
   info.regions.push(region_info);
@@ -84,4 +83,3 @@ function readSaveData (req, res, filename, mappings, callback) {
 }
 
 exports.read_savedata = readSaveData;
-// readSaveData(null, null, "savedata.dat", null, null);

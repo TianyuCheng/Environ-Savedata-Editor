@@ -10,7 +10,6 @@
     "jade": "*",
     "stylus": "*",
     "connect-multiparty": "*",
-    "packet": "*",
     "xml2js": "*",
     "async": "*",
     "method-override": "*",
