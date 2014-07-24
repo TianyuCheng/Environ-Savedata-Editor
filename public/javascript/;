@@ -416,7 +416,6 @@ function getCookie(cname) {
       var val = parseFloat($(this).val());
       if (val > parseFloat($("#gametime").val()))
       $("#gametime").val(val);
-      document.getElementById("gametime").onchange();
       
       // try to move up in table
       var my_prev = myself.prev();
@@ -806,16 +805,17 @@ function getCookie(cname) {
         for (var id = 0; id < savefile.region_counts; id++)  {
           var economy_bars = savefile.regions[id].economy_bars;
           var environ_bars = savefile.regions[id].environ_bars;
-          var economy_score = economy_bars[economy_bars.length - 1];
-          var environ_score = environ_bars[environ_bars.length - 1];
           for (var i = calcCycles; i <= temp; i++) {
-            economy_bars.push(economy_score);
-            environ_bars.push(environ_score);
+            economy_bars.push(0);
+            environ_bars.push(0);
           }
         }
       }
 
       for (var id = 0; id < savefile.region_counts; id++) {
+        // console.log (charts[id]);
+        // charts[id].redraw();
+        // // $("#region-" + id).redraw();
         $("#region-" + id).find(".bars_chart").chartify(id);
       }
     }
