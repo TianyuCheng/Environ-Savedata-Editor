@@ -790,34 +790,36 @@ function getCookie(cname) {
     }
 
     document.getElementById("gametime").onchange = function () {
-      gametime = parseFloat($("#gametime").val());
-      var temp = Math.floor(gametime / (13.846153846));
-      $("#calcCycles").val(temp);
-      if (temp == calcCycles) return;
-      if (temp < calcCycles) {
-        for (var id = 0; id < savefile.region_counts; id++)  {
-          savefile.regions[id].economy_bars = savefile.regions[id].economy_bars.slice(0, temp);
-          savefile.regions[id].environ_bars = savefile.regions[id].environ_bars.slice(0, temp);
+      setTimeout(function () {
+        gametime = parseFloat($("#gametime").val());
+        var temp = Math.floor(gametime / (13.846153846));
+        $("#calcCycles").val(temp);
+        if (temp == calcCycles) return;
+        if (temp < calcCycles) {
+          for (var id = 0; id < savefile.region_counts; id++)  {
+            savefile.regions[id].economy_bars = savefile.regions[id].economy_bars.slice(0, temp);
+            savefile.regions[id].environ_bars = savefile.regions[id].environ_bars.slice(0, temp);
 
+          }
+          calcCycles = temp;
         }
-        calcCycles = temp;
-      }
-      else {
-        for (var id = 0; id < savefile.region_counts; id++)  {
-          var economy_bars = savefile.regions[id].economy_bars;
-          var environ_bars = savefile.regions[id].environ_bars;
-          var economy_score = economy_bars[economy_bars.length - 1];
-          var environ_score = environ_bars[environ_bars.length - 1];
-          for (var i = calcCycles; i <= temp; i++) {
-            economy_bars.push(economy_score);
-            environ_bars.push(environ_score);
+        else {
+          for (var id = 0; id < savefile.region_counts; id++)  {
+            var economy_bars = savefile.regions[id].economy_bars;
+            var environ_bars = savefile.regions[id].environ_bars;
+            var economy_score = economy_bars[economy_bars.length - 1];
+            var environ_score = environ_bars[environ_bars.length - 1];
+            for (var i = calcCycles; i <= temp; i++) {
+              economy_bars.push(economy_score);
+              environ_bars.push(environ_score);
+            }
           }
         }
-      }
 
       for (var id = 0; id < savefile.region_counts; id++) {
         $("#region-" + id).find(".bars_chart").chartify(id);
       }
+      }, 100);
     }
 
   }
