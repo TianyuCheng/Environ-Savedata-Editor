@@ -20,6 +20,12 @@ function getCookie(cname) {
     return null;
 }
 
+function zip(arrays) {
+    return arrays[0].map(function(_,i){
+        return arrays.map(function(array){return array[i]})
+    });
+}
+
 (function ( $ ) {
 
   var regions_dict = null;
@@ -32,9 +38,41 @@ function getCookie(cname) {
   var savefile = null;
   var calcCycles = 0;
   var gametime = 0;
-  var charts = {};
+  var charts = new Array();
+  
+  var chronicle = null;
 
-  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function getChronicleIndex(chronicle) {
+    gametime = parseFloat($("#gametime").val());
+    var temp = Math.floor(gametime / (13.846153846));
+    var year_nums = Math.floor(temp / 12);
+    var month_nums = temp % 12;
+    var currentYear = 2030;
+    var datetime = Date.UTC(currentYear + year_nums, month_nums);
+
+    var index = 0;
+    var latest = chronicle[chronicle.length - 1];
+    // if latest time > current time, no need to elongnate timeline
+    if (latest >= datetime) {
+      for (var i = 0; i < chronicle.length; i++) {
+        if (datetime < chronicle[i]) {
+          chronicle = chronicle.slice(0, i - 1);
+          chronicle.push(datetime);
+          index = i - 1;
+          break;
+        }
+      }
+    }
+    // if current time is greater than the latest time, directly push back
+    else {
+      index = chronicle.length + 1;
+      chronicle.push(datetime);
+    }
+
+    calcCycles = temp;
+    $("#calcCycles").val(temp);
+    return index;
+  }
 
   // toggleable checkbox
   $.fn.toggleable = function () {
@@ -641,22 +679,25 @@ function getCookie(cname) {
   $.fn.chartify = function (id) {
     //setting up xAxis
     calcCycles = parseInt($("#calcCycles").val());
-    var chronicle = [];
-    var year_nums = Math.floor(calcCycles / 12);
-    var month_nums = calcCycles % 12;
-    var startYear = 2030;
-    for (var i = 0; i < year_nums; i++) {
-      for (var j = 0; j < 12; j++) 
-        chronicle.push( startYear + " " + months[j]);
-      startYear++;
+    if (chronicle == null) {
+      var year_nums = Math.floor(calcCycles / 12);
+      var month_nums = calcCycles % 12;
+      var currentYear = 2030;
+      chronicle = new Array();
+      for (var i = 0; i < year_nums; i++) {
+        for (var j = 0; j < 12; j++)
+          chronicle.push(Date.UTC(currentYear, j));
+        currentYear++;
+      }
+      for (var i = 0; i < month_nums; i++)
+        chronicle.push(Date.UTC(currentYear, i));
     }
-
-    for (var i = 0; i < month_nums; i++)
-      chronicle.push(startYear + " " + months[i]);
-
-    charts[id] = $(this).highcharts({
+    // making charts
+    var container = $(".bars_chart")[id];
+    charts[id] = new Highcharts.StockChart({
           chart: {
-            type: 'spline'
+            type: 'spline',
+            renderTo: container,
           },
           title: {
             text: regions_dict[id] + "'s Economy and Environment",
@@ -667,7 +708,12 @@ function getCookie(cname) {
             x: -20
           },
           xAxis: {
-            categories: chronicle
+            // categories: chronicle
+            type: 'datetime',
+            title: {
+              text: 'Date'
+            },
+            ordinal: false
           },
           yAxis: {
             title: {
@@ -679,9 +725,30 @@ function getCookie(cname) {
                 color: '#808080'
             }]
         },
+        plotOptions: {
+          series: {
+            events: {
+              click: function(e) {
+                console.log (this.name);
+                console.log (this);
+              }
+            },
+            point: {
+              events: {
+                click: function() {
+                  console.log ('Date: ' + Highcharts.dateFormat('%Y-%m-%d',this.x) + ', value: ' + this.y);
+                }
+              }
+            }
+          }
+        },
         tooltip: {
             valueSuffix: '%',
-            yDecimals: 2
+            dateTimeLabelFormats: {
+              day: '%e. %b',
+              month: '%b \'%y',
+              year: '%Y'
+            }
         },
         legend: {
           layout: 'vertical',
@@ -691,32 +758,18 @@ function getCookie(cname) {
         },
         series: [{
           name: 'Economy',
-          data: savefile.regions[id].economy_bars,
+          data: zip([chronicle, savefile.regions[id].economy_bars]),
           draggableY: true,
           dragMinY: -100,
           dragMaxY: 100,
-          cursor: 'ns-resize',
-          point: {
-            events: {
-              drop: function (e) {
-                savefile.regions[id].economy_bars[this.x] = this.y;
-              },
-            }
-          }
+          cursor: 'ns-move',
         }, {
           name: 'Environment',
-          data: savefile.regions[id].environ_bars,
+          data: zip([chronicle, savefile.regions[id].environ_bars]),
           draggableY: true,
           dragMinY: -100,
           dragMaxY: 100,
-          cursor: 'ns-resize',
-          point: {
-            events: {
-              drop: function (e) {
-                savefile.regions[id].environ_bars[this.x] = this.y;
-              },
-            }
-          }
+          cursor: 'ns-move',
         }],
         credits: false
       });
@@ -791,37 +844,30 @@ function getCookie(cname) {
 
     document.getElementById("gametime").onchange = function () {
       setTimeout(function () {
-        gametime = parseFloat($("#gametime").val());
-        var temp = Math.floor(gametime / (13.846153846));
-        $("#calcCycles").val(temp);
-        if (temp == calcCycles) return;
-        if (temp < calcCycles) {
-          for (var id = 0; id < savefile.region_counts; id++)  {
-            savefile.regions[id].economy_bars = savefile.regions[id].economy_bars.slice(0, temp);
-            savefile.regions[id].environ_bars = savefile.regions[id].environ_bars.slice(0, temp);
-
+        var index = getChronicleIndex(chronicle);
+        for (var id = 0; id < savefile.region_counts; id++)  {
+          var economy_bars = savefile.regions[id].economy_bars;
+          var environ_bars = savefile.regions[id].environ_bars;
+          
+          if (index < economy_bars.length) {
+            economy_bars = economy_bars.slice(0, index + 1);
+            environ_bars = environ_bars.slice(0, index + 1);
           }
-          calcCycles = temp;
-        }
-        else {
-          for (var id = 0; id < savefile.region_counts; id++)  {
-            var economy_bars = savefile.regions[id].economy_bars;
-            var environ_bars = savefile.regions[id].environ_bars;
-            var economy_score = economy_bars[economy_bars.length - 1];
-            var environ_score = environ_bars[environ_bars.length - 1];
-            for (var i = calcCycles; i <= temp; i++) {
-              economy_bars.push(economy_score);
-              environ_bars.push(environ_score);
-            }
+          else 
+          {
+            economy_bars.push(economy_bars[economy_bars.length - 1]);
+            environ_bars.push(environ_bars[environ_bars.length - 1]);
           }
+
+          savefile.regions[id].economy_bars = economy_bars;
+          savefile.regions[id].environ_bars = environ_bars;
+
+          $("#region-" + id).find(".bars_chart").chartify(id);
+          // charts[id].redraw();
         }
-
-      for (var id = 0; id < savefile.region_counts; id++) {
-        $("#region-" + id).find(".bars_chart").chartify(id);
-      }
-      }, 100);
-    }
-
+    }, 100);
   }
+
+}
 
 }(jQuery));

@@ -240,7 +240,7 @@ block content
                     th= ""
                   tbody
                     // -|| dynamicall loaded with javascript
-          div.bars_chart(style="width:1200px; height: 500px;")
+          div.bars_chart(style="width:1200px; height: 500px;", id="chart_#{region_id}")
     - }
 
     h2.content-subhead 
@@ -252,7 +252,9 @@ block content
 
 
   script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-  script(src='/javascript/highcharts.js', charset='utf-8')
+  // script(src='/javascript/highcharts.js', charset='utf-8')
+  script(src='/javascript/highstock.js', charset='utf-8')
+  script(src='/javascript/highstocks-exporting.js', charset='utf-8')
   script(src='/javascript/draggable-points.js', charset='utf-8')
   script(src='/javascript/savedata.js')
   script(type='text/javascript').
