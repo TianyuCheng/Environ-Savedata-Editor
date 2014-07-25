@@ -729,15 +729,8 @@ function zip(arrays) {
           series: {
             events: {
               click: function(e) {
-                console.log (this.name);
-                console.log (this);
-              }
-            },
-            point: {
-              events: {
-                click: function() {
-                  console.log ('Date: ' + Highcharts.dateFormat('%Y-%m-%d',this.x) + ', value: ' + this.y);
-                }
+                // console.log (this.name);
+                // console.log (this);
               }
             }
           }
@@ -763,6 +756,13 @@ function zip(arrays) {
           dragMinY: -100,
           dragMaxY: 100,
           cursor: 'ns-move',
+          point: {
+            events: {
+              drop: function (e) {
+                savefile.regions[id].economy_bars[this.x] = this.y;
+              },
+            }
+         }
         }, {
           name: 'Environment',
           data: zip([chronicle, savefile.regions[id].environ_bars]),
@@ -770,6 +770,13 @@ function zip(arrays) {
           dragMinY: -100,
           dragMaxY: 100,
           cursor: 'ns-move',
+          point: {
+            events: {
+              drop: function (e) {
+                savefile.regions[id].environ_bars[this.x] = this.y;
+              },
+            }
+         }
         }],
         credits: false
       });
