@@ -609,13 +609,38 @@ function zip(arrays) {
         });
       });
 
+      // interpolating history scores for economy and environment
+      var economy_bars = new Array(calcCycles);
+      var environ_bars = new Array(calcCycles);
+      var startYear = Date.UTC(2030, 0, 0);
+      var month_time = Date.UTC(1970, 1, 0);
+
+      var startCycle = 0;
+      for (var i = 0; i < chronicle.length - 1; i++) {
+        var cycleDiff = Math.floor((chronicle[i + 1] - chronicle[i]) / month_time);
+        var economy_step = (region.economy_bars[i + 1] - region.economy_bars[i]) / cycleDiff;
+        var environ_step = (region.environ_bars[i + 1] - region.environ_bars[i]) / cycleDiff;
+
+        var economy_score = region.economy_bars[i];
+        var environ_score = region.environ_bars[i];
+
+        var endCycle = startCycle + cycleDiff;
+        for (var i = startCycle; i < endCycle; i++, economy_score += economy_step, environ_score += environ_step) {
+          economy_bars[i] = economy_score;
+          environ_bars[i] = environ_score;
+        }
+        startCycle = endCycle;
+      }
+      economy_bars[calcCycles - 1] = region.economy_bars[chronicle.length - 1];
+      environ_bars[calcCycles - 1] = region.environ_bars[chronicle.length - 1];
+
       var region_info = {
         'id' : parseInt(region_id),
         'active' : $("#region-" + region_id + "-status").prop("checked"),
         'scores' : scores,
         'history' : history,
-        'environ_bars': region.environ_bars,
-        'economy_bars': region.economy_bars,
+        'environ_bars': environ_bars,
+        'economy_bars': economy_bars,
       };
 
       save_info['regions'][region_id] = region_info;
