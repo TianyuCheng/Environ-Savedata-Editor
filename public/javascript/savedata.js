@@ -42,7 +42,7 @@ function zip(arrays) {
   
   var chronicle = null;
 
-  function getChronicleIndex(chronicle) {
+  function getChronicleIndex() {
     gametime = parseFloat($("#gametime").val());
     var temp = Math.floor(gametime / (13.846153846));
     var year_nums = Math.floor(temp / 12);
@@ -733,7 +733,6 @@ function zip(arrays) {
             x: -20
           },
           xAxis: {
-            // categories: chronicle
             type: 'datetime',
             title: {
               text: 'Date'
@@ -876,7 +875,8 @@ function zip(arrays) {
 
     document.getElementById("gametime").onchange = function () {
       setTimeout(function () {
-        var index = getChronicleIndex(chronicle);
+        var index = getChronicleIndex();
+        console.log (chronicle.length);
         for (var id = 0; id < savefile.region_counts; id++)  {
           var economy_bars = savefile.regions[id].economy_bars;
           var environ_bars = savefile.regions[id].environ_bars;
@@ -894,6 +894,7 @@ function zip(arrays) {
           savefile.regions[id].economy_bars = economy_bars;
           savefile.regions[id].environ_bars = environ_bars;
 
+          console.log (economy_bars);
           $("#region-" + id).find(".bars_chart").chartify(id);
           // charts[id].redraw();
         }
