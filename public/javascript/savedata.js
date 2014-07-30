@@ -564,7 +564,6 @@ function zip(arrays) {
         
         });
       });
-
   }
 
   // core function for saving data into json and passing to backend
@@ -616,23 +615,27 @@ function zip(arrays) {
       var month_time = Date.UTC(1970, 1, 0);
 
       var startCycle = 0;
+      var endCycle = startCycle;
       for (var i = 0; i < chronicle.length - 1; i++) {
-        var cycleDiff = Math.floor((chronicle[i + 1] - chronicle[i]) / month_time);
+        var cycleDiff = Math.round((chronicle[i + 1] - chronicle[i]) / month_time);
         var economy_step = (region.economy_bars[i + 1] - region.economy_bars[i]) / cycleDiff;
         var environ_step = (region.environ_bars[i + 1] - region.environ_bars[i]) / cycleDiff;
 
         var economy_score = region.economy_bars[i];
         var environ_score = region.environ_bars[i];
 
-        var endCycle = startCycle + cycleDiff;
-        for (var i = startCycle; i < endCycle; i++, economy_score += economy_step, environ_score += environ_step) {
-          economy_bars[i] = economy_score;
-          environ_bars[i] = environ_score;
+        endCycle = startCycle + cycleDiff;
+        console.log (startCycle + "|" + cycleDiff + "|" + endCycle + "|" + economy_step + "|" + region.economy_bars[i]);
+        for (var j = startCycle; j < endCycle; j++, economy_score += economy_step, environ_score += environ_step) {
+          economy_bars[j] = economy_score;
+          environ_bars[j] = environ_score;
         }
         startCycle = endCycle;
       }
-      economy_bars[calcCycles - 1] = region.economy_bars[chronicle.length - 1];
-      environ_bars[calcCycles - 1] = region.environ_bars[chronicle.length - 1];
+      for (var i = endCycle; i < calcCycles; i++) {
+        economy_bars[i] = region.economy_bars[chronicle.length - 1];
+        environ_bars[i] = region.environ_bars[chronicle.length - 1];
+      }
 
       var region_info = {
         'id' : parseInt(region_id),
@@ -643,6 +646,7 @@ function zip(arrays) {
         'economy_bars': economy_bars,
       };
 
+      console.log (region_info);
       save_info['regions'][region_id] = region_info;
     }
 
@@ -749,16 +753,6 @@ function zip(arrays) {
                 color: '#808080'
             }]
         },
-        plotOptions: {
-          series: {
-            events: {
-              click: function(e) {
-                // console.log (this.name);
-                // console.log (this);
-              }
-            }
-          }
-        },
         tooltip: {
             valueSuffix: '%',
             dateTimeLabelFormats: {
@@ -783,7 +777,7 @@ function zip(arrays) {
           point: {
             events: {
               drop: function (e) {
-                savefile.regions[id].economy_bars[this.x] = this.y;
+                savefile.regions[id].economy_bars = this.series.yData;
               },
             }
          }
@@ -797,7 +791,7 @@ function zip(arrays) {
           point: {
             events: {
               drop: function (e) {
-                savefile.regions[id].environ_bars[this.x] = this.y;
+                savefile.regions[id].environ_bars = this.series.yData;
               },
             }
          }

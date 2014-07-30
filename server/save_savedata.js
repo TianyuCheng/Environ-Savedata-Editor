@@ -33,8 +33,10 @@ function writeRegion(writer, region) {
     buffer.writeFloatLE(region.scores[score], offset += 4);
   }
 
-  for (var i = 0; i < calcCycles; i++)
+  for (var i = 0; i < calcCycles; i++) {
+    console.log(region.economy_bars[i]);
     buffer.writeFloatLE(region.economy_bars[i], offset += 4);
+  }
 
   for (var i = 0; i < calcCycles; i++)
     buffer.writeFloatLE(region.environ_bars[i], offset += 4);
