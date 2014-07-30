@@ -365,6 +365,7 @@ function zip(arrays) {
         history_table.append(history_record);
         // manually set key due to the event sequence
         history_record.find(".node-options").selectify();
+        history_record.sorted();
         
         if (record != null) {
           // change status and icon

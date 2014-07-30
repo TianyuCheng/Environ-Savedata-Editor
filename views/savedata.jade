@@ -165,7 +165,7 @@ block content
                     th(class="hide")= "Key"
                     th= "Title"
                     th= "Status"
-                    th= "Location"
+                    // th= "Location"
                   tbody
                     - var bases = mappings.regions_bases[region_id]
                     - for (var index in bases) {
@@ -176,8 +176,8 @@ block content
                         td(class="status toggleable")
                           input(type="checkbox")
                           img(src="/images/icons/cross-icon.png")
-                        td(class="location")
-                          input(type="text", value="(#{base.x}, #{base.y})", class="coordinates")
+                        // td(class="location")
+                        //   input(type="text", value="(#{base.x}, #{base.y})", class="coordinates")
                     - }
 
             div.table-upgrades
@@ -213,7 +213,7 @@ block content
                     th(class="hide")= "Key"
                     th= "Title"
                     th= "Status"
-                    th= "Location"
+                    // th= "Location"
                   tbody
                     - var events = mappings.regions_events[region_id]
                     - for (var index in events) {
@@ -224,8 +224,8 @@ block content
                         td(class="status toggleable")
                           input(type="checkbox")
                           img(src="/images/icons/cross-icon.png")
-                        td(class="location")
-                          input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
+                        // td(class="location")
+                        //   input(type="text", value="(#{event.x}, #{event.y})", class="coordinates")
                     - }
             div.table-history 
               h4.content-subhead.small History &nbsp;
