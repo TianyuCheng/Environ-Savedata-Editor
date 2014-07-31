@@ -891,8 +891,16 @@ function zip(arrays) {
 
     document.getElementById("gametime").onchange = function () {
       setTimeout(function () {
-        var index = getChronicleIndex();
-        // console.log (chronicle.length);
+        var index;
+        if (chronicle.length == 0) 
+        {
+          index = 1;
+          chronicle.push(Date.UTC(2030, 0, 0));
+        }
+        else index = getChronicleIndex();
+
+        // console.log (chronicle);
+
         for (var id = 0; id < savefile.region_counts; id++)  {
           var economy_bars = savefile.regions[id].economy_bars;
           var environ_bars = savefile.regions[id].environ_bars;
@@ -903,8 +911,15 @@ function zip(arrays) {
           }
           else 
           {
-            economy_bars.push(economy_bars[economy_bars.length - 1]);
-            environ_bars.push(environ_bars[environ_bars.length - 1]);
+            if (economy_bars.length == 0)
+            {
+              economy_bars.push(10);
+              environ_bars.push(-10);
+            }
+            else {
+              economy_bars.push(economy_bars[economy_bars.length - 1]);
+              environ_bars.push(environ_bars[environ_bars.length - 1]);
+            }
           }
 
           savefile.regions[id].economy_bars = economy_bars;
@@ -912,7 +927,6 @@ function zip(arrays) {
 
           // console.log (economy_bars);
           $("#region-" + id).find(".bars_chart").chartify(id);
-          // charts[id].redraw();
         }
     }, 100);
   }
