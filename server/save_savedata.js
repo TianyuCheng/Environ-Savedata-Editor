@@ -34,7 +34,7 @@ function writeRegion(writer, region) {
   }
 
   for (var i = 0; i < calcCycles; i++) {
-    console.log(region.economy_bars[i]);
+    // console.log(region.economy_bars[i]);
     buffer.writeFloatLE(region.economy_bars[i], offset += 4);
   }
 

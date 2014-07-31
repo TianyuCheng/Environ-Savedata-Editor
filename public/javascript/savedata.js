@@ -461,12 +461,13 @@ function zip(arrays) {
     // find parent for easy row moving
     // var myself = $(this).parents("tr");
     var myself = obj.parents("tr");
-    console.log (myself);
     // update gametime
     // var val = parseFloat($(this).val());
     var val = parseFloat(obj.val());
-    if (val > parseFloat($("#gametime").val()))
+    if (val > parseFloat($("#gametime").val())) {
       $("#gametime").val(val);
+      document.getElementById("gametime").onchange();
+    }
 
     // try to move up in table
     var my_prev = myself.prev();
@@ -514,7 +515,6 @@ function zip(arrays) {
     // timestamp as trigger to sort history
     $(this).find(".scores").blur(function () { 
       sort($(this)); 
-      document.getElementById("gametime").onchange();
     });
 
     // binding for select change
@@ -535,7 +535,7 @@ function zip(arrays) {
       var icon = $(this);
       var checkbox = $(this).find("input");
       var isChecked = checkbox.prop("checked");
-      console.log(isChecked);
+      // console.log(isChecked);
       if (isChecked)
         checkbox.prop('checked', false);
       else
@@ -645,7 +645,7 @@ function zip(arrays) {
         var environ_score = region.environ_bars[i];
 
         endCycle = startCycle + cycleDiff;
-        console.log (startCycle + "|" + cycleDiff + "|" + endCycle + "|" + economy_step + "|" + region.economy_bars[i]);
+        // console.log (startCycle + "|" + cycleDiff + "|" + endCycle + "|" + economy_step + "|" + region.economy_bars[i]);
         for (var j = startCycle; j < endCycle; j++, economy_score += economy_step, environ_score += environ_step) {
           economy_bars[j] = economy_score;
           environ_bars[j] = environ_score;
@@ -895,7 +895,7 @@ function zip(arrays) {
         if (chronicle.length == 0) 
         {
           index = 1;
-          chronicle.push(Date.UTC(2030, 0, 0));
+          chronicle.push(Date.UTC(2030, 1, 0));
         }
         else index = getChronicleIndex();
 
