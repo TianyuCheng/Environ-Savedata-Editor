@@ -85,55 +85,55 @@ block content
             td Green Sentiment
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-green-sentiment", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GREEN}")
+                  input(id="region-#{region_id}-green-sentiment", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GREEN}")
               - }
           tr(id="gross-domestic-product")
             td GDP
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-gross-domestic-product", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GDP}")
+                  input(id="region-#{region_id}-gross-domestic-product", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].GDP}")
               - }
           tr(id="income-equality")
             td Income Equality
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-income-equality", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EQ}")
+                  input(id="region-#{region_id}-income-equality", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].EQ}")
               - }
           tr(id="purchasing-power")
             td Purchasing Power
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-purchasing-power", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].PP}")
+                  input(id="region-#{region_id}-purchasing-power", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].PP}")
               - }
           tr(id="donations")
             td Donations
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-donations", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].DONATION}")
+                  input(id="region-#{region_id}-donations", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].DONATION}")
               - }
           tr(id="CO2-emission")
             td CO2 Emission
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-co2-emission", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].CO2}")
+                  input(id="region-#{region_id}-co2-emission", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].CO2}")
               - }
           tr(id="air-pollution")
             td Air Pollution
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-air-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].AP}")
+                  input(id="region-#{region_id}-air-pollution", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].AP}")
               - }
           tr(id="water-pollution")
             td Water Pollution
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-water-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].WP}")
+                  input(id="region-#{region_id}-water-pollution", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].WP}")
               - }
           tr(id="land-pollution")
             td Land Pollution
               - for (var region_id in info.regions) {
                 td 
-                  input(id="region-#{region_id}-land-pollution", type="number", min="0", max="100", step="0.5", class="scores" value="#{info.regions[region_id].LP}")
+                  input(id="region-#{region_id}-land-pollution", type="number", min="-100", max="100", step="0.5", class="scores" value="#{info.regions[region_id].LP}")
               - }
 
 
