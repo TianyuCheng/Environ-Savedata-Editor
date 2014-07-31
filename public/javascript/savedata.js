@@ -202,10 +202,10 @@ function zip(arrays) {
       // process on each one
       that.each(function() {
         var node_key = $(this).parents("tr").find(".node-key");
-        var option = $(this).find('option[value="' + node_key.text() + '"]');
+        var option = $(this).find('option[value="' + node_key.text().trim() + '"]');
         option.prop("selected", true);
 
-        node_key.text($(this).val());
+        // node_key.text($(this).val());
         // bind selection
         $(this).change(function() {
           node_key.text($(this).val());
@@ -332,6 +332,17 @@ function zip(arrays) {
       var region_id = parseInt($(this).attr("id").split("-")[1]);
       var history = regions[region_id].history;
 
+      // history = sortByKey(history, 'timestamp');
+      // console.log (history);
+      var sorted = [];
+      for(var key in history) {
+          sorted[sorted.length] = key;
+      }
+      sorted.sort(function (a, b) {
+        return parseFloat(a) - parseFloat(b);
+      });
+      // console.log (sorted);
+
       // find the tables of this region
       var bases_table = $(this).find(".table-bases");
       var upgrades_table = $(this).find(".table-upgrades");
@@ -340,11 +351,12 @@ function zip(arrays) {
 
       // console.log (regions[region_id]);
       // time in increasing order
-      for (var timestamp in history) {
-        value = history[timestamp];
-        _status = value.substring(0, 1);  // +/-
-        _key = value.substring(1);        // B1, U1, E1, etc
-        _type = _key.substring(0, 1);
+      for (var index in sorted) {
+        var timestamp = sorted[index];
+        var value = history[timestamp];
+        var _status = value.substring(0, 1);  // +/-
+        var _key = value.substring(1);        // B1, U1, E1, etc
+        var _type = _key.substring(0, 1);
 
         var record = null;
         switch (_type) {
@@ -444,57 +456,65 @@ function zip(arrays) {
 
   }
 
+  function sort(obj)
+  {
+    // find parent for easy row moving
+    // var myself = $(this).parents("tr");
+    var myself = obj.parents("tr");
+    console.log (myself);
+    // update gametime
+    // var val = parseFloat($(this).val());
+    var val = parseFloat(obj.val());
+    if (val > parseFloat($("#gametime").val()))
+      $("#gametime").val(val);
+
+    // try to move up in table
+    var my_prev = myself.prev();
+    if (my_prev.length > 0) 
+    {
+      var my_score = parseFloat(myself.find("input.scores").val());
+      var my_prev_score = parseFloat(my_prev.find("input.scores").val());
+      // console.log(my_prev.prev().prev().length);
+      while (my_score < my_prev_score)
+      {
+        myself.insertBefore(my_prev);
+        my_prev = myself.prev();
+        // console.log("move up " + my_score + " < " + my_prev_score);
+
+        if (my_prev.length == 0) break;
+        my_score = parseFloat(myself.find("input.scores").val());
+        my_prev_score = parseFloat(my_prev.find("input.scores").val());
+      }
+    }
+
+    // try to move down in table
+    var my_next = myself.next();
+    if (my_next.length > 0) 
+    {
+      var my_score = parseFloat(myself.find("input.scores").val());
+      var my_next_score = parseFloat(my_next.find("input.scores").val());
+      // console.log(my_next.next().next().length);
+      while (my_score > my_next_score)
+      {
+        myself.insertAfter(my_next);
+        my_next = myself.next();
+        // console.log("move down " + my_score + " > " + my_next_score);
+
+        if (my_next.length == 0) break;
+        my_score = parseFloat(myself.find("input.scores").val());
+        my_next_score = parseFloat(my_next.find("input.scores").val());
+      }
+    }
+    // $(this).parents(".region-info").reHistorify();
+    obj.parents(".region-info").reHistorify();
+  }
+
   $.fn.sorted = function () {
   
     // timestamp as trigger to sort history
-    $(this).find(".scores").blur(function() {
-
-      // find parent for easy row moving
-      var myself = $(this).parents("tr");
-      // update gametime
-      var val = parseFloat($(this).val());
-      if (val > parseFloat($("#gametime").val()))
-      $("#gametime").val(val);
+    $(this).find(".scores").blur(function () { 
+      sort($(this)); 
       document.getElementById("gametime").onchange();
-      
-      // try to move up in table
-      var my_prev = myself.prev();
-      if (my_prev.length > 0) 
-      {
-        var my_score = parseFloat(myself.find("input.scores").val());
-        var my_prev_score = parseFloat(my_prev.find("input.scores").val());
-        // console.log(my_prev.prev().prev().length);
-        while (my_score < my_prev_score)
-        {
-          myself.insertBefore(my_prev);
-          my_prev = myself.prev();
-          // console.log("move up " + my_score + " < " + my_prev_score);
-
-          if (my_prev.length == 0) break;
-          my_score = parseFloat(myself.find("input.scores").val());
-          my_prev_score = parseFloat(my_prev.find("input.scores").val());
-        }
-      }
-
-      // try to move down in table
-      var my_next = myself.next();
-      if (my_next.length > 0) 
-      {
-        var my_score = parseFloat(myself.find("input.scores").val());
-        var my_next_score = parseFloat(my_next.find("input.scores").val());
-        // console.log(my_next.next().next().length);
-        while (my_score > my_next_score)
-        {
-          myself.insertAfter(my_next);
-          my_next = myself.next();
-          // console.log("move down " + my_score + " > " + my_next_score);
-
-          if (my_next.length == 0) break;
-          my_score = parseFloat(myself.find("input.scores").val());
-          my_next_score = parseFloat(my_next.find("input.scores").val());
-        }
-      }
-      $(this).parents(".region-info").reHistorify();
     });
 
     // binding for select change
@@ -544,7 +564,6 @@ function zip(arrays) {
 
     new_record.find(".scores").scores();
     new_record.find(".toggleable").toggleable();
-    new_record.sorted();
 
     // manually set key due to the event sequence
     new_record.find(".toggleable input").prop("checked", stats);
@@ -835,6 +854,7 @@ function zip(arrays) {
       var new_record = NewHistoryRecord(key, null, stats);
       var history_table = $(this).parents(".region-info").find(".table-history table tbody");
       history_table.append(new_record);
+      new_record.sorted();
       new_record.find(".node-options").selectify();
       new_record.parents(".region-info").reHistorify();
     });
@@ -853,6 +873,7 @@ function zip(arrays) {
       add_icon.click(function (e) {
         var new_record = NewHistoryRecord("", null);
         table.append(new_record);
+        new_record.sorted();
         new_record.find(".node-options").selectify();
         $(this).parents(".region-info").reHistorify();
       });
@@ -871,7 +892,7 @@ function zip(arrays) {
     document.getElementById("gametime").onchange = function () {
       setTimeout(function () {
         var index = getChronicleIndex();
-        console.log (chronicle.length);
+        // console.log (chronicle.length);
         for (var id = 0; id < savefile.region_counts; id++)  {
           var economy_bars = savefile.regions[id].economy_bars;
           var environ_bars = savefile.regions[id].environ_bars;
@@ -889,7 +910,7 @@ function zip(arrays) {
           savefile.regions[id].economy_bars = economy_bars;
           savefile.regions[id].environ_bars = environ_bars;
 
-          console.log (economy_bars);
+          // console.log (economy_bars);
           $("#region-" + id).find(".bars_chart").chartify(id);
           // charts[id].redraw();
         }
