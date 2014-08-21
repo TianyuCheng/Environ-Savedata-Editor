@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<costs>
+  <cost>
+    <key>C1</key>
+    <scores>
+      <score amount="-20">PC</score>
+      <score amount="0">$</score>
+    </scores>
+  </cost>
+  <cost>
+    <key>C2</key>
+    <scores>
+      <score amount="-5">PC</score>
+      <score amount="-100">$</score>
+    </scores>
+  </cost>
+  <cost>
+    <key>C3</key>
+    <scores>
+      <score amount="-6">PC</score>
+      <score amount="-100">$</score>
+    </scores>
+  </cost>
+  <cost>
+    <key>C4</key>
+    <scores>
+      <score amount="-25">PC</score>
+      <score amount="0">$</score>
+    </scores>
+  </cost>
+  <cost>
+    <key>C5</key>
+    <scores>
+      <score amount="-5">PC</score>
+      <score amount="-200">$</score>
+    </scores>
+  </cost>
+  <cost>
+    <key>C6</key>
+    <scores>
+      <score amount="-10">PC</score>
+      <score amount="-100">$</score>
+    </scores>
+  </cost>
+  <cost>
+    <key>C7</key>
+    <scores>
+      <score amount="-5">PC</score>
+    </scores>
+  </cost>
+  <cost>
+    <key>C8</key>
+    <scores>
+      <score amount="0">PC</score>
+      <score amount="-100">$</score>
+    </scores>
+  </cost>
+</costs>

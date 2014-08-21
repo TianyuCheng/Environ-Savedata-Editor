@@ -4,37 +4,92 @@
     <id>0</id>
     <initials>W</initials>
     <name>World</name>
-    <description> </description>
-    <image> </image>
-    <reference> </reference>
-    <scores>
-      <score amount="0">EN</score>
-      <score amount="0">EC</score>
-    </scores>
-    <cost>25</cost>
+    <description/>
+    <image/>
+    <growth_rate>0</growth_rate>
+    <scores/>
+    <unique_conditions/>
     <bases/>
     <events/>
+    <tags/>
   </region>
   <region>
     <id>1</id>
     <initials>NA</initials>
     <name>North America</name>
-    <description> </description>
-    <image> </image>
-    <reference> </reference>
+    <description/>
+    <image/>
+    <growth_rate>1%</growth_rate>
     <scores>
-      <score amount="-15">EN</score>
-      <score amount="30">EC</score>
+      <score amount="-5">EN</score>
+      <score amount="-10">GS</score>
+      <score amount="150">$</score>
+      <score amount="25">EC</score>
+      <score amount="-25">GG</score>
+      <score amount="20">PC</score>
+      <score amount="30">TE</score>
+      <score amount="6000000">PO</score>
     </scores>
-    <cost>25</cost>
+    <unique_conditions>
+      <effect>F1</effect>
+    </unique_conditions>
     <bases>
-      <base active="0" x="255" y="45">B1</base>
-      <base active="0" x="281" y="50">B2</base>
-      <base active="0" x="290" y="60">B3</base>
-      <base active="0" x="270" y="60">B4</base>
-      <base active="0" x="265" y="65">B5</base>
-      <base active="0" x="260" y="70">B6</base>
-      <base active="0" x="263" y="71">B7</base>
+      <base key="B1" multiplier="1" state="0" x="255" y="45">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B2" multiplier="1" state="0" x="281" y="50">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B3" multiplier="1" state="0" x="290" y="60">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B4" multiplier="1.5" state="0" x="270" y="60">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B5" multiplier="1" state="0" x="265" y="65">
+        <impact amount="0">EN</impact>
+        <impact amount="1">EC</impact>
+      </base>
+      <base key="B6" multiplier="1" state="0" x="260" y="70">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B7" multiplier="1" state="0" x="263" y="71">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B8" multiplier="1" state="0" x="265" y="75">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B9" multiplier="1" state="0" x=" 254" y=" 55">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B10" multiplier="1" state="0" x="234" y="33">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B11" multiplier="1" state="0" x="210" y="23">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B12" multiplier="1" state="0" x="255" y="75">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B13" multiplier="1" state="0" x="234" y="56">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B14" multiplier="1" state="0" x="212" y="21">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
     </bases>
     <events>
       <event x="268" y="63">E1</event>
@@ -43,26 +98,87 @@
       <event x="283" y="63">E19</event>
       <event x="288" y="63">E27</event>
     </events>
+    <tags>
+      <tag>T1</tag>
+    </tags>
   </region>
   <region>
     <id>2</id>
     <initials>SA</initials>
     <name>South America</name>
-    <description> </description>
-    <image> </image>
-    <reference> </reference>
+    <description/>
+    <image/>
+    <growth_rate>2%</growth_rate>
     <scores>
-      <score amount="25">EN</score>
-      <score amount="15">EC</score>
+      <score amount="-25">EN</score>
+      <score amount="-10">GS</score>
+      <score amount="50">$</score>
+      <score amount="5">EC</score>
+      <score amount="-15">GG</score>
+      <score amount="20">PC</score>
+      <score amount="-5">TE</score>
+      <score amount="7000000">PO</score>
     </scores>
-    <cost>25</cost>
+    <unique_conditions>
+      <effect>F2</effect>
+    </unique_conditions>
     <bases>
-      <base active="0" x="250" y="90">B1</base>
-      <base active="0" x="245" y="95">B2</base>
-      <base active="0" x="250" y="100">B3</base>
-      <base active="0" x="235" y="105">B4</base>
-      <base active="0" x="230" y="110">B5</base>
-      <base active="0" x="245" y="115">B6</base>
+      <base key="B1" multiplier="1" state="0" x="250" y="90">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B2" multiplier="1" state="0" x="245" y="95">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B3" multiplier="1" state="0" x="250" y="100">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B4" multiplier="1" state="0" x="235" y="105">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B5" multiplier="1" state="0" x="230" y="110">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B6" multiplier="1" state="0" x="245" y="115">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B7" multiplier=".5" state="0" x="250" y="133">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B8" multiplier="1" state="0" x="256" y="101">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B9" multiplier="1" state="0" x="240" y="120">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B10" multiplier="1" state="0" x="245" y="130">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B11" multiplier="1" state="0" x="250" y="140">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B12" multiplier="1" state="0" x="235" y="80">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B13" multiplier="1" state="0" x="230" y="100">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B14" multiplier="1" state="0" x="230" y="80">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
     </bases>
     <events>
       <event x="268" y="100">E4</event>
@@ -70,26 +186,87 @@
       <event x="278" y="100">E6</event>
       <event x="283" y="100">E20</event>
     </events>
+    <tags>
+      <tag>T2</tag>
+    </tags>
   </region>
   <region>
     <id>3</id>
     <initials>EU</initials>
     <name>Europe</name>
-    <description> </description>
-    <image> </image>
-    <reference> </reference>
+    <description/>
+    <image/>
+    <growth_rate>1%</growth_rate>
     <scores>
-      <score amount="15">EN</score>
-      <score amount="20">EC</score>
+      <score amount="-10">EN</score>
+      <score amount="20">GS</score>
+      <score amount="120">$</score>
+      <score amount="15">EC</score>
+      <score amount="-5">GG</score>
+      <score amount="20">PC</score>
+      <score amount="25">TE</score>
+      <score amount="5000000">PO</score>
     </scores>
-    <cost>25</cost>
+    <unique_conditions>
+      <effect>F3</effect>
+    </unique_conditions>
     <bases>
-      <base active="0" x="185" y="55">B1</base>
-      <base active="0" x="180" y="45">B2</base>
-      <base active="0" x="170" y="50">B3</base>
-      <base active="0" x="165" y="55">B4</base>
-      <base active="0" x="160" y="40">B5</base>
-      <base active="0" x="155" y="55">B6</base>
+      <base key="B1" multiplier="1" state="0" x="185" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B2" multiplier="1" state="0" x="180" y="45">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B3" multiplier="1" state="0" x="170" y="50">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B4" multiplier="1" state="0" x="165" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B5" multiplier="1.5" state="0" x="160" y="40">
+        <impact amount="0">EN</impact>
+        <impact amount="1">EC</impact>
+      </base>
+      <base key="B6" multiplier="1.5" state="0" x="155" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B7" multiplier="1" state="0" x="180" y="30">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B8" multiplier="1" state="0" x="165" y="60">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B9" multiplier="1" state="0" x="190" y="50">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B10" multiplier="1" state="0" x="180" y="70">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B11" multiplier="1.5" state="0" x="190" y="65">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B12" multiplier="1" state="0" x="170" y="45">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B13" multiplier=".5" state="0" x="145" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
+      <base key="B14" multiplier="1" state="0" x="155" y="70">
+        <impact amount="0">EN</impact>
+        <impact amount="10">EC</impact>
+      </base>
     </bases>
     <events>
       <event x="180" y="50">E7</event>
@@ -98,26 +275,87 @@
       <event x="195" y="50">E21</event>
       <event x="175" y="50">E26</event>
     </events>
+    <tags>
+      <tag>T3</tag>
+    </tags>
   </region>
   <region>
     <id>4</id>
     <initials>AF</initials>
     <name>Africa</name>
-    <description> </description>
-    <image> </image>
-    <reference> </reference>
+    <description/>
+    <image/>
+    <growth_rate>4%</growth_rate>
     <scores>
-      <score amount="20">EN</score>
-      <score amount="10">EC</score>
+      <score amount="-20">EN</score>
+      <score amount="-15">GS</score>
+      <score amount="35">$</score>
+      <score amount="-15">EC</score>
+      <score amount="15">GG</score>
+      <score amount="20">PC</score>
+      <score amount="-20">TE</score>
+      <score amount="10000000">PO</score>
     </scores>
-    <cost>25</cost>
+    <unique_conditions>
+      <effect>F2</effect>
+    </unique_conditions>
     <bases>
-      <base active="0" x="185" y="75">B1</base>
-      <base active="0" x="180" y="80">B2</base>
-      <base active="0" x="150" y="70">B3</base>
-      <base active="0" x="155" y="95">B4</base>
-      <base active="0" x="155" y="105">B5</base>
-      <base active="0" x="155" y="115">B6</base>
+      <base key="B1" multiplier="1" state="0" x="185" y="75">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B2" multiplier="1" state="0" x="180" y="80">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B3" multiplier="1" state="0" x="150" y="70">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B4" multiplier="1" state="0" x="155" y="95">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B5" multiplier="1" state="0" x="155" y="105">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B6" multiplier="1" state="0" x="155" y="115">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B7" multiplier=".5" state="0" x="185" y="150">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B8" multiplier="1" state="0" x="150" y="135">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B9" multiplier=".5" state="0" x="165" y="120">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B10" multiplier="1" state="0" x="155" y="160">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B11" multiplier="1" state="0" x="140" y="130">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B12" multiplier="1" state="0" x="150" y="150">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B13" multiplier="1.5" state="0" x="120" y="100">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B14" multiplier="1" state="0" x="150" y="110">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
     </bases>
     <events>
       <event x="160" y="85">E10</event>
@@ -125,26 +363,87 @@
       <event x="170" y="85">E12</event>
       <event x="175" y="85">E22</event>
     </events>
+    <tags>
+      <tag>T4</tag>
+    </tags>
   </region>
   <region>
     <id>5</id>
     <initials>CA</initials>
     <name>Central Asia</name>
-    <description> </description>
-    <image> </image>
-    <reference> </reference>
+    <description/>
+    <image/>
+    <growth_rate>2%</growth_rate>
     <scores>
-      <score amount="10">EN</score>
-      <score amount="20">EC</score>
+      <score amount="-25">EN</score>
+      <score amount="-10">GS</score>
+      <score amount="50">$</score>
+      <score amount="5">EC</score>
+      <score amount="-15">GG</score>
+      <score amount="20">PC</score>
+      <score amount="-5">TE</score>
+      <score amount="20000000">PO</score>
     </scores>
-    <cost>25</cost>
+    <unique_conditions>
+      <effect>F4</effect>
+    </unique_conditions>
     <bases>
-      <base active="0" x="110" y="55">B1</base>
-      <base active="0" x="105" y="50">B2</base>
-      <base active="0" x="100" y="45">B3</base>
-      <base active="0" x="90" y="35">B4</base>
-      <base active="0" x="80" y="30">B5</base>
-      <base active="0" x="70" y="35">B6</base>
+      <base key="B1" multiplier="1" state="0" x="110" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B2" multiplier="1" state="0" x="105" y="50">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B3" multiplier="1" state="0" x="100" y="45">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B4" multiplier="1" state="0" x="90" y="35">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B5" multiplier="1" state="0" x="80" y="30">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B6" multiplier="1" state="0" x="70" y="35">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B7" multiplier="1" state="0" x="100" y="65">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B8" multiplier="1" state="0" x="115" y="30">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B9" multiplier="1" state="0" x="120" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B10" multiplier="1" state="0" x="115" y="65">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B11" multiplier="1.5" state="0" x="95" y="60">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B12" multiplier="1" state="0" x="105" y="35">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B13" multiplier="1" state="0" x="100" y="70">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B14" multiplier="1" state="0" x="120" y="70">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
     </bases>
     <events>
       <event x="110" y="55">E13</event>
@@ -152,26 +451,87 @@
       <event x="100" y="45">E15</event>
       <event x="90" y="35">E23</event>
     </events>
+    <tags>
+      <tag>T5</tag>
+    </tags>
   </region>
   <region>
     <id>6</id>
     <initials>EA</initials>
     <name>East Asia</name>
-    <description> </description>
-    <image> </image>
-    <reference> </reference>
+    <description/>
+    <image/>
+    <growth_rate>2%</growth_rate>
     <scores>
       <score amount="-25">EN</score>
-      <score amount="40">EC</score>
+      <score amount="-10">GS</score>
+      <score amount="100">$</score>
+      <score amount="15">EC</score>
+      <score amount="-15">GG</score>
+      <score amount="20">PC</score>
+      <score amount="-5">TE</score>
+      <score amount="20000000">PO</score>
     </scores>
-    <cost>25</cost>
+    <unique_conditions>
+      <effect>F5</effect>
+    </unique_conditions>
     <bases>
-      <base active="0" x="75" y="55">B1</base>
-      <base active="0" x="70" y="60">B2</base>
-      <base active="0" x="80" y="65">B3</base>
-      <base active="0" x="75" y="70">B4</base>
-      <base active="0" x="70" y="75">B5</base>
-      <base active="0" x="75" y="80">B6</base>
+      <base key="B1" multiplier="1" state="0" x="75" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B2" multiplier="1" state="0" x="70" y="60">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B3" multiplier="2" state="0" x="80" y="65">
+        <impact amount="-5">EN</impact>
+        <impact amount="2">EC</impact>
+      </base>
+      <base key="B4" multiplier="1" state="0" x="75" y="70">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B5" multiplier="1.5" state="0" x="70" y="75">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B6" multiplier="1" state="0" x="75" y="80">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B7" multiplier="1" state="0" x="80" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B8" multiplier="1" state="0" x="75" y="80">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B9" multiplier="1" state="0" x="80" y="65">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B10" multiplier="1" state="0" x="80" y="85">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B11" multiplier="1.5" state="0" x="95" y="55">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B12" multiplier="2" state="0" x="100" y="75">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B13" multiplier="1" state="0" x="100" y="95">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
+      <base key="B14" multiplier="1" state="0" x="80" y="120">
+        <impact amount="0">EN</impact>
+        <impact amount="0">EC</impact>
+      </base>
     </bases>
     <events>
       <event x="75" y="55">E16</event>
@@ -179,5 +539,8 @@
       <event x="80" y="65">E18</event>
       <event x="70" y="75">E24</event>
     </events>
+    <tags>
+      <tag>T6</tag>
+    </tags>
   </region>
 </regions>

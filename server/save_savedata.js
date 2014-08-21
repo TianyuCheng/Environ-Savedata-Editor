@@ -9,34 +9,31 @@ function pad(width, string, padding) {
 }
 
 function writeRegion(writer, region) {
-  // console.log(region);
   // format: region_id, region_active, 14 scores, calcCycles * (4 + 4), history_num, history_num * (9 + 4)
   var numNodes = region.history.length;
-  var size = 4 + 4 + 14 * 4 + calcCycles * 8 + 4 + numNodes * 13;
+  var size = 4 + 4 + 12 * 4 + calcCycles * 8 + 4 + numNodes * 13;
   var buffer = new Buffer(size);
   buffer.writeInt32LE(region.id, 0);
   buffer.writeInt32LE(region.active, 4);
 
-  // these two does not count
+  // these four does not count
   buffer.writeFloatLE(0, 8);  // political capital
   buffer.writeFloatLE(0, 12);  // funds
+  buffer.writeFloatLE(0, 16);  // political capital cost
+  buffer.writeFloatLE(0, 20);  // funds cost
 
-  var offset = 12;
-  var scores = ['economy', 'environment', 'co2-emission', 
-      'air-pollution', 'water-pollution', 'land-pollution',
-      'gross-domestic-product', 'income-equality', 'purchasing-power',
-      'technology', 'green-sentiment', 'donations'];
+  var offset = 20;
+  var scores = ['economy', 'environment', 'technology', 'green-sentiment', 'greenhouse-gases', 'sustainable-energy-mix', 'population'];
 
   // write in scores
   for (var i in scores) {
     var score = scores[i];
     buffer.writeFloatLE(region.scores[score], offset += 4);
   }
+  buffer.writeFloatLE(0, offset += 4);  // build-time, does not really matter
 
-  for (var i = 0; i < calcCycles; i++) {
-    // console.log(region.economy_bars[i]);
+  for (var i = 0; i < calcCycles; i++)
     buffer.writeFloatLE(region.economy_bars[i], offset += 4);
-  }
 
   for (var i = 0; i < calcCycles; i++)
     buffer.writeFloatLE(region.environ_bars[i], offset += 4);
@@ -54,6 +51,8 @@ function writeRegion(writer, region) {
     buffer.writeFloatLE(node.time, offset + 9);
     offset += 13;
   }
+  console.log (offset)
+  console.log ("buffer length: " + buffer.length);
   writer.write(buffer);
 }
 

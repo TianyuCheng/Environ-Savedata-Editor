@@ -604,9 +604,7 @@ function zip(arrays) {
     for (var region_id in regions)
     {
       var region = regions[region_id];
-      var scores_list = ["economy", "environment", "technology", "green-sentiment", "gross-domestic-product", 
-                         "purchasing-power", "income-equality", "donations", "co2-emission", "air-pollution", 
-                         "water-pollution", "land-pollution"];
+      var scores_list = ['economy', 'environment', 'technology', 'green-sentiment', 'greenhouse-gases', 'sustainable-energy-mix', 'population'];
       // set up scores
       var scores = {}
       for (var i in scores_list)

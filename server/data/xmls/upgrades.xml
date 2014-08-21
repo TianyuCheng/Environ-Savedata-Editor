@@ -1,1142 +1,1036 @@
 <?xml version="1.0" ?>
 <upgrades>
   <upgrade>
-    <key>U1</key>
-    <title>Decomission Old Coal Plants</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U1-1</key>
+    <title>Carbon Taxes / Cap &amp; Trade</title>
+    <description>A carbon tax is a tax levied on the carbon content of fuels.
+
+They help to address the problem of emitters of greenhouse gases not facing the full (social) costs of their actions. Carbon taxes can be a regressive tax, in that they may directly or indirectly affect low-income groups disproportionately.
+This initiative will significantly improve the environment and reduce greenhouse gas emissions, while also moderately reducing economic output by raising prices for goods and services.  It will also significantly raise the cost of any initiatives related to fossil fuels.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
     <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T16</tag>
-      <tag>T19</tag>
-      <tag>T26</tag>
-    </tags>
+    <reference>http://en.wikipedia.org/wiki/Emissions_trading</reference>
+    <build_time>1</build_time>
+    <levels>3</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C1</cost>
     </costs>
-    <probabilities/>
-    <effects>
-      <effect>F2</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U2</key>
-    <title>New Coal Plants &amp; Mines </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T16</tag>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F3</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U3</key>
-    <title>Research Carbon Capture </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T16</tag>
-      <tag>T15</tag>
-      <tag>T18</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F4</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U4</key>
-    <title>Clean Coal Plants </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T16</tag>
-      <tag>T19</tag>
-      <tag>T18</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P1</probability>
-    </probabilities>
-    <effects>
-      <effect>F5</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U5</key>
-    <title>Oil Refineries and Wells</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T20</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
     <effects>
       <effect>F6</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U6</key>
-    <title>Natural Gas Plants </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T21</tag>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
       <effect>F7</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U7</key>
-    <title>Deregulate Fracking </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T21</tag>
-      <tag>T20</tag>
-      <tag>T22</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
       <effect>F8</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U8</key>
-    <title>Ban Fracking </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T18</tag>
-      <tag>T22</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
       <effect>F9</effect>
     </effects>
+    <prereqs/>
+    <tags/>
   </upgrade>
   <upgrade>
-    <key>U9</key>
-    <title>Oil and Natural Gas Exploration </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T20</tag>
-      <tag>T21</tag>
-    </tags>
+    <key>U1-2</key>
+    <title>Feed-in Tarrifs</title>
+    <description>A feed-in tariff is a policy designed to accelerate investment in renewable energy technologies. It achieves this by offering long-term contracts to renewable energy producers, typically based on the cost of generation of each technology.
+
+The goal of feed-in tariffs is to offer cost-based compensation to renewable energy producers, providing price certainty and long-term contracts that help finance renewable energy investments.
+
+This initiative will significantly reduce greenhouse gas emissions while also moderately reducing economic output.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Feed-in_tariff</reference>
+    <build_time>0</build_time>
+    <levels>3</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C1</cost>
     </costs>
-    <probabilities/>
     <effects>
+      <effect>F6</effect>
       <effect>F7</effect>
+      <effect>F8</effect>
+    </effects>
+    <prereqs/>
+    <tags/>
+  </upgrade>
+  <upgrade>
+    <key>U1-3</key>
+    <title>Envionmentalism Propaganda</title>
+    <description>Propaganda is a form of communication aimed towards influencing the attitude of a population toward some cause or position.
+
+Propaganda is information that is not impartial and used primarily to influence an audience and further an agenda, often by presenting facts selectively to encourage a particular ideological position.
+This initiative will slightly increase Green Sentiment while moderately reducing Political Capital due to a loss of credibility.  Environmentally friendly initiatives will require considerably less Political Capital.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Green_PR</reference>
+    <build_time>0</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C2</cost>
+    </costs>
+    <effects>
       <effect>F10</effect>
       <effect>F11</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U10</key>
-    <title>Photovoltaic Plants </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>techIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
       <effect>F12</effect>
     </effects>
-  </upgrade>
-  <upgrade>
-    <key>U11</key>
-    <title>Thermal Plants </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
+    <prereqs/>
     <tags>
-      <tag>T19</tag>
+      <tag>T27</tag>
     </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F12</effect>
-    </effects>
   </upgrade>
   <upgrade>
-    <key>U12</key>
-    <title>Solar Energy Research </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T15</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F13</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U13</key>
-    <title>Solar Subsidy </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U1-4</key>
+    <title>Fossil Fuel Propaganda</title>
+    <description>Propaganda is a form of communication aimed towards influencing the attitude of a population toward some cause or position.
+
+Propaganda is information that is not impartial and used primarily to influence an audience and further an agenda, often by presenting facts selectively to encourage a particular ideological position.
+
+This initiative will slightly decrease Green Sentiment while moderately reducing Political Capital due to a loss of credibility.  Fossil Fuel related initiatives will require considerably less Political Capital.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
     <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T22</tag>
-    </tags>
+    <reference>http://en.wikipedia.org/wiki/Green_PR</reference>
+    <build_time>0</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C3</cost>
     </costs>
-    <probabilities/>
     <effects>
+      <effect>F10</effect>
+      <effect>F13</effect>
       <effect>F14</effect>
     </effects>
+    <prereqs/>
+    <tags/>
   </upgrade>
   <upgrade>
-    <key>U14</key>
-    <title>Offshore Solar Plants </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
+    <key>U1-5</key>
+    <title>Population Control Policies</title>
+    <description>Population control is the practice of artificially decreasing the rate of growth of a human population.
+
+While population control can involve measures that improve people's lives by giving them greater control of their reproduction, a few programs, have resorted to coercive measures.
+
+This initiative will moderately reduce the rate of population growth, and will significantly help the environment.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Human_population_control</reference>
+    <build_time>0</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C4</cost>
     </costs>
-    <probabilities>
-      <probability>P5</probability>
-    </probabilities>
     <effects>
       <effect>F15</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U15</key>
-    <title>Hybrid Solar Plants </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>techIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P5</probability>
-    </probabilities>
-    <effects>
-      <effect>F15</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U16</key>
-    <title>Advanced Solar Energy Research</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>8</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T15</tag>
-      <tag>T23</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P5</probability>
-    </probabilities>
-    <effects>
       <effect>F16</effect>
+    </effects>
+    <prereqs/>
+    <tags/>
+  </upgrade>
+  <upgrade>
+    <key>U1-6</key>
+    <title>Peace Treaty</title>
+    <description>A peace treaty is an agreement between two or more hostile parties, usually countries or governments, which formally ends a state of war between the parties.
+This initiative will significantly increase economic output.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Peace_treaty</reference>
+    <build_time>0</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C4</cost>
+    </costs>
+    <effects>
       <effect>F17</effect>
     </effects>
+    <prereqs/>
+    <tags/>
   </upgrade>
   <upgrade>
-    <key>U17</key>
-    <title>Solar Concentration Plants </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
+    <key>U1-7</key>
+    <title>Trade Agreement</title>
+    <description>A trade agreement is a wide ranging tax, tariff and trade treaty that often includes investment guarantees. The most common trade agreements are of the preferential and free trade agreements that aim to reduce (or eliminate) tariffs, quotas and other trade restrictions on items traded between the signatories.
+This initiative will significantly increase economic output.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Trade_agreement</reference>
+    <build_time>0</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C4</cost>
     </costs>
-    <probabilities>
-      <probability>P7</probability>
-    </probabilities>
     <effects>
-      <effect>F18</effect>
+      <effect>F17</effect>
     </effects>
+    <prereqs/>
+    <tags/>
   </upgrade>
   <upgrade>
-    <key>U18</key>
-    <title>Nanomaterial Solar Cells </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>techIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
+    <key>U1-8</key>
+    <title>Fund Climate Study</title>
+    <description>The objectives of a climate study are to develop the fundamental scientific understanding of the physical climate system and climate processes needed to determine to what extent climate can be predicted, and the extent of human influence on climate.
+This initiative will significantly increase Green Sentiment.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Climatology</reference>
+    <build_time>1</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C2</cost>
+    </costs>
+    <effects>
+      <effect>F11</effect>
+    </effects>
+    <prereqs/>
     <tags>
       <tag>T15</tag>
-      <tag>T23</tag>
     </tags>
+  </upgrade>
+  <upgrade>
+    <key>U1-9</key>
+    <title>Renewable Energy R&amp;D Funding</title>
+    <description>Renewable energy is generally defined as energy that comes from resources which are naturally replenished on a human timescale such as sunlight, wind, rain, tides, waves and geothermal heat.
+
+Many renewable energy advancements are on the horizon, but still depend on attracting sufficient research and development (R&amp;D) funding. 
+This initiative will considerably lower the cost of renewable energy initiatives, and significantly reduce their completion time. </description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Renewable_energy</reference>
+    <build_time>1</build_time>
+    <levels>3</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C5</cost>
     </costs>
-    <probabilities>
-      <probability>P7</probability>
-    </probabilities>
     <effects>
+      <effect>F18</effect>
       <effect>F19</effect>
       <effect>F20</effect>
     </effects>
+    <prereqs/>
+    <tags/>
   </upgrade>
   <upgrade>
-    <key>U19</key>
-    <title>Space-based Solar Power </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P7</probability>
-    </probabilities>
-    <effects>
-      <effect>F18</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U20</key>
-    <title>Moon-based Solar Power</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P7</probability>
-      <probability>P8</probability>
-    </probabilities>
-    <effects>
-      <effect>F18</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U21</key>
-    <title>Cut Taxes </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U1-10</key>
+    <title>Global Emissions Treaty</title>
+    <description>Sign a treaty attempting to address global warming by limiting greenhouse gas emissions.
+This initiative will significantly improve the environment and reduce greenhouse gas emission, but will moderately decrease economic output in the short-term.  All fossil fuel initiatives will become considerably more expensive.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
     <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>1</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T22</tag>
-    </tags>
+    <reference>http://en.wikipedia.org/wiki/List_of_international_environmental_agreements</reference>
+    <build_time>0</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C1</cost>
     </costs>
-    <probabilities/>
     <effects>
+      <effect>F6</effect>
       <effect>F21</effect>
+      <effect>F8</effect>
+      <effect>F9</effect>
     </effects>
+    <prereqs/>
+    <tags/>
   </upgrade>
   <upgrade>
-    <key>U22</key>
-    <title>Subsidize Renewable Energy </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U1-11</key>
+    <title>Economic Stimulus</title>
+    <description>In economics, stimulus refers to attempts to use monetary or fiscal policy to stimulate the economy. Stimulus can also refer to monetary policies like lowering interest rates and quantitative easing.
+This initiative will significantly increase economic output.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
     <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T18</tag>
-      <tag>T22</tag>
-    </tags>
+    <reference>http://en.wikipedia.org/wiki/Stimulus_(economics)</reference>
+    <build_time>1</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C2</cost>
     </costs>
-    <probabilities/>
     <effects>
       <effect>F22</effect>
+    </effects>
+    <prereqs/>
+    <tags/>
+  </upgrade>
+  <upgrade>
+    <key>U1-12</key>
+    <title>Cut Taxes</title>
+    <description>A tax cut is a reduction in taxes. The immediate effects of a tax cut are a decrease in the real income of the government and an increase in the real income of those whose tax rate has been lowered.
+This initiative will increase economic output.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Tax_cut</reference>
+    <build_time>1</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C2</cost>
+    </costs>
+    <effects>
+      <effect>F22</effect>
+    </effects>
+    <prereqs/>
+    <tags/>
+  </upgrade>
+  <upgrade>
+    <key>U1-13</key>
+    <title>Fee and Dividend</title>
+    <description>Fee and dividend is a revenue-neutral mechanism designed to impose a progressive fee on carbon emissions and return the fee to the public, which has been proposed as an alternative method of reduction in fossil fuel use to cap and trade or carbon tax mechanisms.
+
+This mechanism is designed to maintain economic function while encouraging transition to a sustainable energy economy while simultaneously reducing CO2 emissions.
+
+This initiative will significantly improve the environment and reduce greenhouse gas emissions.  It will also considerably raise the cost of any initiatives related to fossil fuels.</description>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Fee_and_dividend</reference>
+    <build_time>0</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs/>
+    <effects>
       <effect>F23</effect>
+      <effect>F8</effect>
+      <effect>F9</effect>
     </effects>
+    <prereqs/>
+    <tags/>
   </upgrade>
   <upgrade>
-    <key>U23</key>
-    <title>Carbon Tax </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T18</tag>
-      <tag>T22</tag>
-    </tags>
+    <key>U2-1</key>
+    <title>Research Carbon Capture and Storage</title>
+    <description>Carbon capture and storage (CCS) is the process of capturing waste carbon dioxide (CO2) from large point sources, such as fossil fuel power plants, transporting it to a storage site, and depositing it where it will not enter the atmosphere, normally an underground geological formation.
+This initiative will considerably reduce the cost of fossil fuel plants that are more environmentally friendly. It will also moderately increase technology capacity.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Carbon_capture_and_storage</reference>
+    <build_time>3</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C2</cost>
     </costs>
-    <probabilities/>
     <effects>
       <effect>F24</effect>
       <effect>F25</effect>
-      <effect>F26</effect>
     </effects>
+    <prereqs/>
+    <tags>
+      <tag>T15</tag>
+      <tag>T17</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U24</key>
-    <title>Severe Carbon Tax </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T18</tag>
-      <tag>T22</tag>
-    </tags>
+    <key>U2-2</key>
+    <title>Research Nanotechnology</title>
+    <description>Nanotechnology is the manipulation of matter on an atomic, molecular, and supramolecular scale.
+
+Nanotechnology may be able to create many new materials and devices with a vast range of applications, such as in medicine, electronics, biomaterials and energy production. Nanotechnology also raises many of the same issues as any new technology, including concerns about the toxicity and environmental impact of nanomaterials.
+This initiative will moderately increase economic output and will considerably reduce the cost of renewable energy initiatives. It will also moderately increase technology capacity, and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Nanotechnology</reference>
+    <build_time>3</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C2</cost>
     </costs>
-    <probabilities>
-      <probability>P12</probability>
-    </probabilities>
     <effects>
-      <effect>F24</effect>
-      <effect>F25</effect>
+      <effect>F22</effect>
       <effect>F26</effect>
+      <effect>F25</effect>
     </effects>
+    <prereqs/>
+    <tags>
+      <tag>T15</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U25</key>
-    <title>Fund Climate Studies </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T22</tag>
-    </tags>
+    <key>U2-3</key>
+    <title>Space Program Investment</title>
+    <description>Space exploration is the ongoing discovery and exploration of celestial structures in outer space by means of continuously evolving and growing space technology. While the study of space is carried out mainly by astronomers with telescopes, the physical exploration of space is conducted both by unmanned robotic probes and human spaceflight.
+This initiative will moderately increase technology capacity and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/List_of_government_space_agencies</reference>
+    <build_time>3</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C2</cost>
     </costs>
-    <probabilities/>
+    <effects>
+      <effect>F25</effect>
+    </effects>
+    <prereqs/>
+    <tags/>
+  </upgrade>
+  <upgrade>
+    <key>U2-4</key>
+    <title>Research Advanced Robotics &amp; AI</title>
+    <description>Robotics deals with the design, construction, operation, and application of robots, as well as computer systems for their control, sensory feedback, and information processing.
+
+These technologies deal with automated machines that can take the place of humans in dangerous environments or manufacturing processes, or resemble humans in appearance, behavior, and/or cognition.
+This initiative will moderately increase both economic output technology capacity, and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Artificial_intelligence</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C5</cost>
+    </costs>
+    <effects>
+      <effect>F22</effect>
+      <effect>F25</effect>
+    </effects>
+    <prereqs>
+      <prereq>Q1</prereq>
+    </prereqs>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+  </upgrade>
+  <upgrade>
+    <key>U2-5</key>
+    <title>Research Advanced Superconductors</title>
+    <description>A room-temperature superconductor is a hypothetical material that would be capable of exhibiting superconductivity at operating temperatures above 0 degrees C. It is unknown whether any material exhibiting this characteristic exists, although superconductivity has repeatedly been discovered at temperatures that were previously unexpected or held to be impossible.
+
+Finding a room-temperature superconductor would help to solve the world’s energy problems, provide for faster computers, allow for novel memory-storage devices, and enable ultra-sensitive sensors, among many other possibilities.
+This initiative will moderately increase economic output and significantly increase technology capacity. It may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Superconductivity</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C5</cost>
+    </costs>
     <effects>
       <effect>F27</effect>
+      <effect>F25</effect>
     </effects>
+    <prereqs>
+      <prereq>Q1</prereq>
+    </prereqs>
+    <tags>
+      <tag>T15</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U26</key>
-    <title>Increase Renewable Energy R&amp;D Budget </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T18</tag>
-      <tag>T22</tag>
-    </tags>
+    <key>U2-6</key>
+    <title>Research Bioengineering</title>
+    <description>Biological engineers or bioengineers are engineers who use the principles of biology and the tools of engineering to create usable, tangible, economically viable products.
+
+It is used in the design of medical devices, diagnostic equipment, biocompatible materials, renewable bioenergy, ecological engineering, agricultural engineering, and other areas that improve the living standards of societies.
+This initiative will moderately increase both economic output technology capacity, and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Biological_engineering</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C2</cost>
     </costs>
-    <probabilities/>
     <effects>
+      <effect>F22</effect>
+      <effect>F25</effect>
+    </effects>
+    <prereqs/>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+  </upgrade>
+  <upgrade>
+    <key>U2-7</key>
+    <title>Research Battery Advancements</title>
+    <description>A battery stores electrical energy in a reversible chemical reaction. The renewable energy (RE) source produces the energy, and the battery stores it for times of low or no RE production.
+
+Advancements in battery technology are critically important to make alternative energy technologies practical and cost-effective.
+This initiative will moderately increase both economic output technology capacity, and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Battery_(electricity)</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C5</cost>
+    </costs>
+    <effects>
+      <effect>F22</effect>
+      <effect>F25</effect>
+    </effects>
+    <prereqs/>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+  </upgrade>
+  <upgrade>
+    <key>U2-8</key>
+    <title>Research Advanced Materials</title>
+    <description>Materials science is an interdisciplinary field which deals with the discovery and design of new materials.
+
+Many of the most pressing scientific problems that are faced today are due to the limitations of the materials that are available and, as a result, breakthroughs in this field are likely to have a significant impact on the future of technology.
+This initiative will moderately increase both economic output technology capacity, and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Materials_science</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C5</cost>
+    </costs>
+    <effects>
+      <effect>F22</effect>
+      <effect>F25</effect>
+    </effects>
+    <prereqs/>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+  </upgrade>
+  <upgrade>
+    <key>U2-9</key>
+    <title>Next Generation Batteries</title>
+    <description>Next-generation batteries enable alternative energy technologies to be practical and cost-effective.
+This initiative will significantly increase environmental health, economic output, and technology capacity.  Renewable energy initiatives will be considerably less expensive.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Battery_(electricity)</reference>
+    <build_time>4</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C5</cost>
+    </costs>
+    <effects>
+      <effect>F16</effect>
+      <effect>F22</effect>
+      <effect>F18</effect>
       <effect>F28</effect>
     </effects>
+    <prereqs>
+      <prereq>Q2</prereq>
+    </prereqs>
+    <tags>
+      <tag>T27</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U27</key>
-    <title>Smart Grid </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>techIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T18</tag>
-      <tag>T24</tag>
-    </tags>
+    <key>U2-10</key>
+    <title>Research Wireless Power</title>
+    <description>Wireless power is the transmission of electrical energy from a power source to an electrical load without man-made conductors. Wireless transmission is useful in cases where interconnecting wires are inconvenient, hazardous, or impossible.
+This initiative will moderately increase both economic output technology capacity, and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Wireless_power</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C5</cost>
     </costs>
-    <probabilities/>
+    <effects>
+      <effect>F22</effect>
+      <effect>F25</effect>
+    </effects>
+    <prereqs>
+      <prereq>Q3</prereq>
+    </prereqs>
+    <tags>
+      <tag>T15</tag>
+    </tags>
+  </upgrade>
+  <upgrade>
+    <key>U2-11</key>
+    <title>Space Elevator</title>
+    <description>A space elevator is a proposed type of space transportation system. Its main component is a ribbon-like cable anchored to the surface and extending into space. 
+
+It is designed to permit vehicle transport along the cable from a planetary surface, such as the Earth's, directly into space or orbit, without the use of large rockets.
+This initiative will moderately increase both economic output technology capacity, and may allow for more advanced initiatives.</description>
+    <image>research_baseBanner</image>
+    <model/>
+    <icon>ResearchIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Space_elevator</reference>
+    <build_time>5</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C5</cost>
+    </costs>
+    <effects>
+      <effect>F22</effect>
+      <effect>F28</effect>
+    </effects>
+    <prereqs>
+      <prereq>Q4</prereq>
+    </prereqs>
+    <tags/>
+  </upgrade>
+  <upgrade>
+    <key>U3-1</key>
+    <title>New Coal Plants</title>
+    <description>Coal is the most abundant fossil fuel on the planet. It is a relatively cheap fuel, with some of the largest deposits in regions that are relatively stable politically. Coal can produce more pollution than petroleum or natural gas.
+This initiative will moderately harm the environment and increase greenhouse gas emissions.  It will also moderately increase economic output.</description>
+    <image>coal_baseBanner</image>
+    <model/>
+    <icon>InfraIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Fossil-fuel_power_station</reference>
+    <build_time>2</build_time>
+    <levels>3</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C2</cost>
+    </costs>
     <effects>
       <effect>F29</effect>
       <effect>F30</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U28</key>
-    <title>Global Greenhouse Gas Emmissions Agreement </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T18</tag>
-      <tag>T24</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F28</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U29</key>
-    <title>Economic Stimulus </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>1</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T22</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
       <effect>F31</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U30</key>
-    <title>Wind Farms </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
       <effect>F32</effect>
     </effects>
+    <prereqs/>
+    <tags>
+      <tag>T18</tag>
+      <tag>T29</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U31</key>
-    <title>Wind Power Research </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>1</revertible_times>
+    <key>U3-2</key>
+    <title>Clean Coal Technology</title>
+    <description>Clean coal technology is a collection of technologies being developed to mitigate the environmental impact of coal energy generation. When coal is used as a fuel source, the gaseous emissions generated by the thermal decomposition of the coal include sulphur dioxide (SO2), nitrogen oxides (NOx), carbon dioxide (CO2), mercury, and other chemical byproducts. 
+
+Clean coal technology will moderately increase technology capacity.
+This initiative will moderately increase technology capacity and may allow for more advanced initiatives.</description>
+    <image>coal_baseBanner</image>
+    <model>research_upgrade3D</model>
+    <icon>TechIcon</icon>
+    <reference>http://www.world-nuclear.org/info/energy-and-environment/-clean-coal--technologies/</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C2</cost>
+    </costs>
+    <effects>
+      <effect>F25</effect>
+    </effects>
+    <prereqs/>
     <tags>
       <tag>T15</tag>
     </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F19</effect>
-    </effects>
   </upgrade>
   <upgrade>
-    <key>U32</key>
-    <title>Wind Power Subsidy </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>0</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T22</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F33</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U33</key>
-    <title>Offshore Wind Farms</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U3-3</key>
+    <title>Carbon Capture and Storage Plants</title>
+    <description>Carbon capture and storage (CCS) is the process of capturing waste carbon dioxide (CO2) from large point sources and depositing it where it will not enter the atmosphere, normally an underground geological formation. 
+
+CCS plants are expensive to build and the electricity they produce is more expensive than traditional coal power plants.
+This initiative will moderately help the environment and reduce greenhouse gasses.  It will also slightly decrease economic output.</description>
+    <image>coal_baseBanner</image>
+    <model/>
     <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
+    <reference>http://sequestration.mit.edu/tools/projects/</reference>
+    <build_time>2</build_time>
+    <levels>1</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C5</cost>
     </costs>
-    <probabilities>
-      <probability>P16</probability>
-    </probabilities>
     <effects>
+      <effect>F23</effect>
+      <effect>F33</effect>
       <effect>F34</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U34</key>
-    <title>Advanced Wind Power Research </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>8</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T15</tag>
-      <tag>T23</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P16</probability>
-    </probabilities>
-    <effects>
-      <effect>F19</effect>
       <effect>F35</effect>
     </effects>
+    <prereqs>
+      <prereq>Q5</prereq>
+    </prereqs>
+    <tags>
+      <tag>T18</tag>
+      <tag>T27</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U35</key>
-    <title>Airborne Wind Turbines </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U3-4</key>
+    <title>Pollution Scrubbers</title>
+    <description>Scrubber systems are a diverse group of air pollution control devices that can be used to remove some particulates and/or gases from industrial exhaust streams.
+
+This initiative will moderately help the environment and slightly decrease economic output.</description>
+    <image>coal_baseBanner</image>
+    <model/>
     <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
+    <reference>http://en.wikipedia.org/wiki/Scrubber</reference>
+    <build_time>2</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C2</cost>
     </costs>
-    <probabilities>
-      <probability>P17</probability>
-    </probabilities>
     <effects>
-      <effect>F36</effect>
+      <effect>F23</effect>
+      <effect>F33</effect>
     </effects>
+    <prereqs>
+      <prereq>Q6</prereq>
+    </prereqs>
+    <tags>
+      <tag>T27</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U36</key>
-    <title>Nanomaterial Wind Turbines </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>techIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T15</tag>
-      <tag>T23</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P17</probability>
-    </probabilities>
-    <effects>
-      <effect>F37</effect>
-      <effect>F38</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U37</key>
-    <title>Advanced Wind Turbines</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P17</probability>
-    </probabilities>
-    <effects>
-      <effect>F39</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U38</key>
-    <title>Ban Nuclear Power</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U3-5</key>
+    <title>Coal Phase Out</title>
+    <description>Start phasing out coal as a power source for the region.
+This initiative will moderately help the environment and reduce greenhouse gasses.  It will also slightly decrease economic output.</description>
+    <image>coal_baseBanner</image>
+    <model/>
     <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>1</revertible_times>
-    <tags>
-      <tag>T22</tag>
-      <tag>T26</tag>
-    </tags>
+    <reference>http://en.wikipedia.org/wiki/Fossil-fuel_phase-out</reference>
+    <build_time>0</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C6</cost>
     </costs>
-    <probabilities/>
     <effects>
-      <effect>F40</effect>
+      <effect>F23</effect>
+      <effect>F33</effect>
+      <effect>F34</effect>
+      <effect>F35</effect>
     </effects>
+    <prereqs/>
+    <tags>
+      <tag>T21</tag>
+      <tag>T25</tag>
+      <tag>T27</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U39</key>
-    <title>Nuclear Plants</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F41</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U40</key>
-    <title>Nuclear Power Research </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T15</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities/>
-    <effects>
-      <effect>F4</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U41</key>
-    <title>Passive Nuclear Safety</title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U3-6</key>
+    <title>Subsidize Coal</title>
+    <description>Subsidize the use of coal to lower to price of coal-based energy.  Subsidies supporting fossil fuels, particularly coal and oil, represent greater threats to the environment than subsidies to renewable energy.
+This initiative will moderately harm the environment and increase greenhouse gas emissions.  It will also moderately increase economic output.</description>
+    <image>coal_baseBanner</image>
+    <model/>
     <icon>PolicyIcon</icon>
-    <reference> </reference>
-    <time>5</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T25</tag>
-    </tags>
+    <reference>http://en.wikipedia.org/wiki/Energy_subsidies</reference>
+    <build_time>0</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C2</cost>
     </costs>
-    <probabilities>
-      <probability>P18</probability>
-    </probabilities>
     <effects>
-      <effect>F42</effect>
+      <effect>F29</effect>
+      <effect>F30</effect>
+      <effect>F31</effect>
+      <effect>F32</effect>
     </effects>
+    <prereqs/>
+    <tags>
+      <tag>T21</tag>
+      <tag>T29</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U42</key>
-    <title>Safe Fuel Pellets </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>4</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T25</tag>
-    </tags>
+    <key>U3-7</key>
+    <title>Coal Pollution Regulation</title>
+    <description>Coal power plants are a large source of carbon pollution. Increased regulation can facilitate the reduction of greenhouse gas emissions and other pollutants from coal plants. Typically, increased regulation also raises the cost of the energy produced.
+This initiative will moderately help the environment and reduce greenhouse gasses. It will also slightly decrease economic output</description>
+    <image>coal_baseBanner</image>
+    <model>research_upgrade3D</model>
+    <icon>PolicyIcon</icon>
+    <reference>http://en.wikipedia.org/wiki/Occupational_safety_and_health</reference>
+    <build_time>0</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C7</cost>
     </costs>
-    <probabilities>
-      <probability>P18</probability>
-    </probabilities>
     <effects>
-      <effect>F42</effect>
+      <effect>F23</effect>
+      <effect>F33</effect>
+      <effect>F34</effect>
+      <effect>F35</effect>
     </effects>
+    <prereqs/>
+    <tags>
+      <tag>T21</tag>
+      <tag>T39</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U43</key>
-    <title>Advanced Nuclear Power Research </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U3-8</key>
+    <title>Advanced Coal Plant Research</title>
+    <description>Research Advanced Coal Plant technologies.
+This initiative will moderately increase technology capacity and may allow for more advanced initiatives.</description>
+    <image>coal_baseBanner</image>
+    <model>research_upgrade3D</model>
     <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>8</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
+    <reference>https://www.advancedenergyforlife.com/sites/default/files/Coal%20Technologies%20Fact%20Sheet.pdf</reference>
+    <build_time>2</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C2</cost>
+    </costs>
+    <effects>
+      <effect>F25</effect>
+    </effects>
+    <prereqs>
+      <prereq>Q6</prereq>
+    </prereqs>
     <tags>
       <tag>T15</tag>
-      <tag>T23</tag>
     </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P18</probability>
-    </probabilities>
-    <effects>
-      <effect>F13</effect>
-      <effect>F43</effect>
-    </effects>
   </upgrade>
   <upgrade>
-    <key>U44</key>
-    <title>Nuclear Fusion Research </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>ResearchIcon</icon>
-    <reference> </reference>
-    <time>20</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T15</tag>
-      <tag>T23</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P21</probability>
-    </probabilities>
-    <effects>
-      <effect>F44</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U45</key>
-    <title>Travelling Wave Reactors </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U3-9</key>
+    <title>Next Generation Coal Plants</title>
+    <description>Build next-generation coal plants that emit a reduced amount of greenhouse gasses and other pollutants.
+This initiative will moderately help the environment and reduce greenhouse gasses.  It will also slightly decrease economic output.</description>
+    <image>coal_baseBanner</image>
+    <model>research_upgrade3D</model>
     <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
+    <reference>https://www.advancedenergyforlife.com/sites/default/files/Coal%20Technologies%20Fact%20Sheet.pdf</reference>
+    <build_time>2</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C8</cost>
     </costs>
-    <probabilities>
-      <probability>P21</probability>
-    </probabilities>
     <effects>
-      <effect>F45</effect>
+      <effect>F23</effect>
+      <effect>F33</effect>
+      <effect>F34</effect>
+      <effect>F35</effect>
     </effects>
+    <prereqs>
+      <prereq>Q7</prereq>
+    </prereqs>
+    <tags>
+      <tag>T18</tag>
+      <tag>T29</tag>
+      <tag>T27</tag>
+    </tags>
+  </upgrade>
+    <upgrade>
+    <key>U4-1</key>
+    <title>Arcology Building</title>
+    <description>Lorem Ipsum</description>
+    <image>cities_baseBanner</image>
+    <model>arcology_upgrade3D</model>
+    <icon>InfraIcon</icon>
+    <reference>https://www.advancedenergyforlife.com/sites/default/files/Coal%20Technologies%20Fact%20Sheet.pdf</reference>
+    <build_time>2</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C8</cost>
+    </costs>
+    <effects>
+      <effect>F23</effect>
+      <effect>F33</effect>
+      <effect>F34</effect>
+      <effect>F35</effect>
+    </effects>
+    <prereqs/>
+    <tags>
+      <tag>T18</tag>
+      <tag>T29</tag>
+      <tag>T27</tag>
+    </tags>
+  </upgrade>
+    <upgrade>
+    <key>U4-2</key>
+    <title>Advanced Recycling Center</title>
+    <description></description>
+    <image>cities_baseBanner</image>
+    <model>recycleCenter_upgrade3D</model>
+    <icon>InfraIcon</icon>
+    <reference>https://www.advancedenergyforlife.com/sites/default/files/Coal%20Technologies%20Fact%20Sheet.pdf</reference>
+    <build_time>2</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
+    <costs>
+      <cost>C8</cost>
+    </costs>
+    <effects>
+      <effect>F23</effect>
+      <effect>F33</effect>
+      <effect>F34</effect>
+      <effect>F35</effect>
+    </effects>
+    <prereqs/>
+    <tags>
+      <tag>T18</tag>
+      <tag>T29</tag>
+      <tag>T27</tag>
+    </tags>
   </upgrade>
   <upgrade>
-    <key>U46</key>
-    <title>Thorium Reactors </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
+    <key>U4-3</key>
+    <title>Green City</title>
+    <description></description>
+    <image>cities_baseBanner</image>
+    <model>green_upgrade3D</model>
     <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
+    <reference>https://www.advancedenergyforlife.com/sites/default/files/Coal%20Technologies%20Fact%20Sheet.pdf</reference>
+    <build_time>2</build_time>
+    <levels>2</levels>
+    <multipliers>
+      <cost>1</cost>
+      <effect>1</effect>
+    </multipliers>
     <costs>
-      <cost>F1</cost>
+      <cost>C8</cost>
     </costs>
-    <probabilities>
-      <probability>P21</probability>
-    </probabilities>
     <effects>
-      <effect>F45</effect>
+      <effect>F23</effect>
+      <effect>F33</effect>
+      <effect>F34</effect>
+      <effect>F35</effect>
     </effects>
-  </upgrade>
-  <upgrade>
-    <key>U47</key>
-    <title>Generation IV and V Reactors </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>1</repurchasable_times>
-    <revertible_times>0</revertible_times>
+    <prereqs/>
     <tags>
-      <tag>T19</tag>
+      <tag>T18</tag>
+      <tag>T29</tag>
+      <tag>T27</tag>
     </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P21</probability>
-    </probabilities>
-    <effects>
-      <effect>F45</effect>
-    </effects>
-  </upgrade>
-  <upgrade>
-    <key>U48</key>
-    <title>Fusion Reactors </title>
-    <description> </description>
-    <image> </image>
-    <model>lab</model>
-    <icon>InfraIcon</icon>
-    <reference> </reference>
-    <time>2</time>
-    <repurchasable_times>0</repurchasable_times>
-    <revertible_times>0</revertible_times>
-    <tags>
-      <tag>T19</tag>
-    </tags>
-    <costs>
-      <cost>F1</cost>
-    </costs>
-    <probabilities>
-      <probability>P22</probability>
-    </probabilities>
-    <effects>
-      <effect>F45</effect>
-    </effects>
   </upgrade>
 </upgrades>

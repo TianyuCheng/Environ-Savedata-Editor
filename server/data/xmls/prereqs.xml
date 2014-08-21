@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<prereqs>
+  <prereq>
+    <key>Q1</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U2-2</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q2</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U2-7</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q3</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U2-8</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q4</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U2-3</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q5</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U2-1</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q6</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U3-2</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q7</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U3-11</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q8</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U5-7</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q9</key>
+    <factors>
+      <factor amount="50" relation="1" type="score">TE</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q10</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U6-5</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q11</key>
+    <factors>
+      <factor amount="30" relation="1" type="score">TE</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q12</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U4-6</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q13</key>
+    <factors>
+      <factor amount="20" relation="1" type="score">GS</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q14</key>
+    <factors>
+      <factor amount="20" relation="-1" type="score">GS</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q15</key>
+    <factors>
+      <factor amount="40" relation="1" type="score">EC</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q16</key>
+    <factors>
+      <factor amount="60" relation="1" type="score">TE</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q17</key>
+    <factors>
+      <factor amount="0" relation="1" type="node">U7-6</factor>
+    </factors>
+  </prereq>
+  <prereq>
+    <key>Q18</key>
+    <factors>
+      <factor amount="-20" relation="-1" type="score">GG</factor>
+    </factors>
+  </prereq>
+</prereqs>

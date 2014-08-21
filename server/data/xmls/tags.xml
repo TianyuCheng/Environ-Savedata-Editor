@@ -5,11 +5,11 @@
     <title>North America</title>
   </tag>
   <tag>
-    <key>T2 </key>
+    <key>T2</key>
     <title>South America</title>
   </tag>
   <tag>
-    <key>T3 </key>
+    <key>T3</key>
     <title>Europe</title>
   </tag>
   <tag>
@@ -42,7 +42,7 @@
   </tag>
   <tag>
     <key>T11</key>
-    <title>Solar </title>
+    <title>Solar</title>
   </tag>
   <tag>
     <key>T12</key>
@@ -103,5 +103,57 @@
   <tag>
     <key>T26</key>
     <title>Transportation</title>
+  </tag>
+  <tag>
+    <key>T27</key>
+    <title>Green</title>
+  </tag>
+  <tag>
+    <key>T28</key>
+    <title>Renewable</title>
+  </tag>
+  <tag>
+    <key>T29</key>
+    <title>Grow</title>
+  </tag>
+  <tag>
+    <key>T30</key>
+    <title>Agriculture and Mining</title>
+  </tag>
+  <tag>
+    <key>T31</key>
+    <title>Cities</title>
+  </tag>
+  <tag>
+    <key>T32</key>
+    <title>Manufacturing</title>
+  </tag>
+  <tag>
+    <key>T33</key>
+    <title>Capitol</title>
+  </tag>
+  <tag>
+    <key>T34</key>
+    <title>Research Center</title>
+  </tag>
+  <tag>
+    <key>T35</key>
+    <title>Oil and Gas</title>
+  </tag>
+  <tag>
+    <key>T36</key>
+    <title>Ecosystem</title>
+  </tag>
+  <tag>
+    <key>T37</key>
+    <title>Biofuels</title>
+  </tag>
+  <tag>
+    <key>T38</key>
+    <title>Hydropower</title>
+  </tag>
+  <tag>
+    <key>T39</key>
+    <title>Safety</title>
   </tag>
 </tags>

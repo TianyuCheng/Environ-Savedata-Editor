@@ -15,36 +15,40 @@ function readRegionInfo(data, info, offset) {
   // scores
   region_info['FUNDS']    = data.readFloatLE(_offset += 4);
   region_info['PC']       = data.readFloatLE(_offset += 4);
+  region_info['FUNDS_COST'] = data.readFloatLE(_offset += 4);
+  region_info['PC_COST']  = data.readFloatLE(_offset += 4);
+
   region_info['EC']       = data.readFloatLE(_offset += 4);
   region_info['EN']       = data.readFloatLE(_offset += 4);
-  region_info['CO2']      = data.readFloatLE(_offset += 4);
-  region_info['AP']       = data.readFloatLE(_offset += 4);
-  region_info['WP']       = data.readFloatLE(_offset += 4);
-  region_info['LP']       = data.readFloatLE(_offset += 4);
-  region_info['GDP']      = data.readFloatLE(_offset += 4);
-  region_info['EQ']       = data.readFloatLE(_offset += 4);
-  region_info['PP']       = data.readFloatLE(_offset += 4);
-  region_info['TECH']     = data.readFloatLE(_offset += 4);
-  region_info['GREEN']    = data.readFloatLE(_offset += 4);
-  region_info['DONATION'] = data.readFloatLE(_offset += 4);
+  region_info['TE']       = data.readFloatLE(_offset += 4);
+  region_info['GS']       = data.readFloatLE(_offset += 4);
+  region_info['GG']       = data.readFloatLE(_offset += 4);
+  region_info['SE']       = data.readFloatLE(_offset += 4);
+  region_info['PO']       = data.readFloatLE(_offset += 4);
+  region_info['BT']       = data.readFloatLE(_offset += 4);
   
+  console.log (region_info);
   // read economy bars
-  for (var i = 0; i < info.calcCycles; i++) 
+  for (var i = 0; i < info.calcCycles; i++)
     region_info.economy_bars.push(data.readFloatLE(_offset += 4));
+  console.log (region_info.economy_bars);
 
   // read economy bars
   for (var i = 0; i < info.calcCycles; i++) 
     region_info.environ_bars.push(data.readFloatLE(_offset += 4));
+  console.log (region_info.environ_bars);
 
-  // // read history 
+  // read history 
   var num_nodes_in_history = data.readInt32LE(_offset += 4);
+  console.log ("num nodes:" + num_nodes_in_history);
   for (var i = 0; i < num_nodes_in_history; i++) {
     var length = data.readInt8(_offset + 4);
-    var node_key = data.toString('utf-8', _offset + 5, _offset + 9); 
+    var node_key = data.toString('utf-8', _offset + 5, _offset + 13); 
     var timestamp = data.readFloatLE(_offset + 13);
     _offset += 13;
     region_info.history[timestamp] = node_key;
   }
+  console.log (region_info.history);
   info.regions.push(region_info);
   return _offset;
 }
@@ -69,9 +73,9 @@ function readSaveData (req, res, filename, mappings, callback) {
 
     var offset = 32;
     for (var i = 0; i < info.region_counts; i++) {
+      console.log (i + " offset:" + offset);
       offset = readRegionInfo(data, info, offset);
     }
-    // console.log(info);
 
     if (callback != null) callback(filename);
     return res.render('savedata', {

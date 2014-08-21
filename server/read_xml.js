@@ -35,7 +35,8 @@ async.parallel([
             for (var bases_index in bases) {
               var base = bases[bases_index];
               // console.log (base);
-              bases_list.push({ key : base['_'], 
+              bases_list.push({ 
+                key : base['$'].key, 
                 active :  base['$'].active, 
                 x : base['$'].x, 
                 y : base['$'].y });

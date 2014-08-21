@@ -2,158 +2,230 @@
 <bases>
   <base>
     <key>B1</key>
-    <title>Coal</title>
-    <description> </description>
-    <image> </image>
-    <model>3D_coalPlant</model>
-    <reward>10</reward>
-    <tags>
-      <tag>T9</tag>
-      <tag>T10</tag>
-    </tags>
+    <title>Capitol</title>
+    <description/>
+    <image>capitol_baseBanner</image>
+    <model/>
+    <reference>http://en.wikipedia.org/wiki/Policy</reference>
     <upgrades>
-      <upgrade state="2">U1</upgrade>
-      <upgrade state="2">U2</upgrade>
-      <upgrade state="1">U3</upgrade>
-      <upgrade state="1">U4</upgrade>
-      <upgrade state="1">U5</upgrade>
-      <upgrade state="0">U6</upgrade>
-      <upgrade state="0">U7</upgrade>
-      <upgrade state="0">U8</upgrade>
-      <upgrade state="0">U9</upgrade>
+      <upgrade state="2">U1-1</upgrade>
+      <upgrade state="2">U1-2</upgrade>
+      <upgrade state="2">U1-3</upgrade>
+      <upgrade state="2">U1-4</upgrade>
+      <upgrade state="2">U1-5</upgrade>
+      <upgrade state="2">U1-6</upgrade>
+      <upgrade state="2">U1-7</upgrade>
+      <upgrade state="2">U1-8</upgrade>
+      <upgrade state="2">U1-9</upgrade>
+      <upgrade state="2">U1-10</upgrade>
+      <upgrade state="2">U1-11</upgrade>
+      <upgrade state="2">U1-12</upgrade>
+      <upgrade state="2">U1-13</upgrade>
     </upgrades>
+    <tags>
+      <tag>T33</tag>
+      <tag>T21</tag>
+    </tags>
   </base>
   <base>
     <key>B2</key>
-    <title>Solar Power</title>
-    <description> </description>
-    <image> </image>
-    <model>3D_coalPlant</model>
-    <reward>10</reward>
-    <tags>
-      <tag>T9</tag>
-      <tag>T11</tag>
-      <tag>T17</tag>
-    </tags>
+    <title>Research Center</title>
+    <description/>
+    <image>research_baseBanner</image>
+    <model>research_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Research</reference>
     <upgrades>
-      <upgrade state="2">U10</upgrade>
-      <upgrade state="2">U11</upgrade>
-      <upgrade state="1">U12</upgrade>
-      <upgrade state="1">U13</upgrade>
-      <upgrade state="1">U14</upgrade>
-      <upgrade state="0">U15</upgrade>
-      <upgrade state="0">U16</upgrade>
-      <upgrade state="0">U17</upgrade>
-      <upgrade state="0">U18</upgrade>
-      <upgrade state="0">U19</upgrade>
-      <upgrade state="0">U20</upgrade>
+      <upgrade state="2">U2-1</upgrade>
+      <upgrade state="2">U2-2</upgrade>
+      <upgrade state="2">U2-3</upgrade>
+      <upgrade state="2">U2-6</upgrade>
+      <upgrade state="2">U2-7</upgrade>
+      <upgrade state="2">U2-8</upgrade>
+      <upgrade state="1">U2-4</upgrade>
+      <upgrade state="1">U2-5</upgrade>
+      <upgrade state="1">U2-9</upgrade>
+      <upgrade state="1">U2-10</upgrade>
+      <upgrade state="1">U2-11</upgrade>
     </upgrades>
+    <tags>
+      <tag>T34</tag>
+    </tags>
   </base>
   <base>
     <key>B3</key>
-    <title>Capitol</title>
-    <description> </description>
-    <image> </image>
-    <model> </model>
-    <reward>10</reward>
-    <tags>
-      <tag>T12</tag>
-    </tags>
+    <title>Coal</title>
+    <description/>
+    <image>coal_baseBanner</image>
+    <model>coal_base3D</model>
+    <reference>http://www.originenergy.com.au/4229/Coal</reference>
     <upgrades>
-      <upgrade state="2">U21</upgrade>
-      <upgrade state="2">U22</upgrade>
-      <upgrade state="1">U23</upgrade>
-      <upgrade state="1">U24</upgrade>
-      <upgrade state="1">U25</upgrade>
-      <upgrade state="0">U26</upgrade>
-      <upgrade state="0">U27</upgrade>
-      <upgrade state="0">U28</upgrade>
-      <upgrade state="0">U29</upgrade>
+      <upgrade state="2">U3-1</upgrade>
+      <upgrade state="2">U3-2</upgrade>
+      <upgrade state="2">U3-5</upgrade>
+      <upgrade state="2">U3-6</upgrade>
+      <upgrade state="2">U3-7</upgrade>
+      <upgrade state="1">U3-3</upgrade>
+      <upgrade state="1">U3-4</upgrade>
+      <upgrade state="1">U3-8</upgrade>
+      <upgrade state="0">U3-9</upgrade>
     </upgrades>
+    <tags>
+      <tag>T9</tag>
+      <tag>T16</tag>
+      <tag>T10</tag>
+    </tags>
   </base>
   <base>
     <key>B4</key>
-    <title>Wind Power</title>
-    <description> </description>
-    <image> </image>
-    <model>3D_wind</model>
-    <reward>10</reward>
+    <title>Oil and Gas</title>
+    <description/>
+    <image>oilAndGas_baseBanner</image>
+    <model>oilAndGas_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Petroleum_industry</reference>
+    <upgrades/>
     <tags>
       <tag>T9</tag>
-      <tag>T13</tag>
-      <tag>T17</tag>
+      <tag>T35</tag>
+      <tag>T10</tag>
     </tags>
-    <upgrades>
-      <upgrade state="2">U30</upgrade>
-      <upgrade state="2">U31</upgrade>
-      <upgrade state="1">U32</upgrade>
-      <upgrade state="1">U33</upgrade>
-      <upgrade state="1">U34</upgrade>
-      <upgrade state="0">U35</upgrade>
-      <upgrade state="0">U36</upgrade>
-      <upgrade state="0">U37</upgrade>
-    </upgrades>
   </base>
   <base>
     <key>B5</key>
-    <title>Nuclear Power</title>
-    <description> </description>
-    <image> </image>
-    <model>3D_NuclearPlant</model>
-    <reward>10</reward>
+    <title>Solar Power</title>
+    <description/>
+    <image>solar_baseBanner</image>
+    <model>solar_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Solar_power</reference>
+    <upgrades/>
     <tags>
       <tag>T9</tag>
-      <tag>T14</tag>
       <tag>T17</tag>
+      <tag>T28</tag>
+      <tag>T11</tag>
     </tags>
-    <upgrades>
-      <upgrade state="2">U38</upgrade>
-      <upgrade state="2">U39</upgrade>
-      <upgrade state="1">U40</upgrade>
-      <upgrade state="1">U41</upgrade>
-      <upgrade state="1">U42</upgrade>
-      <upgrade state="0">U43</upgrade>
-      <upgrade state="0">U44</upgrade>
-      <upgrade state="0">U45</upgrade>
-      <upgrade state="0">U46</upgrade>
-      <upgrade state="0">U47</upgrade>
-      <upgrade state="0">U48</upgrade>
-    </upgrades>
   </base>
   <base>
     <key>B6</key>
-    <title>Oil And Gas</title>
-    <description> </description>
-    <image> </image>
-    <model>3D_oilAndGas</model>
-    <reward>10</reward>
+    <title>Wind Power</title>
+    <description/>
+    <image>wind_baseBanner</image>
+    <model>wind_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Wind_power</reference>
+    <upgrades/>
     <tags>
-      <tag>T26</tag>
+      <tag>T9</tag>
+      <tag>T17</tag>
+      <tag>T28</tag>
+      <tag>T13</tag>
     </tags>
-    <upgrades>
-      <upgrade state="2">U38</upgrade>
-      <upgrade state="2">U39</upgrade>
-      <upgrade state="1">U40</upgrade>
-      <upgrade state="1">U41</upgrade>
-      <upgrade state="1">U42</upgrade>
-      <upgrade state="0">U43</upgrade>
-      <upgrade state="0">U44</upgrade>
-      <upgrade state="0">U45</upgrade>
-      <upgrade state="0">U46</upgrade>
-      <upgrade state="0">U47</upgrade>
-      <upgrade state="0">U48</upgrade>
-    </upgrades>
   </base>
   <base>
     <key>B7</key>
-    <title>Research</title>
-    <description> </description>
-    <image> </image>
-    <model>3D_research</model>
-    <reward>10</reward>
+    <title>Nuclear Power</title>
+    <description/>
+    <image>nuclear_baseBanner</image>
+    <model>nuclear_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Nuclear_power</reference>
+    <upgrades/>
+    <tags>
+      <tag>T9</tag>
+      <tag>T17</tag>
+      <tag>T28</tag>
+      <tag>T14</tag>
+    </tags>
+  </base>
+  <base>
+    <key>B8</key>
+    <title>Biofuel</title>
+    <description/>
+    <image>biofuel_baseBanner</image>
+    <model>biofuel_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Biofuel</reference>
+    <upgrades/>
+    <tags>
+      <tag>T9</tag>
+      <tag>T17</tag>
+      <tag>T28</tag>
+      <tag>T37</tag>
+    </tags>
+  </base>
+  <base>
+    <key>B9</key>
+    <title>Hydropower</title>
+    <description/>
+    <image>hydropower_baseBanner</image>
+    <model>hydropower_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Hydropower</reference>
+    <upgrades/>
+    <tags>
+      <tag>T9</tag>
+      <tag>T17</tag>
+      <tag>T28</tag>
+      <tag>T38</tag>
+    </tags>
+  </base>
+  <base>
+    <key>B10</key>
+    <title>Ecosystem</title>
+    <description/>
+    <image>ecosystem_baseBanner</image>
+    <model>ecosystem_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Ecosystem</reference>
+    <upgrades/>
+    <tags>
+      <tag>T36</tag>
+    </tags>
+  </base>
+  <base>
+    <key>B11</key>
+    <title>Cities</title>
+    <description/>
+    <image>cities_baseBanner</image>
+    <model>cities_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/City</reference>
+    <upgrades>
+      <upgrade state="2">U4-1</upgrade>
+      <upgrade state="2">U4-2</upgrade>
+      <upgrade state="2">U4-3</upgrade>
+   </upgrades>
+    <tags>
+      <tag>T31</tag>
+    </tags>
+  </base>
+  <base>
+    <key>B12</key>
+    <title>Manufacturing</title>
+    <description/>
+    <image>manufacturing_baseBanner</image>
+    <model>manufacturing_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Manufacturing</reference>
+    <upgrades/>
+    <tags>
+      <tag>T32</tag>
+    </tags>
+  </base>
+  <base>
+    <key>B13</key>
+    <title>Agriculture and Mining</title>
+    <description/>
+    <image>agricultureAndMining_baseBanner</image>
+    <model>agricultureAndMining_base3D</model>
+    <reference>http://www.miningfacts.org/economy/how-does-large-scale-mining-affect-agriculture/</reference>
+    <upgrades/>
+    <tags>
+      <tag>T30</tag>
+    </tags>
+  </base>
+  <base>
+    <key>B14</key>
+    <title>Transportation</title>
+    <description/>
+    <image>transportation_baseBanner</image>
+    <model>transportation_base3D</model>
+    <reference>http://en.wikipedia.org/wiki/Transport</reference>
+    <upgrades/>
     <tags>
       <tag>T26</tag>
     </tags>
-    <upgrades/>
   </base>
 </bases>
